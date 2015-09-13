@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">theSOS</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="facebook_app_id">697006213740920</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="title_activity_report">ReportActivity</string>
+    <string name="tel">เบอร์โทรศัพท์</string>
+    <string name="provide">จังหวัด</string>
+    <string name="title_activity_telephone">TelephoneActivity</string>
+    <string name="title_activity_test">TestActivity</string>
+    <string name="title_activity_wait">WaitActivity</string>
+
+</resources>

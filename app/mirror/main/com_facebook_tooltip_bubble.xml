@@ -1,0 +1,20 @@
+<!-- [ Mirror metadata ] generatedAt: 1442088697914 -->
+<!-- Generated screen file. Fill the id tags below with content with
+which to populate your previewed layout. For a complete specification
+of sample data, please see http://jimulabs.com/sample-data-specifications/ 
+
+Valid attributes on <screen> tag: theme="@style/someTheme" inEditMode="false" overlay="@drawable/mockup" -->
+<screen>
+    <_content layout="@layout/com_facebook_tooltip_bubble">
+        <!-- ImageView Examples:
+        <com_facebook_button_xout src="@drawable/image_resource" />
+        <com_facebook_button_xout src="relative_path/image.jpg" /> -->
+        <com_facebook_button_xout />
+        <!-- TextView Examples:
+        <com_facebook_tooltip_bubble_view_text_body text="@string/string_resource" />
+        <com_facebook_tooltip_bubble_view_text_body text="Text literal" textSize="14sp" /> -->
+        <com_facebook_tooltip_bubble_view_text_body />
+        <com_facebook_tooltip_bubble_view_top_pointer />
+        <com_facebook_tooltip_bubble_view_bottom_pointer />
+    </_content>
+</screen>

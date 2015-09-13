@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="accident_type">
+        <item>อุบบัตเหตุทางรถ</item>
+        <item>ทางน้ำ</item>
+        <item>งูเข้าบ้าน</item>
+
+    </string-array>
+</resources>

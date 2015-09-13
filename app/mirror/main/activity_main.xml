@@ -1,0 +1,16 @@
+<!-- [ Mirror metadata ] generatedAt: 1442088697757 -->
+<!-- Generated screen file. Fill the id tags below with content with
+which to populate your previewed layout. For a complete specification
+of sample data, please see http://jimulabs.com/sample-data-specifications/ 
+
+Valid attributes on <screen> tag: theme="@style/someTheme" inEditMode="false" overlay="@drawable/mockup" -->
+<screen>
+    <_content layout="@layout/activity_main">
+        <!-- TextView Examples:
+        <username text="@string/string_resource" />
+        <username text="Text literal" textSize="14sp" /> -->
+        <username />
+        <email />
+        <textView3 />
+    </_content>
+</screen>

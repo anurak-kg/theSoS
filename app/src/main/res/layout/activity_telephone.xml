@@ -1,0 +1,53 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="thesos.com.sos.badboy.thesos.TelephoneActivity">
+
+    <EditText
+        android:id="@+id/phoneNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="85dp"
+        android:ems="10"
+        android:inputType="phone"
+        android:phoneNumber="true"
+        android:text="0" />
+
+    <TextView
+        android:id="@+id/telephoneTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/phoneNumber"
+        android:layout_alignLeft="@+id/phoneNumber"
+        android:layout_alignStart="@+id/phoneNumber"
+        android:layout_marginBottom="37dp"
+        android:text="เบอร์โทรศัพท์"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:text="รายละเอียดเพิ่มเติม"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textStyle="bold"
+        android:typeface="serif" />
+
+    <Button
+        android:id="@+id/nextTelephoneBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/phoneNumber"
+        android:layout_centerHorizontal="true"
+        android:text="ถัดไป" />
+
+</RelativeLayout>
