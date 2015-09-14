@@ -1,17 +1,50 @@
 package thesos.com.sos.badboy.thesos;
 
+import android.net.Uri;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class WaitActivity extends ActionBarActivity {
+import com.facebook.AccessToken;
+import com.facebook.GraphRequest;
+import com.facebook.GraphResponse;
+import com.parse.ParseGeoPoint;
+import com.parse.ParseUser;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+public class WaitActivity extends ActionBarActivity {
+    private Accident accident;
+    private Uri imagesUri;
+    private ParseUser currentUser;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //Fetch Facebook user info if it is logged
+        currentUser = ParseUser.getCurrentUser();
+        if ((currentUser != null) && currentUser.isAuthenticated()) {
+            makeMeRequest();
+        }
+        accident = (Accident) getIntent().getSerializableExtra("accident");
+        if (getIntent().getExtras().getString("uri") != null) {
+            imagesUri = Uri.parse(getIntent().getExtras().getString("uri"));
+            Log.d("theSos", imagesUri.getPath());
+        }
+       Log.d("theSos",accident.getAccidentType());
         setContentView(R.layout.activity_wait);
     }
+
+    private void sendAccident() {
+
+    }
+
+    private void fireRescuer() {
+
+    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -34,4 +67,58 @@ public class WaitActivity extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
+    private void makeMeRequest() {
+        GraphRequest request = GraphRequest.newMeRequest(AccessToken.getCurrentAccessToken(),
+                new GraphRequest.GraphJSONObjectCallback() {
+                    @Override
+                    public void onCompleted(JSONObject user, GraphResponse response) {
+                        if (user != null) {
+
+                            JSONObject userProfile = new JSONObject();
+                            try {
+
+                               // profilePicture.setProfileId(user.getString("id"));
+
+                                userProfile.put("facebookId", user.getLong("id"));
+                                userProfile.put("name", user.getString("name"));
+                                if (user.getString("gender") != null) {
+                                    userProfile.put("gender", (String) user.getString("gender"));
+                                }
+                                if (user.getString("email") != null) {
+                                    userProfile.put("email", (String) user.getString("email"));
+                                }
+
+                                ParseUser currentUser = ParseUser.getCurrentUser();
+                                currentUser.put("name", user.getString("name"));
+                                currentUser.put("type", "User");
+                                currentUser.put("profile", userProfile);
+
+                            } catch (JSONException e) {
+                                Log.d("My", "Error parsing returned user data. " + e);
+                            }
+
+                        } else if (response.getError() != null) {
+                            switch (response.getError().getCategory()) {
+                                case LOGIN_RECOVERABLE:
+                                    Log.d("theSOS",
+                                            "Authentication error: " + response.getError());
+                                    break;
+
+                                case TRANSIENT:
+                                    Log.d("theSOS",
+                                            "Transient error. Try again. " + response.getError());
+                                    break;
+
+                                case OTHER:
+                                    Log.d("theSOS",
+                                            "Some other error: " + response.getError());
+                                    break;
+                            }
+                        }
+                    }
+                }
+        );
+        request.executeAsync();
+    }
+
 }

@@ -11,6 +11,7 @@
     <string name="provide">จังหวัด</string>
     <string name="title_activity_telephone">TelephoneActivity</string>
     <string name="title_activity_test">TestActivity</string>
-    <string name="title_activity_wait">WaitActivity</string>
+    <string name="title_activity_wait">กำลังติดต่อเจ้าหน้าที่</string>
+    <string name="wait_status">สถานะ</string>
 
 </resources>

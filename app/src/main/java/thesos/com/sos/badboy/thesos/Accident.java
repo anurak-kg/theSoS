@@ -1,21 +1,25 @@
 package thesos.com.sos.badboy.thesos;
 
 import android.location.Location;
+import android.net.Uri;
 
 import com.parse.ParseGeoPoint;
+import com.parse.ParseObject;
+
+import java.io.Serializable;
 
 /**
  * Created by iMan on 9/12/2557.
  */
-public class Accident {
+public class Accident implements Serializable {
     private String accidentId;
     private String accidentType;
-    private ParseGeoPoint location;
     private String rescuerId;
-    private String victimId;
     private String accidentDescription;
     private String accidentStatus;
-
+    private String uri;
+    private float latitude;
+    private float longitude;
 
     public String getAccidentId() {
         return accidentId;
@@ -32,14 +36,12 @@ public class Accident {
     public void setAccidentType(String accidentType) {
         this.accidentType = accidentType;
     }
+    public void setLocation(float latitude,float longitude){
+        this.latitude = latitude;
+        this.longitude = longitude;
 
-    public ParseGeoPoint getLocation() {
-        return location;
     }
 
-    public void setLocation(ParseGeoPoint location) {
-        this.location = location;
-    }
 
     public String getRescuerId() {
         return rescuerId;
@@ -49,13 +51,6 @@ public class Accident {
         this.rescuerId = rescuerId;
     }
 
-    public String getVictimId() {
-        return victimId;
-    }
-
-    public void setVictimId(String victimId) {
-        this.victimId = victimId;
-    }
 
     public String getAccidentDescription() {
         return accidentDescription;
@@ -71,5 +66,13 @@ public class Accident {
 
     public void setAccidentStatus(String accidentStatus) {
         this.accidentStatus = accidentStatus;
+    }
+
+    public String getUri() {
+        return uri;
+    }
+
+    public void setUri(String uri) {
+        this.uri = uri;
     }
 }

@@ -21,22 +21,15 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.facebook.*;
 import com.facebook.login.widget.ProfilePictureView;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
 import com.parse.*;
-
-
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import com.parse.SaveCallback;
-
 import java.io.File;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
 
 
@@ -52,6 +45,7 @@ public class ReportActivity extends ActionBarActivity {
     private double longitude;
     private double latitude;
     private Button alertBtn;
+    private Accident accident;
     private BestLocationListener mBestLocationListener;
     private BestLocationProvider mBestLocationProvider;
     private ProfilePictureView profilePicture;
@@ -142,6 +136,9 @@ public class ReportActivity extends ActionBarActivity {
 
     private void redirectToWaiting() {
         Intent i = new Intent(this, WaitActivity.class);
+        i.putExtra("accident",getAccidentData());
+        i.putExtra("uri",uri.getPath());
+
         startActivity(i);
     }
 
@@ -162,8 +159,17 @@ public class ReportActivity extends ActionBarActivity {
         }
     }
 
-    private void sendAlertInfo(String rescuerId) {
-        ParseObject pr = new ParseObject("accident");
+    private Accident getAccidentData() {
+
+        accident = new Accident();
+        accident.setAccidentType("อุบัติเหตุทางรถ");
+        //accident.setLocation(new ParseGeoPoint(locationGPS.getLatitude(), locationGPS.getLongitude()));
+        accident.setAccidentStatus("waiting");
+        accident.setAccidentDescription("Bla Bla Bla");
+        //accident.setUri(uri.toString());
+        return accident;
+
+        /*ParseObject pr = new ParseObject("accident");
         pr.put("accidentType", "อุบัติเหตุทางรถยนต์");
         pr.put("location", new ParseGeoPoint(locationGPS.getLatitude(), locationGPS.getLongitude()));
         pr.put("accidentDescription", "Bla Bla Bla");
@@ -182,7 +188,7 @@ public class ReportActivity extends ActionBarActivity {
                 }
 
             }
-        });
+        });*/
 
 
     }

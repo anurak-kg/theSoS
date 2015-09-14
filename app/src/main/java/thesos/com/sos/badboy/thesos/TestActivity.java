@@ -253,8 +253,8 @@ public class TestActivity extends ActionBarActivity {
         //Bind Widget
         TextView type = (TextView) findViewById(R.id.accidentTypeTxt);
         Location location = new Location("");
-        location.setLatitude(accident.getLocation().getLatitude());
-        location.setLongitude(accident.getLocation().getLongitude());
+        //location.setLatitude(accident.getLocation().getLatitude());
+       // location.setLongitude(accident.getLocation().getLongitude());
         setVictimLocation(location);
         accidentVicTxt.setText(victimObj.getString("name"));
         //update name
@@ -347,7 +347,7 @@ public class TestActivity extends ActionBarActivity {
                         query.whereEqualTo("rescuerId", ParseObject.createWithoutData("_User", "GvFOd4AFsb"));
                         query.include("victimId");
 
-                        query.getFirstInBackground(new GetCallback<ParseObject>() {
+                        /*query.getFirstInBackground(new GetCallback<ParseObject>() {
                             @Override
                             public void done(ParseObject parseObject, ParseException e) {
                                 if (e == null) {
@@ -367,7 +367,7 @@ public class TestActivity extends ActionBarActivity {
                                     Log.d("Loop", "Not Found");
                                 }
                             }
-                        });
+                        });*/
                         Thread.sleep(5000);
                     }
                 }
