@@ -56,10 +56,18 @@
                     android:text="@string/wait_status"
                     android:layout_alignBottom="@+id/waitingLoadingIcon"
                     android:layout_centerHorizontal="true" />
+                <Button
+                    android:id="@+id/startThread"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ส่งข้อมูล"
+                    android:layout_centerHorizontal="true" />
             </RelativeLayout>
 
 
         </android.support.v7.widget.CardView>
+
+
     </RelativeLayout>
 
 

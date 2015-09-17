@@ -137,8 +137,9 @@ public class ReportActivity extends ActionBarActivity {
     private void redirectToWaiting() {
         Intent i = new Intent(this, WaitActivity.class);
         i.putExtra("accident",getAccidentData());
-        i.putExtra("uri",uri.getPath());
-
+        if(uri !=  null){
+            i.putExtra("uri",uri.getPath());
+        }
         startActivity(i);
     }
 
@@ -163,7 +164,7 @@ public class ReportActivity extends ActionBarActivity {
 
         accident = new Accident();
         accident.setAccidentType("อุบัติเหตุทางรถ");
-        //accident.setLocation(new ParseGeoPoint(locationGPS.getLatitude(), locationGPS.getLongitude()));
+        accident.setLocation(locationGPS.getLatitude(), locationGPS.getLongitude());
         accident.setAccidentStatus("waiting");
         accident.setAccidentDescription("Bla Bla Bla");
         //accident.setUri(uri.toString());

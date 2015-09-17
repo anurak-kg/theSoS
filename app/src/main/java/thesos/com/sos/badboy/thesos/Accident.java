@@ -18,8 +18,8 @@ public class Accident implements Serializable {
     private String accidentDescription;
     private String accidentStatus;
     private String uri;
-    private float latitude;
-    private float longitude;
+    private double latitude;
+    private double longitude;
 
     public String getAccidentId() {
         return accidentId;
@@ -36,7 +36,7 @@ public class Accident implements Serializable {
     public void setAccidentType(String accidentType) {
         this.accidentType = accidentType;
     }
-    public void setLocation(float latitude,float longitude){
+    public void setLocation(double latitude,double longitude){
         this.latitude = latitude;
         this.longitude = longitude;
 
@@ -74,5 +74,13 @@ public class Accident implements Serializable {
 
     public void setUri(String uri) {
         this.uri = uri;
+    }
+
+    public double getLatitude() {
+        return latitude;
+    }
+
+    public double getLongitude() {
+        return longitude;
     }
 }
