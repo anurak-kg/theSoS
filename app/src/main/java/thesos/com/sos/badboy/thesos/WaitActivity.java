@@ -66,10 +66,7 @@ public class WaitActivity extends ActionBarActivity {
         }
         Log.d("theSos", accident.getAccidentType());
         setContentView(R.layout.activity_wait);
-
         bindLayout();
-
-
     }
 
     private void bindLayout() {

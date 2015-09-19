@@ -14,6 +14,7 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import com.directions.route.Route;
 import com.parse.LogInCallback;
 import com.parse.Parse;
 import com.parse.ParseException;
@@ -36,11 +37,10 @@ public class MainActivity extends ActionBarActivity {
         setContentView(R.layout.activity_main);
         //getHashKey();
         bindWidget();
-        parseInit();
 
         ParseUser currentUser = ParseUser.getCurrentUser();
         if ((currentUser != null) && ParseFacebookUtils.isLinked(currentUser)) {
-            Intent i = new Intent(this, ReportActivity.class);
+            Intent i = new Intent(this, RescuerActivity.class);
             startActivity(i);
         }
         loginBtn.setOnClickListener(new View.OnClickListener() {
@@ -86,13 +86,16 @@ public class MainActivity extends ActionBarActivity {
             public void done(ParseUser user, ParseException err) {
                 MainActivity.this.progressDialog.dismiss();
                 if (user == null) {
-                    Log.d("My App", "Uh oh. The user cancelled the Facebook login.");
+                    Log.d("TheSos", "Uh oh. The user cancelled the Facebook login.");
                 } else if (user.isNew()) {
-                    Log.d("My App", "User signed up and logged in through Facebook!");
-                    showExtraData();
+                    Log.d("TheSos", "User signed up and logged in through Facebook!");
+                    showRouteActivity();
+                   // showExtraData();
                 } else {
-                    Log.d("My App", "User logged in through Faceb+ook!");
-                    showUserDetailsActivity();
+                    Log.d("TheSos", "User logged in through Faceb+ook!");
+                    showRouteActivity();
+
+                    //showUserDetailsActivity();
                 }
             }
         });
@@ -100,6 +103,11 @@ public class MainActivity extends ActionBarActivity {
 
     private void showExtraData() {
         Intent i = new Intent(this, TelephoneActivity.class);
+        startActivity(i);
+        finish();
+    }
+    private void showRouteActivity() {
+        Intent i = new Intent(this, RouteActivity.class);
         startActivity(i);
         finish();
     }
@@ -115,13 +123,6 @@ public class MainActivity extends ActionBarActivity {
         super.onActivityResult(requestCode, resultCode, data);
         ParseFacebookUtils.onActivityResult(requestCode, resultCode, data);
     }
-
-
-    private void parseInit() {
-        Parse.initialize(this, "zPrOlIvdOFRYgrzqRrPvketZjpGvwIIWyT4tAXEF", "39u6qq3HqKfFZMqI5tM2pGGPj3z1y9GNGfBeuNPj");
-        ParseFacebookUtils.initialize(this);
-    }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
