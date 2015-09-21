@@ -4,6 +4,8 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.Switch;
 import android.widget.Toast;
@@ -14,23 +16,26 @@ import com.parse.ParseInstallation;
 import com.parse.ParsePush;
 import com.parse.SaveCallback;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 public class RescuerActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rescuer);
-        Switch subscribeToggle = (Switch)findViewById(R.id.rescurer_sub);
+        Switch subscribeToggle = (Switch) findViewById(R.id.rescurer_sub);
         subscribeToggle.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
-                if (isChecked){
-                    if(!ifSubscribed()){
+                if (isChecked) {
+                    if (!ifSubscribed()) {
                         //สมัครรับข้อมูล
                         subscribed();
                     }
-                }else{
-                    if(!ifSubscribed()){
+                } else {
+                    if (!ifSubscribed()) {
                         //ยกเลิกการรับข้อมูล
                         unSubscribed();
                     }
@@ -38,8 +43,31 @@ public class RescuerActivity extends ActionBarActivity {
 
             }
         });
+
+        Button testPushBtn = (Button) findViewById(R.id.testPushBtn);
+        testPushBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                JSONObject data = new JSONObject();
+                try {
+                    data.put("title","ทดสอบหน่อยไอสาด");
+                    data.put("text", "อุบัติเหตุทางเรือ @Chalong ระยะห่าง 1.2 กม.");
+                    data.put("accident_id", "gXMeLvFipa");
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+
+                ParsePush push = new ParsePush();
+                push.setChannel("");
+                push.setData(data);
+                push.sendInBackground();
+                Toast.makeText(getApplicationContext(), "Send", Toast.LENGTH_LONG).show();
+            }
+        });
     }
-    private  void  subscribed(){
+
+    private void subscribed() {
         String channel = getChannel();
         ParsePush.subscribeInBackground(channel, new SaveCallback() {
             @Override
@@ -53,12 +81,12 @@ public class RescuerActivity extends ActionBarActivity {
         return "Test";
     }
 
-    private void unSubscribed(){
+    private void unSubscribed() {
         String channel = getChannel();
         ParsePush.unsubscribeInBackground(channel, new SaveCallback() {
             @Override
             public void done(ParseException e) {
-                Toast.makeText(getApplicationContext(),"unSubscribe",Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "unSubscribe", Toast.LENGTH_LONG).show();
             }
         });
     }
@@ -84,12 +112,12 @@ public class RescuerActivity extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
-    public boolean ifSubscribed(){
+
+    public boolean ifSubscribed() {
         //check if device is already subscribed to Giants channel
-        if(ParseInstallation.getCurrentInstallation().getList("channels").contains(getChannel())) {
+        if (ParseInstallation.getCurrentInstallation().getList("channels").contains(getChannel())) {
             return true;
-        }
-        else{
+        } else {
             return false;
         }
     }
