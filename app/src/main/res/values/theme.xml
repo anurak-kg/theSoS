@@ -21,23 +21,4 @@
         <item name="android:textColor">#ffffff</item>
     </style>
 
-    <style name="Button">
-        <item name="android:textColor">#ffffff</item>
-        <item name="android:padding">0dp</item>
-        <item name="android:minWidth">88dp</item>
-        <item name="android:minHeight">36dp</item>
-        <item name="android:layout_margin">3dp</item>
-        <item name="elevation">1dp</item>
-        <item name="android:background">#F44336</item>
-    </style>
-
-    <style name="ButtonGreen">
-        <item name="android:textColor">#ffffff</item>
-        <item name="android:padding">0dp</item>
-        <item name="android:minWidth">88dp</item>
-        <item name="android:minHeight">36dp</item>
-        <item name="android:layout_margin">3dp</item>
-        <item name="elevation">1dp</item>
-        <item name="android:background">#ff06f414</item>
-    </style>
 </resources>

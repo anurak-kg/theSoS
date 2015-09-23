@@ -46,7 +46,6 @@
 
                     <Button
                         android:id="@+id/rescueAcceptBtn"
-                        style="@style/ButtonGreen"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -54,7 +53,6 @@
 
                     <Button
                         android:id="@+id/CanceltBtn"
-                        style="@style/Button"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.5"

@@ -1,6 +1,9 @@
 package thesos.com.sos.badboy.thesos;
 
 import android.app.ProgressDialog;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.nfc.Tag;
 import android.os.Handler;
 import android.os.Message;
@@ -9,11 +12,15 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.parse.GetCallback;
+import com.parse.GetDataCallback;
 import com.parse.Parse;
 import com.parse.ParseException;
+import com.parse.ParseFile;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
 
@@ -22,15 +29,29 @@ public class AccidentActivity extends ActionBarActivity {
     private String accidentId;
     private static final String TAG = "TheSos";
     private ProgressDialog progressDialog;
+    private TextView txtAccidentType;
+    private ImageView accidentPhoto;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_accident);
         accidentId = getIntent().getExtras().getString("accident_id");
-        if(accidentId != null){
+        bindLayout();
+        if (accidentId != null) {
             getAccidentData();
         }
+
+    }
+
+    private void bindLayout() {
+        txtAccidentType = (TextView) findViewById(R.id.typeOfAccidentTxt);
+        accidentPhoto = (ImageView) findViewById(R.id.accidentPhoto);
+        // Uri uriLoadingPhoto = Uri.parse("android.resource://thesos.com.sos.badboy.thesos/" + R.raw.loadingtxt);
+        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.loading);
+        accidentPhoto.setImageBitmap(bitmap);
+
+
     }
 
     private void getAccidentData() {
@@ -40,12 +61,25 @@ public class AccidentActivity extends ActionBarActivity {
                 try {
                     ParseQuery<ParseObject> query = ParseQuery.getQuery("accident");
                     query.whereNotEqualTo("objectId", accidentId);
+                    // query.getFirst();
                     query.getFirstInBackground(new GetCallback<ParseObject>() {
                         @Override
-                        public void done(ParseObject parseObject, ParseException e) {
+                        public void done(final ParseObject parseObject, ParseException e) {
                             if (e == null) {
-                                Toast.makeText(getApplicationContext(), parseObject.getObjectId(), Toast.LENGTH_LONG).show();
 
+                                txtAccidentType.setText(parseObject.getString("accidentType"));
+                                //โหลดรูปภาพ
+                                ParseFile imageFile = parseObject.getParseFile("photo");
+                                imageFile.getDataInBackground(new GetDataCallback() {
+                                    public void done(byte[] data, ParseException e) {
+                                        if (e == null) {
+                                            Bitmap bitmap = BitmapFactory.decodeByteArray(data, 0, data.length);
+                                            accidentPhoto.setImageBitmap(bitmap);
+                                        } else {
+                                            Log.d(TAG, "Error: ไม่พบภาพถ่าย");
+                                        }
+                                    }
+                                });
 
                             } else {
                                 Toast.makeText(getApplicationContext(), "เกิดข้อผิดผลาด : ไม่สามารถหาข้อมูลการเกิดอุบัติเหตุได้", Toast.LENGTH_LONG).show();
@@ -57,13 +91,12 @@ public class AccidentActivity extends ActionBarActivity {
 
 
                 } catch (Exception e) {
+                    Toast.makeText(getApplicationContext(), "เกิดข้อผิดผลาด 0x00001 : ไม่สามารถหาข้อมูลการเกิดอุบัติเหตุได้", Toast.LENGTH_LONG).show();
                     Log.e("tag", e.getMessage());
                 }
-                // dismiss the progress dialog
                 progressDialog.dismiss();
             }
         }.start();
-
 
 
     }

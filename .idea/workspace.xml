@@ -23,12 +23,347 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="52107420-a48c-4e48-ac67-5ff1456a9497" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/appcompat_v7_23_0_1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/values/btn_select.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/mediarouter_v7_22_2_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/play_services_analytics_7_8_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/play_services_appindexing_7_8_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/play_services_appinvite_7_8_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/play_services_appstate_7_8_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/play_services_base_7_8_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/play_services_cast_7_8_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/play_services_drive_7_8_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/play_services_fitness_7_8_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/play_services_games_7_8_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/play_services_gcm_7_8_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/play_services_identity_7_8_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/play_services_location_7_8_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/play_services_maps_7_8_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/play_services_nearby_7_8_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/play_services_panorama_7_8_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/play_services_plus_7_8_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/play_services_safetynet_7_8_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/play_services_vision_7_8_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/play_services_wallet_7_8_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/play_services_wearable_7_8_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/support_annotations_23_0_1.xml" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\classes\.keep" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\3\.keep" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\4\drawable-hdpi\common_full_open_on_phone.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\4\drawable-hdpi\common_ic_googleplayservices.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\4\drawable-hdpi\common_signin_btn_icon_disabled_dark.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\4\drawable-hdpi\common_signin_btn_icon_disabled_focus_dark.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\4\drawable-hdpi\common_signin_btn_icon_disabled_focus_light.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\4\drawable-hdpi\common_signin_btn_icon_disabled_light.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\4\drawable-hdpi\common_signin_btn_icon_focus_dark.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\4\drawable-hdpi\common_signin_btn_icon_focus_light.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\4\drawable-hdpi\common_signin_btn_icon_normal_dark.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\4\drawable-hdpi\common_signin_btn_icon_normal_light.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\4\drawable-hdpi\common_signin_btn_icon_pressed_dark.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\4\drawable-hdpi\common_signin_btn_icon_pressed_light.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\4\drawable-hdpi\common_signin_btn_text_disabled_dark.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\4\drawable-hdpi\common_signin_btn_text_disabled_focus_dark.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\4\drawable-hdpi\common_signin_btn_text_disabled_focus_light.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\4\drawable-hdpi\common_signin_btn_text_disabled_light.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\4\drawable-hdpi\common_signin_btn_text_focus_dark.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\4\drawable-hdpi\common_signin_btn_text_focus_light.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\4\drawable-hdpi\common_signin_btn_text_normal_dark.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\4\drawable-hdpi\common_signin_btn_text_normal_light.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\4\drawable-hdpi\common_signin_btn_text_pressed_dark.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\4\drawable-hdpi\common_signin_btn_text_pressed_light.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\4\drawable-hdpi\ic_plusone_medium_off_client.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\4\drawable-hdpi\ic_plusone_small_off_client.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\4\drawable-hdpi\ic_plusone_standard_off_client.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\4\drawable-hdpi\ic_plusone_tall_off_client.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\4\drawable-hdpi\powered_by_google_dark.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\4\drawable-hdpi\powered_by_google_light.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\4\drawable-mdpi\common_signin_btn_icon_disabled_dark.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\4\drawable-mdpi\common_signin_btn_icon_disabled_focus_dark.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\4\drawable-mdpi\common_signin_btn_icon_disabled_focus_light.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\4\drawable-mdpi\common_signin_btn_icon_disabled_light.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\4\drawable-mdpi\common_signin_btn_icon_focus_dark.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\4\drawable-mdpi\common_signin_btn_icon_focus_light.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\4\drawable-mdpi\common_signin_btn_icon_normal_dark.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\4\drawable-mdpi\common_signin_btn_icon_normal_light.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\4\drawable-mdpi\common_signin_btn_icon_pressed_dark.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\4\drawable-mdpi\common_signin_btn_icon_pressed_light.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\4\drawable-mdpi\common_signin_btn_text_disabled_dark.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\4\drawable-mdpi\common_signin_btn_text_disabled_focus_dark.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\4\drawable-mdpi\common_signin_btn_text_disabled_focus_light.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\4\drawable-mdpi\common_signin_btn_text_disabled_light.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\4\drawable-mdpi\common_signin_btn_text_focus_dark.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\4\drawable-mdpi\common_signin_btn_text_focus_light.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\4\drawable-mdpi\common_signin_btn_text_normal_dark.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\4\drawable-mdpi\common_signin_btn_text_normal_light.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\4\drawable-mdpi\common_signin_btn_text_pressed_dark.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\4\drawable-mdpi\common_signin_btn_text_pressed_light.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\4\drawable-mdpi\ic_plusone_medium_off_client.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\4\drawable-mdpi\ic_plusone_small_off_client.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\4\drawable-mdpi\ic_plusone_standard_off_client.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\4\drawable-mdpi\ic_plusone_tall_off_client.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\4\drawable-mdpi\powered_by_google_dark.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\4\drawable-mdpi\powered_by_google_light.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\4\drawable-tvdpi\ic_plusone_medium_off_client.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\4\drawable-tvdpi\ic_plusone_small_off_client.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\4\drawable-tvdpi\ic_plusone_standard_off_client.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\4\drawable-tvdpi\ic_plusone_tall_off_client.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\4\drawable-xhdpi\common_signin_btn_icon_disabled_dark.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\4\drawable-xhdpi\common_signin_btn_icon_disabled_focus_dark.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\4\drawable-xhdpi\common_signin_btn_icon_disabled_focus_light.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\4\drawable-xhdpi\common_signin_btn_icon_disabled_light.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\4\drawable-xhdpi\common_signin_btn_icon_focus_dark.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\4\drawable-xhdpi\common_signin_btn_icon_focus_light.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\4\drawable-xhdpi\common_signin_btn_icon_normal_dark.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\4\drawable-xhdpi\common_signin_btn_icon_normal_light.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\4\drawable-xhdpi\common_signin_btn_icon_pressed_dark.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\4\drawable-xhdpi\common_signin_btn_icon_pressed_light.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\4\drawable-xhdpi\common_signin_btn_text_disabled_dark.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\4\drawable-xhdpi\common_signin_btn_text_disabled_focus_dark.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\4\drawable-xhdpi\common_signin_btn_text_disabled_focus_light.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\4\drawable-xhdpi\common_signin_btn_text_disabled_light.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\4\drawable-xhdpi\common_signin_btn_text_focus_dark.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\4\drawable-xhdpi\common_signin_btn_text_focus_light.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\4\drawable-xhdpi\common_signin_btn_text_normal_dark.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\4\drawable-xhdpi\common_signin_btn_text_normal_light.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\4\drawable-xhdpi\common_signin_btn_text_pressed_dark.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\4\drawable-xhdpi\common_signin_btn_text_pressed_light.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\4\drawable-xhdpi\ic_plusone_medium_off_client.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\4\drawable-xhdpi\ic_plusone_small_off_client.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\4\drawable-xhdpi\ic_plusone_standard_off_client.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\4\drawable-xhdpi\ic_plusone_tall_off_client.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\4\drawable-xhdpi\powered_by_google_dark.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\4\drawable-xhdpi\powered_by_google_light.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\4\drawable-xxhdpi\common_signin_btn_icon_disabled_dark.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\4\drawable-xxhdpi\common_signin_btn_icon_disabled_focus_dark.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\4\drawable-xxhdpi\common_signin_btn_icon_disabled_focus_light.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\4\drawable-xxhdpi\common_signin_btn_icon_disabled_light.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\4\drawable-xxhdpi\common_signin_btn_icon_focus_dark.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\4\drawable-xxhdpi\common_signin_btn_icon_focus_light.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\4\drawable-xxhdpi\common_signin_btn_icon_normal_dark.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\4\drawable-xxhdpi\common_signin_btn_icon_normal_light.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\4\drawable-xxhdpi\common_signin_btn_icon_pressed_dark.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\4\drawable-xxhdpi\common_signin_btn_icon_pressed_light.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\4\drawable-xxhdpi\common_signin_btn_text_disabled_dark.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\4\drawable-xxhdpi\common_signin_btn_text_disabled_focus_dark.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\4\drawable-xxhdpi\common_signin_btn_text_disabled_focus_light.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\4\drawable-xxhdpi\common_signin_btn_text_disabled_light.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\4\drawable-xxhdpi\common_signin_btn_text_focus_dark.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\4\drawable-xxhdpi\common_signin_btn_text_focus_light.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\4\drawable-xxhdpi\common_signin_btn_text_normal_dark.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\4\drawable-xxhdpi\common_signin_btn_text_normal_light.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\4\drawable-xxhdpi\common_signin_btn_text_pressed_dark.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\4\drawable-xxhdpi\common_signin_btn_text_pressed_light.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\4\drawable-xxhdpi\ic_plusone_medium_off_client.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\4\drawable-xxhdpi\ic_plusone_small_off_client.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\4\drawable-xxhdpi\ic_plusone_standard_off_client.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\4\drawable-xxhdpi\ic_plusone_tall_off_client.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\4\drawable-xxhdpi\powered_by_google_dark.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\4\drawable-xxhdpi\powered_by_google_light.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\5\.keep" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-hdpi\abc_ab_share_pack_holo_dark.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-hdpi\abc_ab_share_pack_holo_light.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-hdpi\abc_btn_check_to_on_mtrl_000.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-hdpi\abc_btn_check_to_on_mtrl_015.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-hdpi\abc_btn_radio_to_on_mtrl_000.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-hdpi\abc_btn_radio_to_on_mtrl_015.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-hdpi\abc_btn_switch_to_on_mtrl_00001.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-hdpi\abc_btn_switch_to_on_mtrl_00012.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-hdpi\abc_cab_background_top_mtrl_alpha.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-hdpi\abc_ic_ab_back_mtrl_am_alpha.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-hdpi\abc_ic_clear_mtrl_alpha.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-hdpi\abc_ic_commit_search_api_mtrl_alpha.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-hdpi\abc_ic_go_search_api_mtrl_alpha.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-hdpi\abc_ic_menu_copy_mtrl_am_alpha.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-hdpi\abc_ic_menu_cut_mtrl_alpha.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-hdpi\abc_ic_menu_moreoverflow_mtrl_alpha.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-hdpi\abc_ic_menu_paste_mtrl_am_alpha.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-hdpi\abc_ic_menu_selectall_mtrl_alpha.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-hdpi\abc_ic_menu_share_mtrl_alpha.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-hdpi\abc_ic_search_api_mtrl_alpha.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-hdpi\abc_ic_voice_search_api_mtrl_alpha.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-hdpi\abc_list_divider_mtrl_alpha.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-hdpi\abc_list_focused_holo.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-hdpi\abc_list_longpressed_holo.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-hdpi\abc_list_pressed_holo_dark.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-hdpi\abc_list_pressed_holo_light.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-hdpi\abc_list_selector_disabled_holo_dark.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-hdpi\abc_list_selector_disabled_holo_light.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-hdpi\abc_menu_hardkey_panel_mtrl_mult.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-hdpi\abc_popup_background_mtrl_mult.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-hdpi\abc_spinner_mtrl_am_alpha.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-hdpi\abc_switch_track_mtrl_alpha.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-hdpi\abc_tab_indicator_mtrl_alpha.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-hdpi\abc_textfield_activated_mtrl_alpha.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-hdpi\abc_textfield_default_mtrl_alpha.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-hdpi\abc_textfield_search_activated_mtrl_alpha.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-hdpi\abc_textfield_search_default_mtrl_alpha.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-ldrtl-hdpi\abc_ic_ab_back_mtrl_am_alpha.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-ldrtl-hdpi\abc_ic_menu_copy_mtrl_am_alpha.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-ldrtl-hdpi\abc_ic_menu_cut_mtrl_alpha.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-ldrtl-hdpi\abc_spinner_mtrl_am_alpha.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-ldrtl-mdpi\abc_ic_ab_back_mtrl_am_alpha.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-ldrtl-mdpi\abc_ic_menu_copy_mtrl_am_alpha.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-ldrtl-mdpi\abc_ic_menu_cut_mtrl_alpha.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-ldrtl-mdpi\abc_spinner_mtrl_am_alpha.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-ldrtl-xhdpi\abc_ic_ab_back_mtrl_am_alpha.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-ldrtl-xhdpi\abc_ic_menu_copy_mtrl_am_alpha.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-ldrtl-xhdpi\abc_ic_menu_cut_mtrl_alpha.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-ldrtl-xhdpi\abc_spinner_mtrl_am_alpha.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-ldrtl-xxhdpi\abc_ic_ab_back_mtrl_am_alpha.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-ldrtl-xxhdpi\abc_ic_menu_copy_mtrl_am_alpha.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-ldrtl-xxhdpi\abc_ic_menu_cut_mtrl_alpha.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-ldrtl-xxhdpi\abc_spinner_mtrl_am_alpha.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-ldrtl-xxxhdpi\abc_ic_ab_back_mtrl_am_alpha.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-ldrtl-xxxhdpi\abc_ic_menu_copy_mtrl_am_alpha.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-ldrtl-xxxhdpi\abc_ic_menu_cut_mtrl_alpha.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-ldrtl-xxxhdpi\abc_spinner_mtrl_am_alpha.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-mdpi\abc_ab_share_pack_holo_dark.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-mdpi\abc_ab_share_pack_holo_light.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-mdpi\abc_btn_check_to_on_mtrl_000.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-mdpi\abc_btn_check_to_on_mtrl_015.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-mdpi\abc_btn_radio_to_on_mtrl_000.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-mdpi\abc_btn_radio_to_on_mtrl_015.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-mdpi\abc_btn_switch_to_on_mtrl_00001.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-mdpi\abc_btn_switch_to_on_mtrl_00012.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-mdpi\abc_cab_background_top_mtrl_alpha.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-mdpi\abc_ic_ab_back_mtrl_am_alpha.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-mdpi\abc_ic_clear_mtrl_alpha.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-mdpi\abc_ic_commit_search_api_mtrl_alpha.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-mdpi\abc_ic_go_search_api_mtrl_alpha.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-mdpi\abc_ic_menu_copy_mtrl_am_alpha.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-mdpi\abc_ic_menu_cut_mtrl_alpha.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-mdpi\abc_ic_menu_moreoverflow_mtrl_alpha.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-mdpi\abc_ic_menu_paste_mtrl_am_alpha.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-mdpi\abc_ic_menu_selectall_mtrl_alpha.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-mdpi\abc_ic_menu_share_mtrl_alpha.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-mdpi\abc_ic_search_api_mtrl_alpha.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-mdpi\abc_ic_voice_search_api_mtrl_alpha.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-mdpi\abc_list_divider_mtrl_alpha.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-mdpi\abc_list_focused_holo.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-mdpi\abc_list_longpressed_holo.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-mdpi\abc_list_pressed_holo_dark.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-mdpi\abc_list_pressed_holo_light.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-mdpi\abc_list_selector_disabled_holo_dark.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-mdpi\abc_list_selector_disabled_holo_light.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-mdpi\abc_menu_hardkey_panel_mtrl_mult.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-mdpi\abc_popup_background_mtrl_mult.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-mdpi\abc_spinner_mtrl_am_alpha.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-mdpi\abc_switch_track_mtrl_alpha.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-mdpi\abc_tab_indicator_mtrl_alpha.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-mdpi\abc_textfield_activated_mtrl_alpha.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-mdpi\abc_textfield_default_mtrl_alpha.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-mdpi\abc_textfield_search_activated_mtrl_alpha.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-mdpi\abc_textfield_search_default_mtrl_alpha.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-xhdpi\abc_ab_share_pack_holo_dark.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-xhdpi\abc_ab_share_pack_holo_light.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-xhdpi\abc_btn_check_to_on_mtrl_000.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-xhdpi\abc_btn_check_to_on_mtrl_015.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-xhdpi\abc_btn_radio_to_on_mtrl_000.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-xhdpi\abc_btn_radio_to_on_mtrl_015.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-xhdpi\abc_btn_switch_to_on_mtrl_00001.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-xhdpi\abc_btn_switch_to_on_mtrl_00012.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-xhdpi\abc_cab_background_top_mtrl_alpha.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-xhdpi\abc_ic_ab_back_mtrl_am_alpha.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-xhdpi\abc_ic_clear_mtrl_alpha.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-xhdpi\abc_ic_commit_search_api_mtrl_alpha.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-xhdpi\abc_ic_go_search_api_mtrl_alpha.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-xhdpi\abc_ic_menu_copy_mtrl_am_alpha.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-xhdpi\abc_ic_menu_cut_mtrl_alpha.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-xhdpi\abc_ic_menu_moreoverflow_mtrl_alpha.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-xhdpi\abc_ic_menu_paste_mtrl_am_alpha.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-xhdpi\abc_ic_menu_selectall_mtrl_alpha.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-xhdpi\abc_ic_menu_share_mtrl_alpha.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-xhdpi\abc_ic_search_api_mtrl_alpha.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-xhdpi\abc_ic_voice_search_api_mtrl_alpha.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-xhdpi\abc_list_divider_mtrl_alpha.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-xhdpi\abc_list_focused_holo.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-xhdpi\abc_list_longpressed_holo.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-xhdpi\abc_list_pressed_holo_dark.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-xhdpi\abc_list_pressed_holo_light.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-xhdpi\abc_list_selector_disabled_holo_dark.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-xhdpi\abc_list_selector_disabled_holo_light.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-xhdpi\abc_menu_hardkey_panel_mtrl_mult.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-xhdpi\abc_popup_background_mtrl_mult.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-xhdpi\abc_spinner_mtrl_am_alpha.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-xhdpi\abc_switch_track_mtrl_alpha.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-xhdpi\abc_tab_indicator_mtrl_alpha.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-xhdpi\abc_textfield_activated_mtrl_alpha.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-xhdpi\abc_textfield_default_mtrl_alpha.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-xhdpi\abc_textfield_search_activated_mtrl_alpha.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-xhdpi\abc_textfield_search_default_mtrl_alpha.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-xxhdpi\abc_ab_share_pack_holo_dark.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-xxhdpi\abc_ab_share_pack_holo_light.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-xxhdpi\abc_btn_check_to_on_mtrl_000.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-xxhdpi\abc_btn_check_to_on_mtrl_015.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-xxhdpi\abc_btn_radio_to_on_mtrl_000.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-xxhdpi\abc_btn_radio_to_on_mtrl_015.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-xxhdpi\abc_btn_switch_to_on_mtrl_00001.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-xxhdpi\abc_btn_switch_to_on_mtrl_00012.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-xxhdpi\abc_cab_background_top_mtrl_alpha.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-xxhdpi\abc_ic_ab_back_mtrl_am_alpha.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-xxhdpi\abc_ic_clear_mtrl_alpha.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-xxhdpi\abc_ic_commit_search_api_mtrl_alpha.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-xxhdpi\abc_ic_go_search_api_mtrl_alpha.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-xxhdpi\abc_ic_menu_copy_mtrl_am_alpha.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-xxhdpi\abc_ic_menu_cut_mtrl_alpha.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-xxhdpi\abc_ic_menu_moreoverflow_mtrl_alpha.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-xxhdpi\abc_ic_menu_paste_mtrl_am_alpha.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-xxhdpi\abc_ic_menu_selectall_mtrl_alpha.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-xxhdpi\abc_ic_menu_share_mtrl_alpha.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-xxhdpi\abc_ic_search_api_mtrl_alpha.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-xxhdpi\abc_ic_voice_search_api_mtrl_alpha.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-xxhdpi\abc_list_divider_mtrl_alpha.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-xxhdpi\abc_list_focused_holo.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-xxhdpi\abc_list_longpressed_holo.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-xxhdpi\abc_list_pressed_holo_dark.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-xxhdpi\abc_list_pressed_holo_light.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-xxhdpi\abc_list_selector_disabled_holo_dark.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-xxhdpi\abc_list_selector_disabled_holo_light.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-xxhdpi\abc_menu_hardkey_panel_mtrl_mult.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-xxhdpi\abc_popup_background_mtrl_mult.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-xxhdpi\abc_spinner_mtrl_am_alpha.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-xxhdpi\abc_switch_track_mtrl_alpha.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-xxhdpi\abc_tab_indicator_mtrl_alpha.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-xxhdpi\abc_textfield_activated_mtrl_alpha.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-xxhdpi\abc_textfield_default_mtrl_alpha.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-xxhdpi\abc_textfield_search_activated_mtrl_alpha.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-xxhdpi\abc_textfield_search_default_mtrl_alpha.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-xxxhdpi\abc_btn_check_to_on_mtrl_000.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-xxxhdpi\abc_btn_check_to_on_mtrl_015.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-xxxhdpi\abc_btn_radio_to_on_mtrl_000.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-xxxhdpi\abc_btn_radio_to_on_mtrl_015.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-xxxhdpi\abc_btn_switch_to_on_mtrl_00001.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-xxxhdpi\abc_btn_switch_to_on_mtrl_00012.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-xxxhdpi\abc_ic_ab_back_mtrl_am_alpha.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-xxxhdpi\abc_ic_clear_mtrl_alpha.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-xxxhdpi\abc_ic_menu_copy_mtrl_am_alpha.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-xxxhdpi\abc_ic_menu_cut_mtrl_alpha.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-xxxhdpi\abc_ic_menu_moreoverflow_mtrl_alpha.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-xxxhdpi\abc_ic_menu_paste_mtrl_am_alpha.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-xxxhdpi\abc_ic_menu_selectall_mtrl_alpha.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-xxxhdpi\abc_ic_search_api_mtrl_alpha.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-xxxhdpi\abc_ic_voice_search_api_mtrl_alpha.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-xxxhdpi\abc_spinner_mtrl_am_alpha.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-xxxhdpi\abc_switch_track_mtrl_alpha.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\6\drawable-xxxhdpi\abc_tab_indicator_mtrl_alpha.9.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\7\.keep" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\crunched-pngs\8\.keep" afterPath="" />
+      <change type="DELETED" beforePath="C:\Copy\Project_theSoS\app\mirror\.gen\cache\zips\jimu_update.zip" afterPath="" />
+      <change type="MOVED" beforePath="C:\Copy\Project_theSoS\.idea\libraries\appcompat_v7_21_0_3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/play_services_ads_7_8_0.xml" />
+      <change type="MOVED" beforePath="C:\Copy\Project_theSoS\.idea\libraries\play_services_6_5_87.xml" afterPath="$PROJECT_DIR$/.idea/libraries/play_services_7_8_0.xml" />
+      <change type="MOVED" beforePath="C:\Copy\Project_theSoS\.idea\libraries\support_v4_22_2_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/support_v4_23_0_1.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/thesos/com/sos/badboy/thesos/AccidentActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/thesos/com/sos/badboy/thesos/AccidentActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/thesos/com/sos/badboy/thesos/AccidentPushBroadcastReceive.java" afterPath="$PROJECT_DIR$/app/src/main/java/thesos/com/sos/badboy/thesos/AccidentPushBroadcastReceive.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/thesos/com/sos/badboy/thesos/RescuerActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/thesos/com/sos/badboy/thesos/RescuerActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/thesos/com/sos/badboy/thesos/RouteActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/thesos/com/sos/badboy/thesos/RouteActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/thesos/com/sos/badboy/thesos/JSONParser.java" afterPath="$PROJECT_DIR$/app/src/main/java/thesos/com/sos/badboy/thesos/JSONParser.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/thesos/com/sos/badboy/thesos/TestActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/thesos/com/sos/badboy/thesos/TestActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_accident.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_accident.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_rescuer.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_rescuer.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_test.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_test.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build.gradle" afterPath="$PROJECT_DIR$/app/build.gradle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/facebook/facebook.iml" afterPath="$PROJECT_DIR$/facebook/facebook.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/mirror/.gen/header" afterPath="$PROJECT_DIR$/app/mirror/.gen/header" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/play_services_6_5_87.xml" afterPath="$PROJECT_DIR$/.idea/libraries/play_services_6_5_87.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/support_v4_22_2_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/support_v4_22_2_1.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/theme.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/theme.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="theSOS.iws" />
@@ -66,21 +401,8 @@
       <file leaf-file-name="AccidentActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/thesos/com/sos/badboy/thesos/AccidentActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.39534885">
-              <caret line="47" column="32" selection-start-line="47" selection-start-column="32" selection-end-line="47" selection-end-column="32" />
-              <folding>
-                <element signature="e#1385#2139#0" expanded="true" />
-                <element signature="e#2138#2139#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ParseQuery.class" pinned="false" current-in-tab="false">
-        <entry file="jar://$PROJECT_DIR$/app/libs/Parse-1.10.1.jar!/com/parse/ParseQuery.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.888889">
-              <caret line="162" column="13" selection-start-line="162" selection-start-column="13" selection-end-line="162" selection-end-column="13" />
+            <state vertical-scroll-proportion="0.17889088">
+              <caret line="74" column="41" selection-start-line="74" selection-start-column="41" selection-end-line="74" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -88,50 +410,96 @@
       </file>
       <file leaf-file-name="activity_accident.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_accident.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.310345">
-              <caret line="31" column="43" selection-start-line="31" selection-start-column="43" selection-end-line="31" selection-end-column="43" />
-              <folding />
-            </state>
-          </provider>
           <provider editor-type-id="android-designer">
             <state />
           </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Accident.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/thesos/com/sos/badboy/thesos/Accident.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+            <state vertical-scroll-proportion="-3.0344827">
+              <caret line="100" column="0" selection-start-line="100" selection-start-column="0" selection-end-line="100" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="activity_rescuer.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_rescuer.xml">
+      <file leaf-file-name="activity_test.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_test.xml">
+          <provider editor-type-id="android-designer">
+            <state />
+          </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="35" selection-end-column="41" />
+            <state vertical-scroll-proportion="-0.0">
+              <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
               <folding />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="theme.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/values/theme.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="3" column="61" selection-start-line="3" selection-start-column="40" selection-end-line="3" selection-end-column="61" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="styles.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/build.gradle">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="5" column="19" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="activity_report.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_report.xml">
           <provider editor-type-id="android-designer">
             <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="81" column="34" selection-start-line="81" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
+              <folding />
+            </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="activity_route.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_route.xml">
+          <provider selected="true" editor-type-id="android-designer">
+            <state />
+          </provider>
           <provider editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
               <folding />
             </state>
           </provider>
-          <provider selected="true" editor-type-id="android-designer">
-            <state />
+        </entry>
+      </file>
+      <file leaf-file-name="AccidentPushBroadcastReceive.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/thesos/com/sos/badboy/thesos/AccidentPushBroadcastReceive.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="55" column="110" selection-start-line="55" selection-start-column="30" selection-end-line="55" selection-end-column="110" />
+              <folding>
+                <element signature="e#0#41#0" expanded="false" />
+                <element signature="imports" expanded="false" />
+              </folding>
+            </state>
           </provider>
         </entry>
       </file>
@@ -140,8 +508,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="valueResourceFile" />
         <option value="Class" />
+        <option value="valueResourceFile" />
+        <option value="resourceFile" />
       </list>
     </option>
   </component>
@@ -599,9 +968,9 @@
                 <option name="name" value="preReleaseUnitTestBuild" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Prepare com.android.support:appcompat-v7:21.0.3" />
+                <option name="description" value="Prepare com.android.support:appcompat-v7:23.0.1" />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
-                <option name="name" value="prepareComAndroidSupportAppcompatV72103Library" />
+                <option name="name" value="prepareComAndroidSupportAppcompatV72301Library" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Prepare com.android.support:cardview-v7:21.0.2" />
@@ -609,14 +978,19 @@
                 <option name="name" value="prepareComAndroidSupportCardviewV72102Library" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
+                <option name="description" value="Prepare com.android.support:mediarouter-v7:22.2.0" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="prepareComAndroidSupportMediarouterV72220Library" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
                 <option name="description" value="Prepare com.android.support:recyclerview-v7:21.0.3" />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="prepareComAndroidSupportRecyclerviewV72103Library" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Prepare com.android.support:support-v4:22.2.1" />
+                <option name="description" value="Prepare com.android.support:support-v4:23.0.1" />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
-                <option name="name" value="prepareComAndroidSupportSupportV42221Library" />
+                <option name="name" value="prepareComAndroidSupportSupportV42301Library" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Prepare com.facebook.android:facebook:4.3.0" />
@@ -624,9 +998,114 @@
                 <option name="name" value="prepareComFacebookAndroidFacebook430Library" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Prepare com.google.android.gms:play-services:6.5.87" />
+                <option name="description" value="Prepare com.google.android.gms:play-services:7.8.0" />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
-                <option name="name" value="prepareComGoogleAndroidGmsPlayServices6587Library" />
+                <option name="name" value="prepareComGoogleAndroidGmsPlayServices780Library" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Prepare com.google.android.gms:play-services-ads:7.8.0" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="prepareComGoogleAndroidGmsPlayServicesAds780Library" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Prepare com.google.android.gms:play-services-analytics:7.8.0" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="prepareComGoogleAndroidGmsPlayServicesAnalytics780Library" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Prepare com.google.android.gms:play-services-appindexing:7.8.0" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="prepareComGoogleAndroidGmsPlayServicesAppindexing780Library" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Prepare com.google.android.gms:play-services-appinvite:7.8.0" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="prepareComGoogleAndroidGmsPlayServicesAppinvite780Library" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Prepare com.google.android.gms:play-services-appstate:7.8.0" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="prepareComGoogleAndroidGmsPlayServicesAppstate780Library" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Prepare com.google.android.gms:play-services-base:7.8.0" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="prepareComGoogleAndroidGmsPlayServicesBase780Library" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Prepare com.google.android.gms:play-services-cast:7.8.0" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="prepareComGoogleAndroidGmsPlayServicesCast780Library" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Prepare com.google.android.gms:play-services-drive:7.8.0" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="prepareComGoogleAndroidGmsPlayServicesDrive780Library" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Prepare com.google.android.gms:play-services-fitness:7.8.0" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="prepareComGoogleAndroidGmsPlayServicesFitness780Library" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Prepare com.google.android.gms:play-services-games:7.8.0" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="prepareComGoogleAndroidGmsPlayServicesGames780Library" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Prepare com.google.android.gms:play-services-gcm:7.8.0" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="prepareComGoogleAndroidGmsPlayServicesGcm780Library" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Prepare com.google.android.gms:play-services-identity:7.8.0" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="prepareComGoogleAndroidGmsPlayServicesIdentity780Library" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Prepare com.google.android.gms:play-services-location:7.8.0" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="prepareComGoogleAndroidGmsPlayServicesLocation780Library" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Prepare com.google.android.gms:play-services-maps:7.8.0" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="prepareComGoogleAndroidGmsPlayServicesMaps780Library" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Prepare com.google.android.gms:play-services-nearby:7.8.0" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="prepareComGoogleAndroidGmsPlayServicesNearby780Library" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Prepare com.google.android.gms:play-services-panorama:7.8.0" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="prepareComGoogleAndroidGmsPlayServicesPanorama780Library" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Prepare com.google.android.gms:play-services-plus:7.8.0" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="prepareComGoogleAndroidGmsPlayServicesPlus780Library" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Prepare com.google.android.gms:play-services-safetynet:7.8.0" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="prepareComGoogleAndroidGmsPlayServicesSafetynet780Library" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Prepare com.google.android.gms:play-services-vision:7.8.0" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="prepareComGoogleAndroidGmsPlayServicesVision780Library" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Prepare com.google.android.gms:play-services-wallet:7.8.0" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="prepareComGoogleAndroidGmsPlayServicesWallet780Library" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Prepare com.google.android.gms:play-services-wearable:7.8.0" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="prepareComGoogleAndroidGmsPlayServicesWearable780Library" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
@@ -843,6 +1322,11 @@
                 <option name="name" value="packageReleaseResources" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
+                <option name="description" value="Prepare com.android.support:support-v4:22.2.1" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="prepareComAndroidSupportSupportV42221Library" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="setVersion" />
               </ExternalTaskPojo>
@@ -859,6 +1343,11 @@
                 <option name="description" value="Prepare com.android.support:support-v4:21.0.3" />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="prepareComAndroidSupportSupportV42103Library" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Prepare com.google.android.gms:play-services:6.5.87" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="prepareComGoogleAndroidGmsPlayServices6587Library" />
               </ExternalTaskPojo>
             </list>
           </value>
@@ -1254,9 +1743,9 @@
                 <option name="name" value="preReleaseUnitTestBuild" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Prepare com.android.support:appcompat-v7:21.0.3" />
+                <option name="description" value="Prepare com.android.support:appcompat-v7:23.0.1" />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
-                <option name="name" value="prepareComAndroidSupportAppcompatV72103Library" />
+                <option name="name" value="prepareComAndroidSupportAppcompatV72301Library" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Prepare com.android.support:cardview-v7:21.0.2" />
@@ -1264,14 +1753,19 @@
                 <option name="name" value="prepareComAndroidSupportCardviewV72102Library" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
+                <option name="description" value="Prepare com.android.support:mediarouter-v7:22.2.0" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
+                <option name="name" value="prepareComAndroidSupportMediarouterV72220Library" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
                 <option name="description" value="Prepare com.android.support:recyclerview-v7:21.0.3" />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
                 <option name="name" value="prepareComAndroidSupportRecyclerviewV72103Library" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Prepare com.android.support:support-v4:22.2.1" />
+                <option name="description" value="Prepare com.android.support:support-v4:23.0.1" />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
-                <option name="name" value="prepareComAndroidSupportSupportV42221Library" />
+                <option name="name" value="prepareComAndroidSupportSupportV42301Library" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Prepare com.facebook.android:facebook:4.3.0" />
@@ -1279,9 +1773,114 @@
                 <option name="name" value="prepareComFacebookAndroidFacebook430Library" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Prepare com.google.android.gms:play-services:6.5.87" />
+                <option name="description" value="Prepare com.google.android.gms:play-services:7.8.0" />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
-                <option name="name" value="prepareComGoogleAndroidGmsPlayServices6587Library" />
+                <option name="name" value="prepareComGoogleAndroidGmsPlayServices780Library" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Prepare com.google.android.gms:play-services-ads:7.8.0" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
+                <option name="name" value="prepareComGoogleAndroidGmsPlayServicesAds780Library" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Prepare com.google.android.gms:play-services-analytics:7.8.0" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
+                <option name="name" value="prepareComGoogleAndroidGmsPlayServicesAnalytics780Library" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Prepare com.google.android.gms:play-services-appindexing:7.8.0" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
+                <option name="name" value="prepareComGoogleAndroidGmsPlayServicesAppindexing780Library" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Prepare com.google.android.gms:play-services-appinvite:7.8.0" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
+                <option name="name" value="prepareComGoogleAndroidGmsPlayServicesAppinvite780Library" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Prepare com.google.android.gms:play-services-appstate:7.8.0" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
+                <option name="name" value="prepareComGoogleAndroidGmsPlayServicesAppstate780Library" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Prepare com.google.android.gms:play-services-base:7.8.0" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
+                <option name="name" value="prepareComGoogleAndroidGmsPlayServicesBase780Library" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Prepare com.google.android.gms:play-services-cast:7.8.0" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
+                <option name="name" value="prepareComGoogleAndroidGmsPlayServicesCast780Library" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Prepare com.google.android.gms:play-services-drive:7.8.0" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
+                <option name="name" value="prepareComGoogleAndroidGmsPlayServicesDrive780Library" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Prepare com.google.android.gms:play-services-fitness:7.8.0" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
+                <option name="name" value="prepareComGoogleAndroidGmsPlayServicesFitness780Library" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Prepare com.google.android.gms:play-services-games:7.8.0" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
+                <option name="name" value="prepareComGoogleAndroidGmsPlayServicesGames780Library" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Prepare com.google.android.gms:play-services-gcm:7.8.0" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
+                <option name="name" value="prepareComGoogleAndroidGmsPlayServicesGcm780Library" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Prepare com.google.android.gms:play-services-identity:7.8.0" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
+                <option name="name" value="prepareComGoogleAndroidGmsPlayServicesIdentity780Library" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Prepare com.google.android.gms:play-services-location:7.8.0" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
+                <option name="name" value="prepareComGoogleAndroidGmsPlayServicesLocation780Library" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Prepare com.google.android.gms:play-services-maps:7.8.0" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
+                <option name="name" value="prepareComGoogleAndroidGmsPlayServicesMaps780Library" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Prepare com.google.android.gms:play-services-nearby:7.8.0" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
+                <option name="name" value="prepareComGoogleAndroidGmsPlayServicesNearby780Library" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Prepare com.google.android.gms:play-services-panorama:7.8.0" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
+                <option name="name" value="prepareComGoogleAndroidGmsPlayServicesPanorama780Library" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Prepare com.google.android.gms:play-services-plus:7.8.0" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
+                <option name="name" value="prepareComGoogleAndroidGmsPlayServicesPlus780Library" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Prepare com.google.android.gms:play-services-safetynet:7.8.0" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
+                <option name="name" value="prepareComGoogleAndroidGmsPlayServicesSafetynet780Library" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Prepare com.google.android.gms:play-services-vision:7.8.0" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
+                <option name="name" value="prepareComGoogleAndroidGmsPlayServicesVision780Library" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Prepare com.google.android.gms:play-services-wallet:7.8.0" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
+                <option name="name" value="prepareComGoogleAndroidGmsPlayServicesWallet780Library" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Prepare com.google.android.gms:play-services-wearable:7.8.0" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
+                <option name="name" value="prepareComGoogleAndroidGmsPlayServicesWearable780Library" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
@@ -2566,7 +3165,7 @@
     <option name="modificationStamps">
       <map>
         <entry key="$PROJECT_DIR$" value="7211677041214" />
-        <entry key="C:\Copy\Project_theSoS" value="7211677041214" />
+        <entry key="C:\Copy\Project_theSoS" value="7212031757572" />
         <entry key="C:\Copy\Projects\theSOS" value="7164186545219" />
       </map>
     </option>
@@ -2745,13 +3344,35 @@
                             <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/intellij/annotations/12.0/annotations-12.0.jar" />
                             <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/tools/external/lombok/lombok-ast/0.2.3/lombok-ast-0.2.3-sources.jar" />
                             <option value="$APPLICATION_HOME_DIR$/gradle/m2repository/com/android/tools/external/lombok/lombok-ast/0.2.3/lombok-ast-0.2.3.jar" />
-                            <option value="E:/AndroidSDK/extras/google/m2repository/com/google/android/gms/play-services/6.5.87/play-services-6.5.87.aar" />
-                            <option value="E:/AndroidSDK/extras/android/m2repository/com/android/support/appcompat-v7/21.0.3/appcompat-v7-21.0.3.aar" />
+                            <option value="E:/AndroidSDK/extras/google/m2repository/com/google/android/gms/play-services/7.8.0/play-services-7.8.0.aar" />
+                            <option value="E:/AndroidSDK/extras/android/m2repository/com/android/support/appcompat-v7/23.0.1/appcompat-v7-23.0.1.aar" />
                             <option value="E:/AndroidSDK/extras/android/m2repository/com/android/support/recyclerview-v7/21.0.3/recyclerview-v7-21.0.3.aar" />
                             <option value="E:/AndroidSDK/extras/android/m2repository/com/android/support/cardview-v7/21.0.2/cardview-v7-21.0.2.aar" />
-                            <option value="E:/AndroidSDK/extras/android/m2repository/com/android/support/support-v4/22.2.1/support-v4-22.2.1.aar" />
+                            <option value="E:/AndroidSDK/extras/google/m2repository/com/google/android/gms/play-services-ads/7.8.0/play-services-ads-7.8.0.aar" />
+                            <option value="E:/AndroidSDK/extras/google/m2repository/com/google/android/gms/play-services-analytics/7.8.0/play-services-analytics-7.8.0.aar" />
+                            <option value="E:/AndroidSDK/extras/google/m2repository/com/google/android/gms/play-services-appindexing/7.8.0/play-services-appindexing-7.8.0.aar" />
+                            <option value="E:/AndroidSDK/extras/google/m2repository/com/google/android/gms/play-services-appinvite/7.8.0/play-services-appinvite-7.8.0.aar" />
+                            <option value="E:/AndroidSDK/extras/google/m2repository/com/google/android/gms/play-services-appstate/7.8.0/play-services-appstate-7.8.0.aar" />
+                            <option value="E:/AndroidSDK/extras/google/m2repository/com/google/android/gms/play-services-base/7.8.0/play-services-base-7.8.0.aar" />
+                            <option value="E:/AndroidSDK/extras/google/m2repository/com/google/android/gms/play-services-cast/7.8.0/play-services-cast-7.8.0.aar" />
+                            <option value="E:/AndroidSDK/extras/google/m2repository/com/google/android/gms/play-services-drive/7.8.0/play-services-drive-7.8.0.aar" />
+                            <option value="E:/AndroidSDK/extras/google/m2repository/com/google/android/gms/play-services-fitness/7.8.0/play-services-fitness-7.8.0.aar" />
+                            <option value="E:/AndroidSDK/extras/google/m2repository/com/google/android/gms/play-services-games/7.8.0/play-services-games-7.8.0.aar" />
+                            <option value="E:/AndroidSDK/extras/google/m2repository/com/google/android/gms/play-services-gcm/7.8.0/play-services-gcm-7.8.0.aar" />
+                            <option value="E:/AndroidSDK/extras/google/m2repository/com/google/android/gms/play-services-identity/7.8.0/play-services-identity-7.8.0.aar" />
+                            <option value="E:/AndroidSDK/extras/google/m2repository/com/google/android/gms/play-services-location/7.8.0/play-services-location-7.8.0.aar" />
+                            <option value="E:/AndroidSDK/extras/google/m2repository/com/google/android/gms/play-services-maps/7.8.0/play-services-maps-7.8.0.aar" />
+                            <option value="E:/AndroidSDK/extras/google/m2repository/com/google/android/gms/play-services-nearby/7.8.0/play-services-nearby-7.8.0.aar" />
+                            <option value="E:/AndroidSDK/extras/google/m2repository/com/google/android/gms/play-services-panorama/7.8.0/play-services-panorama-7.8.0.aar" />
+                            <option value="E:/AndroidSDK/extras/google/m2repository/com/google/android/gms/play-services-plus/7.8.0/play-services-plus-7.8.0.aar" />
+                            <option value="E:/AndroidSDK/extras/google/m2repository/com/google/android/gms/play-services-safetynet/7.8.0/play-services-safetynet-7.8.0.aar" />
+                            <option value="E:/AndroidSDK/extras/google/m2repository/com/google/android/gms/play-services-vision/7.8.0/play-services-vision-7.8.0.aar" />
+                            <option value="E:/AndroidSDK/extras/google/m2repository/com/google/android/gms/play-services-wallet/7.8.0/play-services-wallet-7.8.0.aar" />
+                            <option value="E:/AndroidSDK/extras/google/m2repository/com/google/android/gms/play-services-wearable/7.8.0/play-services-wearable-7.8.0.aar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-android/1.2.0/6ee2953ccf51ce72b6d548c30c4633b99eb4f9dd/bolts-android-1.2.0.jar" />
-                            <option value="E:/AndroidSDK/extras/android/m2repository/com/android/support/support-annotations/22.2.1/support-annotations-22.2.1.jar" />
+                            <option value="E:/AndroidSDK/extras/android/m2repository/com/android/support/support-v4/23.0.1/support-v4-23.0.1.aar" />
+                            <option value="E:/AndroidSDK/extras/android/m2repository/com/android/support/mediarouter-v7/22.2.0/mediarouter-v7-22.2.0.aar" />
+                            <option value="E:/AndroidSDK/extras/android/m2repository/com/android/support/support-annotations/23.0.1/support-annotations-23.0.1.jar" />
                             <option value="$MODULE_DIR$/libs/Parse-1.10.1.jar" />
                             <option value="$MODULE_DIR$/libs/ParseFacebookUtilsV4-1.10.1.jar" />
                           </list>
@@ -3077,11 +3698,9 @@
         <option value="$PROJECT_DIR$/app/src/main/res/values/array.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_report.xml" />
         <option value="$PROJECT_DIR$/app/mirror/.res/layout/testwait.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/thesos/com/sos/badboy/thesos/TestActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/thesos/com/sos/badboy/thesos/ReportActivity.java" />
         <option value="$PROJECT_DIR$/facebook/build.gradle" />
         <option value="$PROJECT_DIR$/route/build.gradle" />
-        <option value="$PROJECT_DIR$/app/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_wait.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/thesos/com/sos/badboy/thesos/UpdateStatus.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/thesos/com/sos/badboy/thesos/Application.java" />
@@ -3098,8 +3717,16 @@
         <option value="$PROJECT_DIR$/app/src/main/java/thesos/com/sos/badboy/thesos/RescuerActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/thesos/com/sos/badboy/thesos/AccidentPushBroadcastReceive.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/thesos/com/sos/badboy/thesos/Accident.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_accident.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/thesos/com/sos/badboy/thesos/AccidentActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/btn_select.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/drawable/primary_round.xml" />
+        <option value="$PROJECT_DIR$/app/build.gradle" />
+        <option value="$PROJECT_DIR$/app/src/main/java/thesos/com/sos/badboy/thesos/JSONParser.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/thesos/com/sos/badboy/thesos/TestActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/theme.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_accident.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_test.xml" />
       </list>
     </option>
   </component>
@@ -3145,6 +3772,29 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
+      <pane id="AndroidView">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="theSOS" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Gradle Scripts" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidBuildScriptsGroupNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="theSOS" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -3219,35 +3869,12 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
-      <pane id="AndroidView">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="theSOS" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Gradle Scripts" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidBuildScriptsGroupNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="theSOS" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="recentsLimit" value="5" />
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="emulator-5554" />
-    <property name="settings.editor.selected.configurable" value="gradle.compiler" />
+    <property name="settings.editor.selected.configurable" value="editing.templates" />
     <property name="FullScreen" value="false" />
     <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager2.STATE" value="ToolWindow" />
     <property name="UI_DESIGNER_EDITOR_MODE.PaletteToolWindowManager.STATE" value="left" />
@@ -3255,7 +3882,7 @@
     <property name="restartRequiresConfirmation" value="true" />
     <property name="OverrideImplement.combined" value="true" />
     <property name="OverrideImplement.overriding.sorted" value="false" />
-    <property name="SearchEverywhereHistoryKey" value="Wa&#9;FILE&#9;file://C:/Copy/Project_theSoS/app/src/main/java/thesos/com/sos/badboy/thesos/WaitActivity.java&#10;Repor&#9;FILE&#9;file://C:/Copy/Project_theSoS/app/src/main/java/thesos/com/sos/badboy/thesos/ReportActivity.java&#10;Accident&#9;FILE&#9;file://C:/Copy/Project_theSoS/app/src/main/java/thesos/com/sos/badboy/thesos/Accident.java&#10;Acc&#9;FILE&#9;file://C:/Copy/Project_theSoS/app/src/main/java/thesos/com/sos/badboy/thesos/AccidentActivity.java&#10;Resc&#9;FILE&#9;file://C:/Copy/Project_theSoS/app/src/main/java/thesos/com/sos/badboy/thesos/RescuerActivity.java&#10;Route&#9;FILE&#9;file://C:/Copy/Project_theSoS/app/src/main/java/thesos/com/sos/badboy/thesos/RouteActivity.java&#10;Main&#9;FILE&#9;file://C:/Copy/Project_theSoS/app/src/main/java/thesos/com/sos/badboy/thesos/MainActivity.java&#10;Str&#9;FILE&#9;file://C:/Copy/Project_theSoS/app/src/main/res/values/strings.xml&#10;String&#9;FILE&#9;file://C:/Copy/Project_theSoS/app/src/main/res/values/strings.xml" />
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://C:/Copy/Project_theSoS/app/src/main/res/layout/activity_rescuer.xml&#10;Wa&#9;FILE&#9;file://C:/Copy/Project_theSoS/app/src/main/java/thesos/com/sos/badboy/thesos/WaitActivity.java&#10;Repor&#9;FILE&#9;file://C:/Copy/Project_theSoS/app/src/main/java/thesos/com/sos/badboy/thesos/ReportActivity.java&#10;Accident&#9;FILE&#9;file://C:/Copy/Project_theSoS/app/src/main/java/thesos/com/sos/badboy/thesos/Accident.java&#10;Acc&#9;FILE&#9;file://C:/Copy/Project_theSoS/app/src/main/java/thesos/com/sos/badboy/thesos/AccidentActivity.java&#10;Resc&#9;FILE&#9;file://C:/Copy/Project_theSoS/app/src/main/java/thesos/com/sos/badboy/thesos/RescuerActivity.java&#10;Route&#9;FILE&#9;file://C:/Copy/Project_theSoS/app/src/main/java/thesos/com/sos/badboy/thesos/RouteActivity.java&#10;Main&#9;FILE&#9;file://C:/Copy/Project_theSoS/app/src/main/java/thesos/com/sos/badboy/thesos/MainActivity.java&#10;Str&#9;FILE&#9;file://C:/Copy/Project_theSoS/app/src/main/res/values/strings.xml&#10;String&#9;FILE&#9;file://C:/Copy/Project_theSoS/app/src/main/res/values/strings.xml" />
     <property name="android.project.structure.last.selected" value="app" />
     <property name="android.project.structure.proportion" value="0.15" />
   </component>
@@ -3534,7 +4161,13 @@
       <option name="project" value="LOCAL" />
       <updated>1442679484519</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="set">
+      <created>1442862620273</created>
+      <option name="number" value="00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1442862620273</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TodoView">
@@ -3569,13 +4202,13 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32980332" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.10665658" sideWeight="0.48722318" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19440243" sideWeight="0.48722318" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33049405" sideWeight="0.4795764" order="2" side_tool="false" content_ui="tabs" x="1366" y="242" width="436" height="210" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879046" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -3593,7 +4226,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add photo" />
-    <option name="LAST_COMMIT_MESSAGE" value="add photo" />
+    <MESSAGE value="set" />
+    <option name="LAST_COMMIT_MESSAGE" value="set" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -3610,69 +4244,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/mirror/main/testwait.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="58" column="13" selection-start-line="58" selection-start-column="13" selection-end-line="58" selection-end-column="13" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/array.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="5" column="24" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.navigation/app/raw/main.nvg.xml">
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="navigationeditor">
-        <state />
-      </provider>
-    </entry>
-    <entry file="jar://E:/AndroidSDK/platforms/android-21/android.jar!/android/net/Uri.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6950495">
-          <caret line="185" column="0" selection-start-line="185" selection-start-column="0" selection-end-line="185" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://E:/AndroidSDK/platforms/android-21/android.jar!/java/lang/Object.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.84158415">
-          <caret line="36" column="18" selection-start-line="36" selection-start-column="18" selection-end-line="36" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/thesos/com/sos/badboy/thesos/Alert.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.060822897">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/thesos/com/sos/badboy/thesos/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.21288015">
-          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/menu_wait.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/app/libs/Parse-1.10.1.jar!/com/parse/ParseGeoPoint.class">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.19172932">
@@ -3691,13 +4262,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.36831683">
           <caret line="350" column="15" selection-start-line="350" selection-start-column="15" selection-end-line="350" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/thesos/com/sos/badboy/thesos/TestActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="256" column="22" selection-start-line="256" selection-start-column="22" selection-end-line="256" selection-end-column="31" />
         </state>
       </provider>
     </entry>
@@ -3729,13 +4293,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.36090225">
-          <caret line="20" column="18" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/proguard-rules.pro">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -3764,20 +4321,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/app/libs/Parse-1.10.1.jar!/com/parse/ParseFile.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="71" column="11" selection-start-line="71" selection-start-column="11" selection-end-line="71" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/app/libs/Parse-1.10.1.jar!/com/parse/ParseObject.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="972" column="36" selection-start-line="972" selection-start-column="36" selection-end-line="972" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/thesos/com/sos/badboy/thesos/UpdateStatus.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33452594">
@@ -3786,14 +4329,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_wait.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.41698113">
           <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="40" selection-end-column="53" />
           <folding />
         </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/thesos/com/sos/badboy/thesos/TheSosApplication.java">
@@ -3868,17 +4411,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_route.xml">
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/thesos/com/sos/badboy/thesos/RouteActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.57781756">
@@ -3890,13 +4422,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.9637306">
           <caret line="29" column="32" selection-start-line="29" selection-start-column="32" selection-end-line="29" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/thesos/com/sos/badboy/thesos/AccidentPushBroadcastReceive.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6194332">
-          <caret line="21" column="36" selection-start-line="21" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -3915,63 +4440,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_rescuer.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="35" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_accident.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.310345">
-          <caret line="31" column="43" selection-start-line="31" selection-start-column="43" selection-end-line="31" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/app/libs/Parse-1.10.1.jar!/com/parse/ParseQuery.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.888889">
-          <caret line="162" column="13" selection-start-line="162" selection-start-column="13" selection-end-line="162" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/thesos/com/sos/badboy/thesos/ReportActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33207548">
           <caret line="384" column="16" selection-start-line="384" selection-start-column="11" selection-end-line="384" selection-end-column="16" />
-          <folding>
-            <element signature="e#4371#4606#0" expanded="true" />
-            <element signature="e#4605#4606#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_report.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.19245283">
-          <caret line="65" column="41" selection-start-line="65" selection-start-column="24" selection-end-line="65" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/thesos/com/sos/badboy/thesos/RescuerActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.6386404">
-          <caret line="26" column="38" selection-start-line="26" selection-start-column="38" selection-end-line="26" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3979,7 +4451,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33452594">
           <caret line="44" column="0" selection-start-line="44" selection-start-column="0" selection-end-line="50" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3987,18 +4458,176 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/app/libs/Parse-1.10.1.jar!/com/parse/ParseFile.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.37272727">
+          <caret line="261" column="18" selection-start-line="261" selection-start-column="18" selection-end-line="261" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/app/libs/Parse-1.10.1.jar!/com/parse/ParseQuery.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.13721804">
+          <caret line="162" column="13" selection-start-line="162" selection-start-column="13" selection-end-line="162" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/app/libs/Parse-1.10.1.jar!/com/parse/ParseObject.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.34962407">
+          <caret line="2162" column="21" selection-start-line="2162" selection-start-column="21" selection-end-line="2162" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_rescuer.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.99433964">
+          <caret line="37" column="11" selection-start-line="37" selection-start-column="11" selection-end-line="37" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/thesos/com/sos/badboy/thesos/RescuerActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.7370304">
+          <caret line="26" column="38" selection-start-line="26" selection-start-column="38" selection-end-line="26" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/thesos/com/sos/badboy/thesos/AccidentPushBroadcastReceive.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="55" column="110" selection-start-line="55" selection-start-column="30" selection-end-line="55" selection-end-column="110" />
+          <folding>
+            <element signature="e#0#41#0" expanded="false" />
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_route.xml">
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/btn_select.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.030411448">
+          <caret line="1" column="23" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values-v23/values-v23.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.6296296">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/thesos/com/sos/badboy/thesos/TestActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/thesos/com/sos/badboy/thesos/JSONParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_report.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="81" column="34" selection-start-line="81" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://E:/AndroidSDK/platforms/android-23/data/res/drawable/btn_default.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.15563506">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values/values.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.4041353">
+          <caret line="1420" column="17" selection-start-line="1420" selection-start-column="17" selection-end-line="1420" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="5" column="19" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/theme.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="3" column="61" selection-start-line="3" selection-start-column="40" selection-end-line="3" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_test.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_accident.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.0344827">
+          <caret line="100" column="0" selection-start-line="100" selection-start-column="0" selection-end-line="100" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/thesos/com/sos/badboy/thesos/AccidentActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.39534885">
-          <caret line="47" column="32" selection-start-line="47" selection-start-column="32" selection-end-line="47" selection-end-column="32" />
-          <folding>
-            <element signature="e#1385#2139#0" expanded="true" />
-            <element signature="e#2138#2139#0" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.17889088">
+          <caret line="74" column="41" selection-start-line="74" selection-start-column="41" selection-end-line="74" selection-end-column="41" />
+          <folding />
         </state>
       </provider>
     </entry>
