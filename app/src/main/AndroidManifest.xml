@@ -105,6 +105,10 @@
             android:name=".AccidentActivity"
             android:label="@string/title_activity_accident" >
         </activity>
+        <activity
+            android:name=".AccidentListActivity"
+            android:label="@string/title_activity_accident_list" >
+        </activity>
     </application>
 
 </manifest>

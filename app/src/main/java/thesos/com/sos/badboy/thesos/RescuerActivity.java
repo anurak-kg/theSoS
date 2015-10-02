@@ -1,5 +1,6 @@
 package thesos.com.sos.badboy.thesos;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -62,7 +63,8 @@ public class RescuerActivity extends AppCompatActivity {
         testPushBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                getNearRescuer();
+                //getNearRescuer();
+                goToAccidentListActivity();
 
             }
         });
@@ -77,12 +79,17 @@ public class RescuerActivity extends AppCompatActivity {
             public void done(List<ParseObject> list, ParseException e) {
                 for (ParseObject object : list) {
                     ParseGeoPoint location = object.getParseGeoPoint("location");
-                    Log.d(TAG,object.getString("name") + "อยู่ห่างจากผู้ใช้ " + location.distanceInKilometersTo(currentLocation)  + " กม." );
+                    Log.d(TAG, object.getString("name") + "อยู่ห่างจากผู้ใช้ " + location.distanceInKilometersTo(currentLocation) + " กม.");
                 }
             }
         });
 
 
+    }
+    private void goToAccidentListActivity(){
+        Intent i = new Intent(this, AccidentListActivity.class);
+        startActivity(i);
+        finish();
     }
 
     private void pushAccidentNotic() {

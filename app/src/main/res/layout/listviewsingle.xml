@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:padding="8dp" >
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/listAccidentImages"
+        android:src="@drawable/common_signin_btn_icon_normal_dark"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="ประเภทอุบัติเหตุ"
+        android:id="@+id/listAccidentTypeTxt"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/listAccidentImages" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Small Text"
+        android:id="@+id/textView8"
+        android:layout_below="@+id/listAccidentTypeTxt"
+        android:layout_alignLeft="@+id/listAccidentTypeTxt" />
+</RelativeLayout>
