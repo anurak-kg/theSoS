@@ -50,6 +50,7 @@ public class WaitActivity extends ActionBarActivity {
         }
     };
     private String objectId;
+    private AccidentReport acidentReport;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -93,7 +94,12 @@ public class WaitActivity extends ActionBarActivity {
                         updateCurrentStatus("เตีมความพร้อมข้อมูล");
                         updateCurrentStatus("กำลังส่งข้อมูลขึ้น Server");
                         Log.d("theSos", "Prepair Send Accdent to Parse");
-                        sendAccidentToServer();
+
+                        acidentReport = new AccidentReport();
+                        acidentReport.setImagesUri(imagesUri);
+                        acidentReport.setCurrentUser(currentUser);
+                        acidentReport.report();
+
                         updateCurrentStatus("รอการติดต่อกลับ");
 
                     } catch (InterruptedException e) {
@@ -118,58 +124,12 @@ public class WaitActivity extends ActionBarActivity {
     }
 
 
-    private void sendAccidentToServer() {
-        try {
-            Log.d("theSos", "Start Send Accdent to Parse");
 
-            ParseObject pr = new ParseObject("accident");
-            pr.put("accidentType", "อุบัติเหตุทางรถยนต์");
-            //pr.put("location", new ParseGeoPoint(accident.getLatitude(), accident.getLongitude()));
-            pr.put("accidentDescription", "Bla Bla Bla");
-            if (imagesUri != null) {
-                File file = new File(imagesUri.getPath());
-                if (file.exists()) {
-                    byte[] videoBytes = convertImageToByte(imagesUri);
-                    String fileName = UUID.randomUUID().toString() + ".jpg";
-                    Log.d("theSos", "ParseFile Cloud : " + fileName);
-                    ParseFile photo = new ParseFile(fileName, videoBytes);
-                    photo.save();
-                    pr.put("photo", photo);
-                }
-
-            }
-            pr.put("victimId", currentUser);
-            pr.put("status", "waiting");
-            pr.save();
-            objectId = pr.getObjectId();
-            Log.d(TAG, "The object id is: " + pr.getObjectId());
-            Log.d(TAG, "Send Object to Parse Server");
-        } catch (IOException e) {
-            Log.d("theSos", "Error Save (0x00102)");
-            Toast.makeText(getApplicationContext(), "Error Save (0x00102)", Toast.LENGTH_SHORT).show();
-            e.printStackTrace();
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-
-    }
 
     private void fireRescuer() {
 
     }
 
-    private byte[] convertImageToByte(Uri uri) throws IOException {
-        ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        FileInputStream fis = new FileInputStream(new File(uri.getPath()));
-        byte[] buf = new byte[1024];
-        int n;
-        while (-1 != (n = fis.read(buf))) {
-            baos.write(buf, 0, n);
-        }
-        byte[] videoBytes = baos.toByteArray();
-        Log.d("theSos", "convert video to byte");
-        return videoBytes;
-    }
 
     private void uploadFileToParse() {
 

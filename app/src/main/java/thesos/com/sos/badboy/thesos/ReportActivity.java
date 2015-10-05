@@ -21,13 +21,16 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import com.facebook.*;
 import com.facebook.login.widget.ProfilePictureView;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
 import com.parse.*;
+
 import org.json.JSONException;
 import org.json.JSONObject;
+
 import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -136,9 +139,9 @@ public class ReportActivity extends ActionBarActivity {
 
     private void redirectToWaiting() {
         Intent i = new Intent(this, WaitActivity.class);
-        i.putExtra("accident",getAccidentData());
-        if(uri !=  null){
-            i.putExtra("uri",uri.getPath());
+        i.putExtra("accident", getAccidentData());
+        if (uri != null) {
+            i.putExtra("uri", uri.getPath());
         }
         startActivity(i);
     }
@@ -219,15 +222,15 @@ public class ReportActivity extends ActionBarActivity {
 
     private void bindMapWidget() {
         try {
-            map = ((MapFragment) getFragmentManager().findFragmentById(R.id.map)).getMap();
+            /*map = ((MapFragment) getFragmentManager().findFragmentById(R.id.map)).getMap();
             map.setMyLocationEnabled(true);
             LocationManager lm = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
             Location location = lm.getLastKnownLocation(LocationManager.GPS_PROVIDER);
-            // longitude = location.getLongitude();
-            //  latitude = location.getLatitude();
-            // Log.d("mapWidget", "Long" + longitude + "  Lat :" + latitude);
-            //  LatLng myLocation = new LatLng(latitude, longitude);
-            //   map.moveCamera(CameraUpdateFactory.newLatLngZoom(myLocation, 13));
+            longitude = location.getLongitude();
+            latitude = location.getLatitude();
+            Log.d("mapWidget", "Long" + longitude + "  Lat :" + latitude);
+            LatLng myLocation = new LatLng(latitude, longitude);
+            map.moveCamera(CameraUpdateFactory.newLatLngZoom(myLocation, 13));*/
         } catch (Exception e) {
             e.printStackTrace();
         }

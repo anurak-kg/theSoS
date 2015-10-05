@@ -40,7 +40,7 @@ public class MainActivity extends ActionBarActivity {
 
         ParseUser currentUser = ParseUser.getCurrentUser();
         if ((currentUser != null) && ParseFacebookUtils.isLinked(currentUser)) {
-            Intent i = new Intent(this, RescuerActivity.class);
+            Intent i = new Intent(this, ReportActivity.class);
             startActivity(i);
         }
         loginBtn.setOnClickListener(new View.OnClickListener() {
@@ -89,13 +89,15 @@ public class MainActivity extends ActionBarActivity {
                     Log.d("TheSos", "Uh oh. The user cancelled the Facebook login.");
                 } else if (user.isNew()) {
                     Log.d("TheSos", "User signed up and logged in through Facebook!");
-                    showRouteActivity();
+                    showUserDetailsActivity();
+
+                    //showRouteActivity();
                    // showExtraData();
                 } else {
                     Log.d("TheSos", "User logged in through Faceb+ook!");
-                    showRouteActivity();
+                    //showRouteActivity();
 
-                    //showUserDetailsActivity();
+                    showUserDetailsActivity();
                 }
             }
         });

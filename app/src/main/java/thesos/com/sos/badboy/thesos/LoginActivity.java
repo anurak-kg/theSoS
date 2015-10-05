@@ -67,7 +67,8 @@ public class LoginActivity extends Activity {
     }
 
     private void showUserDetailsActivity() {
-
+        startActivity(new Intent(this, ReportActivity.class));
+        finish();
     }
 
     @Override
