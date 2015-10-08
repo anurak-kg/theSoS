@@ -5,6 +5,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -35,7 +36,7 @@ import java.util.Random;
 import java.util.UUID;
 import java.util.logging.LogRecord;
 
-public class WaitActivity extends ActionBarActivity {
+public class WaitActivity extends AppCompatActivity {
     private static final String TAG = "theSos";
     private Accident accident;
     private Uri imagesUri;
@@ -51,6 +52,7 @@ public class WaitActivity extends ActionBarActivity {
     };
     private String objectId;
     private AccidentReport acidentReport;
+    private Button waitingBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,7 +75,7 @@ public class WaitActivity extends ActionBarActivity {
     private void bindLayout() {
         status = (TextView) findViewById(R.id.loadingTxtTop);
 
-        Button waitingBtn = (Button) findViewById(R.id.startThread);
+        waitingBtn = (Button) findViewById(R.id.startThread);
         waitingBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -96,11 +98,12 @@ public class WaitActivity extends ActionBarActivity {
                         Log.d("theSos", "Prepair Send Accdent to Parse");
 
                         acidentReport = new AccidentReport();
-                        acidentReport.setImagesUri(imagesUri);
+                        //acidentReport.setImagesUri(imagesUri);
                         acidentReport.setCurrentUser(currentUser);
+                        acidentReport.setTextUI(status);
                         acidentReport.report();
 
-                        updateCurrentStatus("รอการติดต่อกลับ");
+                        //updateCurrentStatus("รอการติดต่อกลับ");
 
                     } catch (InterruptedException e) {
                         e.printStackTrace();
