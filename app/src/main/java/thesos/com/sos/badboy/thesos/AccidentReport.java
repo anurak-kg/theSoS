@@ -19,23 +19,26 @@ import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
 public class AccidentReport {
 
+    private static final long TIME_PROCESS_SLEEP = 1000;
+    private static final long MAX_TIME_WAIT = 30;
     private Uri imagesUri;
     private String TAG = "theSos";
     private ParseObject currentUser;
     private TextView status;
-
     private String objectId = "3r5fNg3CTs";
     private List<ParseObject> list;
     private static final ParseGeoPoint currentUserLocation = new ParseGeoPoint(7.8481069, 98.329275);
     private static final double MAX_NEAR_KILOMATE = 10;
     private static final int LIMIT_RESCURER = 5;
 
-    String currentStatus;
+    public String currentStatus;
+    private boolean running;
 
 
     public void report() {
@@ -52,31 +55,122 @@ public class AccidentReport {
         }
 
     }
-    public void sendAccidentToRescuer(){
-        synchronized (this){
+
+    private void sendNotification() {
+
+    }
+
+    private String updateRescuerStatus(String objectId) {
+        this.running = true;
+        this.setCurrentStatus("กำลังติดต่อกู้ภัย");
+        long start = new Date().getTime();
+        long currentTime;
+
+        try {
+            //ดาวน์โหลด จาก Parse
+            ParseQuery tempData = ParseQuery.getQuery("tempdata");
+            tempData.whereEqualTo("objectId", objectId);
+            ParseObject object = tempData.getFirst();
+            // ส่ง Notification
+            // this.sendNotification();
+
+            // Update สถานะเป็นกำลังส่ง
+
+
+            // ตรวจสอบสถานะการติดต่อ
             do {
+                // คำนวญเวลา เพื่อกำหนดเวลาในการติดต่อ
+                currentTime = new Date().getTime();
+                long diff = currentTime - start;
+                long diffSeconds = diff / 1000 % 60;
 
-                try {
-                    ParseQuery<ParseObject> accident = ParseQuery.getQuery("accident");
-                    accident.whereEqualTo("objectId", this.getObjectId());
+                //โหลดข้อมูลจาก Parse Server
+                ParseQuery tempQuery = ParseQuery.getQuery("tempdata");
+                tempQuery.whereEqualTo("objectId", objectId);
+                ParseObject tempObject = tempQuery.getFirst();
 
+                //ดึงสถานะจาก Server
+                String rescuerStatus = tempObject.getString("status");
 
-                    ParseQuery<ParseObject> query = ParseQuery.getQuery("tempdata");
-                    query.whereMatchesQuery("accident", accident);
-                    List<ParseObject> listTemp = null;
-                    listTemp = query.find();
+                //อัพเดทสถานะ และเวลา 
+                this.setCurrentStatus("กำลังติดต่อกู้ภัย เหลือเวลาอีก  (" + (MAX_TIME_WAIT - diffSeconds) + ") วินาที");
+                Log.d(TAG, tempObject.getObjectId() + " ||  สถานะ -> " + rescuerStatus);
 
-                    for (ParseObject temp:listTemp) {
-                        Log.d(TAG,"ID = " + temp.getObjectId() + "Status " + temp.getString("status"));
+                //เมื่อกู้ภัยตอบรับ
+                if (rescuerStatus.equals("accept")) {
+                    this.setCurrentStatus("กรุณารอสักครู่ เจ้าหน้ากำลังเดินไปที่เกิดเหตุ...");
+                    return "found";
 
-                    }
-
-                } catch (ParseException e) {
-                    e.printStackTrace();
+                }
+                //เมื่อกู้ภัยประฏิเสธ
+                else if (rescuerStatus.equals("reject")) {
+                    this.setCurrentStatus("เจ้าหน้าที่ปฏิเสธ! ระบบกำลังติดต่อเจ้าหน้าที่ท่านอื่น");
+                    return "not_found";
                 }
 
+                //เมื่อเวลาเกินจากที่ต้องใว้ให้ค้นหาคนถัดไป
+                if (diffSeconds > MAX_TIME_WAIT) {
+                    this.setCurrentStatus("หมดเวลา");
+                    return "not_found";
+                }
 
-            }while (false);
+                //หยุดเพื่อหน่วงการประมวณผล
+                Thread.sleep(TIME_PROCESS_SLEEP);
+
+            } while (running);
+
+        } catch (ParseException | InterruptedException e) {
+            e.printStackTrace();
+        }
+        return "not_found";
+
+
+    }
+
+    private void setTempStatus(String objectId, String prepair) {
+
+    }
+
+    public void sendAccidentToRescuer() {
+        synchronized (this) {
+
+            try {
+                ParseQuery<ParseObject> accident = ParseQuery.getQuery("accident");
+                accident.whereEqualTo("objectId", this.getObjectId());
+                ParseQuery<ParseObject> query = ParseQuery.getQuery("tempdata");
+                query.whereMatchesQuery("accident", accident);
+                //ค้นหาเฉพาะที่มีสถานะ pending
+                query.whereEqualTo("status", "pending");
+
+                List<ParseObject> listTemp;
+                listTemp = query.find();
+
+                //ถ้าไม่พบกู้ภัยที่มีสถานะ waiting
+                int count = query.count();
+                Log.d(TAG, "Count : " + count);
+                if (count == 0) {
+                    this.setCurrentStatus("ไม่พบกู้ภัย" + query.count());
+                    throw new Exception();
+                }
+
+                //ส่งการแจ้งเตือนไปยังกู้ภัย
+                for (ParseObject temp : listTemp) {
+                    Log.d(TAG, "ID = " + temp.getObjectId() + "  |  Status " + temp.getString("status"));
+                    String currentReportStatus = this.updateRescuerStatus(temp.getObjectId());
+                    if (currentReportStatus.equals("found")) {
+                        this.setCurrentStatus("พบกู้ภัย");
+                        break;
+                    }
+                    this.setCurrentStatus("กำลังค้นหาคนต่อไป");
+                    Thread.sleep(100);
+
+                }
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+
         }
 
     }
@@ -104,11 +198,7 @@ public class AccidentReport {
     private void saveTempData(ParseObject rescuer, Integer round) {
 
         ParseObject object = new ParseObject("tempdata");
-        if (round == 0) {
-            object.put("status", "waiting");
-        } else {
-            object.put("status", "pending");
-        }
+        object.put("status", "pending");
         ParseObject res = ParseObject.createWithoutData("_User", rescuer.getObjectId());
         object.put("rescuer", res);
         object.put("location", rescuer.getParseGeoPoint("location"));
@@ -213,6 +303,7 @@ public class AccidentReport {
 
     public void setCurrentStatus(String currentStatus) {
         this.currentStatus = currentStatus;
+        this.updateStatus();
     }
 
     public String getObjectId() {

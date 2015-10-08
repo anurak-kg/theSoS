@@ -18,13 +18,13 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="No Filters" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="52107420-a48c-4e48-ac67-5ff1456a9497" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/thesos/com/sos/badboy/thesos/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/thesos/com/sos/badboy/thesos/MainActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/thesos/com/sos/badboy/thesos/AccidentReport.java" afterPath="$PROJECT_DIR$/app/src/main/java/thesos/com/sos/badboy/thesos/AccidentReport.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/thesos/com/sos/badboy/thesos/WaitActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/thesos/com/sos/badboy/thesos/WaitActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_wait.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_wait.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="theSOS.iws" />
@@ -59,62 +59,53 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="activity_main.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
-          <provider editor-type-id="android-designer">
-            <state />
-          </provider>
+      <file leaf-file-name="AccidentReport.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/thesos/com/sos/badboy/thesos/AccidentReport.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.724138">
-              <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="facebooklogin.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/facebooklogin.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="applogo.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/applogo.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/thesos/com/sos/badboy/thesos/MainActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.1824687">
-              <caret line="78" column="40" selection-start-line="78" selection-start-column="40" selection-end-line="78" selection-end-column="40" />
+            <state vertical-scroll-proportion="0.23434705">
+              <caret line="71" column="56" selection-start-line="71" selection-start-column="56" selection-end-line="71" selection-end-column="56" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#9471#9612#0" expanded="true" />
+                <element signature="e#9611#9612#0" expanded="true" />
+                <element signature="e#9666#9667#0" expanded="true" />
+                <element signature="e#9708#9709#0" expanded="true" />
+                <element signature="e#9746#9747#0" expanded="true" />
+                <element signature="e#9780#9781#0" expanded="true" />
+                <element signature="e#9837#9838#0" expanded="true" />
+                <element signature="e#9883#9884#0" expanded="true" />
+                <element signature="e#9923#9924#0" expanded="true" />
+                <element signature="e#9959#9960#0" expanded="true" />
+                <element signature="e#10131#10132#0" expanded="true" />
+                <element signature="e#10162#10163#0" expanded="true" />
+                <element signature="e#10210#10211#0" expanded="true" />
+                <element signature="e#10250#10251#0" expanded="true" />
+                <element signature="e#10296#10297#0" expanded="true" />
+                <element signature="e#10332#10333#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="colors.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
+      <file leaf-file-name="WaitActivity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/thesos/com/sos/badboy/thesos/WaitActivity.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
+              <caret line="70" column="38" selection-start-line="70" selection-start-column="38" selection-end-line="70" selection-end-column="38" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="theme.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/values/theme.xml">
-          <provider selected="true" editor-type-id="text-editor">
+      <file leaf-file-name="activity_wait.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_wait.xml">
+          <provider editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="6" column="41" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="41" />
+              <caret line="52" column="51" selection-start-line="52" selection-start-column="51" selection-end-line="52" selection-end-column="51" />
               <folding />
             </state>
+          </provider>
+          <provider selected="true" editor-type-id="android-designer">
+            <state />
           </provider>
         </entry>
       </file>
@@ -3281,7 +3272,6 @@
         <option value="$PROJECT_DIR$/app/mirror/.res/layout/testwait.xml" />
         <option value="$PROJECT_DIR$/facebook/build.gradle" />
         <option value="$PROJECT_DIR$/route/build.gradle" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_wait.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/thesos/com/sos/badboy/thesos/UpdateStatus.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/thesos/com/sos/badboy/thesos/Application.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/thesos/com/sos/badboy/thesos/Receiver.java" />
@@ -3312,11 +3302,12 @@
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/thesos/com/sos/badboy/thesos/ReportActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_report.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/thesos/com/sos/badboy/thesos/WaitActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/thesos/com/sos/badboy/thesos/AccidentReport.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/thesos/com/sos/badboy/thesos/MainActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/thesos/com/sos/badboy/thesos/WaitActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_wait.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/thesos/com/sos/badboy/thesos/AccidentReport.java" />
       </list>
     </option>
   </component>
@@ -3362,6 +3353,27 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="AndroidView">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="theSOS" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Gradle Scripts" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidBuildScriptsGroupNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="theSOS" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -3436,28 +3448,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
-      <pane id="AndroidView">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="theSOS" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Gradle Scripts" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidBuildScriptsGroupNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="theSOS" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -3472,7 +3463,7 @@
     <property name="restartRequiresConfirmation" value="true" />
     <property name="OverrideImplement.combined" value="true" />
     <property name="OverrideImplement.overriding.sorted" value="false" />
-    <property name="SearchEverywhereHistoryKey" value="Main&#9;FILE&#9;file://C:/Copy/Project_theSoS/app/src/main/java/thesos/com/sos/badboy/thesos/MainActivity.java&#10;main&#9;ACTION&#9;MaintenanceAction&#10;Repor&#9;FILE&#9;file://C:/Copy/Project_theSoS/app/src/main/java/thesos/com/sos/badboy/thesos/ReportActivity.java&#10;Resc&#9;FILE&#9;file://C:/Copy/Project_theSoS/app/src/main/java/thesos/com/sos/badboy/thesos/RescuerActivity.java&#10;Wa&#9;FILE&#9;file://C:/Copy/Project_theSoS/app/src/main/java/thesos/com/sos/badboy/thesos/WaitActivity.java&#10;Accident&#9;FILE&#9;file://C:/Copy/Project_theSoS/app/src/main/java/thesos/com/sos/badboy/thesos/Accident.java&#10;Acc&#9;FILE&#9;file://C:/Copy/Project_theSoS/app/src/main/java/thesos/com/sos/badboy/thesos/AccidentActivity.java&#10;Route&#9;FILE&#9;file://C:/Copy/Project_theSoS/app/src/main/java/thesos/com/sos/badboy/thesos/RouteActivity.java&#10;Str&#9;FILE&#9;file://C:/Copy/Project_theSoS/app/src/main/res/values/strings.xml&#10;String&#9;FILE&#9;file://C:/Copy/Project_theSoS/app/src/main/res/values/strings.xml" />
+    <property name="SearchEverywhereHistoryKey" value="Wa&#9;FILE&#9;file://C:/Copy/Project_theSoS/app/src/main/java/thesos/com/sos/badboy/thesos/WaitActivity.java&#10;rep&#9;FILE&#9;file://C:/Copy/Project_theSoS/app/src/main/java/thesos/com/sos/badboy/thesos/ReportActivity.java&#10;Report&#9;FILE&#9;file://C:/Copy/Project_theSoS/app/src/main/java/thesos/com/sos/badboy/thesos/AccidentReport.java&#10;Main&#9;FILE&#9;file://C:/Copy/Project_theSoS/app/src/main/java/thesos/com/sos/badboy/thesos/MainActivity.java&#10;main&#9;ACTION&#9;MaintenanceAction&#10;Repor&#9;FILE&#9;file://C:/Copy/Project_theSoS/app/src/main/java/thesos/com/sos/badboy/thesos/ReportActivity.java&#10;Resc&#9;FILE&#9;file://C:/Copy/Project_theSoS/app/src/main/java/thesos/com/sos/badboy/thesos/RescuerActivity.java&#10;Accident&#9;FILE&#9;file://C:/Copy/Project_theSoS/app/src/main/java/thesos/com/sos/badboy/thesos/Accident.java&#10;Acc&#9;FILE&#9;file://C:/Copy/Project_theSoS/app/src/main/java/thesos/com/sos/badboy/thesos/AccidentActivity.java&#10;Route&#9;FILE&#9;file://C:/Copy/Project_theSoS/app/src/main/java/thesos/com/sos/badboy/thesos/RouteActivity.java&#10;Str&#9;FILE&#9;file://C:/Copy/Project_theSoS/app/src/main/res/values/strings.xml&#10;String&#9;FILE&#9;file://C:/Copy/Project_theSoS/app/src/main/res/values/strings.xml" />
     <property name="android.project.structure.last.selected" value="app" />
     <property name="android.project.structure.proportion" value="0.15" />
   </component>
@@ -3795,7 +3786,13 @@
       <option name="project" value="LOCAL" />
       <updated>1444302039859</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="add logo">
+      <created>1444324768153</created>
+      <option name="number" value="00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1444324768153</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TodoView">
@@ -3816,11 +3813,11 @@
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32980332" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879046" sideWeight="0.49394855" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32980332" sideWeight="0.50596255" order="6" side_tool="true" content_ui="tabs" />
-      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.45655876" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" x="3" y="390" width="1197" height="307" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.45655876" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" x="3" y="390" width="1197" height="307" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32980332" sideWeight="0.49063033" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39863715" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19440243" sideWeight="0.52981263" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33049405" sideWeight="0.5204236" order="7" side_tool="true" content_ui="tabs" x="1374" y="7" width="509" height="691" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19440243" sideWeight="0.52981263" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879046" sideWeight="0.49394855" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5144804" sideWeight="0.53630865" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24962178" sideWeight="0.50596255" order="2" side_tool="true" content_ui="tabs" />
@@ -3860,7 +3857,8 @@
     <MESSAGE value="เพิ่มการโหลดภาพหน้าเจ้าหน้าที่" />
     <MESSAGE value="อัพเดท Dependency" />
     <MESSAGE value="fix map error" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix map error" />
+    <MESSAGE value="add logo" />
+    <option name="LAST_COMMIT_MESSAGE" value="add logo" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -3883,19 +3881,14 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/warningsign.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_accident.xml">
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="100" column="0" selection-start-line="100" selection-start-column="0" selection-end-line="100" selection-end-column="0" />
         </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/array.xml">
@@ -3993,13 +3986,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_rescuer.xml">
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="4" column="46" selection-start-line="4" selection-start-column="46" selection-end-line="4" selection-end-column="46" />
         </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
     <entry file="file://E:/AndroidSDK/sources/android-23/org/xml/sax/helpers/ParserAdapter.java">
@@ -4022,23 +4015,23 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_addition.xml">
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/test.xml">
-      <provider editor-type-id="android-designer">
+      <provider selected="true" editor-type-id="android-designer">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/test.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
     <entry file="jar://$PROJECT_DIR$/app/libs/ParseFacebookUtilsV4-1.10.1.jar!/com/parse/ParseFacebookUtils.class">
@@ -4049,13 +4042,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/listviewsingle.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="20" column="44" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="44" />
         </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
     <entry file="jar://E:/AndroidSDK/extras/android/m2repository/com/android/support/support-v4/23.0.1/support-v4-23.0.1-sources.jar!/android/support/v4/app/TaskStackBuilder.java">
@@ -4080,13 +4073,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_accident_list.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-6.448276">
           <caret line="11" column="20" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
         </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/menu_accident_list.xml">
@@ -4125,20 +4118,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_report.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-5.862069">
           <caret line="85" column="49" selection-start-line="85" selection-start-column="49" selection-end-line="85" selection-end-column="49" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/thesos/com/sos/badboy/thesos/ReportActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="62" column="43" selection-start-line="62" selection-start-column="43" selection-end-line="62" selection-end-column="43" />
-        </state>
+      <provider editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/thesos/com/sos/badboy/thesos/TheSosApplication.java">
@@ -4212,39 +4198,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/thesos/com/sos/badboy/thesos/WaitActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="102" column="45" selection-start-line="102" selection-start-column="45" selection-end-line="102" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/thesos/com/sos/badboy/thesos/AccidentReport.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="51" column="9" selection-start-line="51" selection-start-column="9" selection-end-line="51" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/facebooklogin.png">
       <provider selected="true" editor-type-id="images">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/theme.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="6" column="41" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="41" />
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/applogo.png">
@@ -4253,22 +4209,90 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-7.724138">
           <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
           <folding />
         </state>
       </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/thesos/com/sos/badboy/thesos/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1824687">
-          <caret line="78" column="40" selection-start-line="78" selection-start-column="40" selection-end-line="78" selection-end-column="40" />
+        <state vertical-scroll-proportion="2.4633274">
+          <caret line="101" column="46" selection-start-line="101" selection-start-column="46" selection-end-line="101" selection-end-column="46" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.15205725">
+          <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/theme.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.19172932">
+          <caret line="6" column="41" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/thesos/com/sos/badboy/thesos/ReportActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.0679786">
+          <caret line="85" column="17" selection-start-line="85" selection-start-column="17" selection-end-line="85" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_wait.xml">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="52" column="51" selection-start-line="52" selection-start-column="51" selection-end-line="52" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/thesos/com/sos/badboy/thesos/WaitActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="70" column="38" selection-start-line="70" selection-start-column="38" selection-end-line="70" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/thesos/com/sos/badboy/thesos/AccidentReport.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.23434705">
+          <caret line="71" column="56" selection-start-line="71" selection-start-column="56" selection-end-line="71" selection-end-column="56" />
+          <folding>
+            <element signature="e#9471#9612#0" expanded="true" />
+            <element signature="e#9611#9612#0" expanded="true" />
+            <element signature="e#9666#9667#0" expanded="true" />
+            <element signature="e#9708#9709#0" expanded="true" />
+            <element signature="e#9746#9747#0" expanded="true" />
+            <element signature="e#9780#9781#0" expanded="true" />
+            <element signature="e#9837#9838#0" expanded="true" />
+            <element signature="e#9883#9884#0" expanded="true" />
+            <element signature="e#9923#9924#0" expanded="true" />
+            <element signature="e#9959#9960#0" expanded="true" />
+            <element signature="e#10131#10132#0" expanded="true" />
+            <element signature="e#10162#10163#0" expanded="true" />
+            <element signature="e#10210#10211#0" expanded="true" />
+            <element signature="e#10250#10251#0" expanded="true" />
+            <element signature="e#10296#10297#0" expanded="true" />
+            <element signature="e#10332#10333#0" expanded="true" />
           </folding>
         </state>
       </provider>

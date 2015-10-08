@@ -95,7 +95,7 @@ public class WaitActivity extends AppCompatActivity {
                         //เริ่มติดต่อ
                         updateCurrentStatus("เตีมความพร้อมข้อมูล");
                         updateCurrentStatus("กำลังส่งข้อมูลขึ้น Server");
-                        Log.d("theSos", "Prepair Send Accdent to Parse");
+                        Log.d("theSos", "Prepare Send Accident to Parse");
 
                         acidentReport = new AccidentReport();
                         //acidentReport.setImagesUri(imagesUri);
