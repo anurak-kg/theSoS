@@ -6,6 +6,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@color/defaultBg"
     tools:context=".MainActivity">
 
     <TextView
@@ -29,19 +30,20 @@
         style="android:Borderless"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
         android:background="@null"
         android:contentDescription="Facebook Login"
-        android:src="@drawable/facebooklogin" />
+        android:src="@drawable/facebooklogin"
+        android:layout_below="@+id/email"
+        android:layout_centerHorizontal="true" />
 
-    <TextView
-        android:id="@+id/textView3"
+    <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/loginBtn"
-        android:layout_centerHorizontal="true"
-        android:text="Medium Text"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        android:id="@+id/mainLogo"
+        android:layout_marginTop="30dp"
+        android:paddingTop="20dp"
+        android:src="@drawable/applogo"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true" />
 
 </RelativeLayout>

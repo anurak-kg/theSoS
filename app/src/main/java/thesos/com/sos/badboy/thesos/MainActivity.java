@@ -1,4 +1,5 @@
 package thesos.com.sos.badboy.thesos;
+import android.app.ActionBar;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
@@ -6,6 +7,7 @@ import android.content.pm.PackageManager;
 import android.content.pm.Signature;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Base64;
 import android.util.Log;
 import android.view.Menu;
@@ -26,7 +28,7 @@ import java.security.NoSuchAlgorithmException;
 import java.util.Arrays;
 import java.util.List;
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends AppCompatActivity {
 
     ProgressDialog progressDialog;
     private ImageButton loginBtn;
@@ -37,7 +39,6 @@ public class MainActivity extends ActionBarActivity {
         setContentView(R.layout.activity_main);
         //getHashKey();
         bindWidget();
-
         ParseUser currentUser = ParseUser.getCurrentUser();
         if ((currentUser != null) && ParseFacebookUtils.isLinked(currentUser)) {
             Intent i = new Intent(this, ReportActivity.class);
@@ -54,6 +55,7 @@ public class MainActivity extends ActionBarActivity {
 
     private void getHashKey() {
         try {
+
             PackageInfo info =     getPackageManager().getPackageInfo("thesos.com.sos.badboy.thesos",     PackageManager.GET_SIGNATURES);
             for (Signature signature : info.signatures) {
                 MessageDigest md = MessageDigest.getInstance("SHA");
