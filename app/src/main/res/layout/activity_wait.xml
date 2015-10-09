@@ -56,7 +56,6 @@
                     android:text="@string/wait_status"
                     android:layout_alignBottom="@+id/waitingLoadingIcon"
                     android:layout_centerHorizontal="true"
-                    android:textColor="#595757"
                     android:textSize="15sp" />
                 <Button
                     android:id="@+id/startThread"

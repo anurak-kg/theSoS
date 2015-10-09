@@ -11,6 +11,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -53,6 +54,7 @@ public class WaitActivity extends AppCompatActivity {
     private String objectId;
     private AccidentReport acidentReport;
     private Button waitingBtn;
+    private ProgressBar loading;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,6 +72,9 @@ public class WaitActivity extends AppCompatActivity {
         Log.d("theSos", accident.getAccidentType());
         setContentView(R.layout.activity_wait);
         bindLayout();
+
+        //เริ่มกระบวนการติดต่อเจ้าหน้าที่
+        this.start();
     }
 
     private void bindLayout() {
@@ -82,6 +87,8 @@ public class WaitActivity extends AppCompatActivity {
                 start();
             }
         });
+        loading = (ProgressBar) findViewById(R.id.waitingLoadingIcon);
+        loading.setVisibility(View.GONE);
 
     }
 
@@ -90,24 +97,21 @@ public class WaitActivity extends AppCompatActivity {
             Runnable run = new Runnable() {
                 @Override
                 public void run() {
-                    try {
-                        Thread.sleep(2000);
-                        //เริ่มติดต่อ
-                        updateCurrentStatus("เตีมความพร้อมข้อมูล");
-                        updateCurrentStatus("กำลังส่งข้อมูลขึ้น Server");
-                        Log.d("theSos", "Prepare Send Accident to Parse");
+                    //เริ่มติดต่อ
+                    updateCurrentStatus("เตีมความพร้อมข้อมูล");
+                    updateCurrentStatus("กำลังส่งข้อมูลขึ้น Server");
+                    Log.d("theSos", "Prepare Send Accident to Parse");
 
-                        acidentReport = new AccidentReport();
-                        //acidentReport.setImagesUri(imagesUri);
-                        acidentReport.setCurrentUser(currentUser);
-                        acidentReport.setTextUI(status);
-                        acidentReport.report();
+                    acidentReport = new AccidentReport(getApplicationContext());
+                    //acidentReport.setImagesUri(imagesUri);
+                    acidentReport.setCurrentUser(currentUser);
+                    acidentReport.setTextUI(status);
+                    acidentReport.setLoadingHandle(loading);
+                    acidentReport.report();
 
-                        //updateCurrentStatus("รอการติดต่อกลับ");
 
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
+
+
                 }
             };
             t = new Thread(run);
@@ -125,8 +129,6 @@ public class WaitActivity extends AppCompatActivity {
         message.setData(bundle);
         handler.sendMessageDelayed(message, 0);
     }
-
-
 
 
     private void fireRescuer() {
@@ -214,6 +216,7 @@ public class WaitActivity extends AppCompatActivity {
         );
         request.executeAsync();
     }
+
     private void setStatusText(String status) {
         this.status.setText(status);
     }

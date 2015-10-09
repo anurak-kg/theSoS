@@ -1,19 +1,28 @@
 package thesos.com.sos.badboy.thesos;
 
+import android.content.Context;
 import android.graphics.Color;
 import android.net.Uri;
+import android.text.Html;
+import android.text.Spannable;
+import android.text.Spanned;
 import android.util.Log;
-import android.widget.Button;
+import android.view.View;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.parse.FindCallback;
+import com.parse.Parse;
 import com.parse.ParseException;
 import com.parse.ParseFile;
 import com.parse.ParseGeoPoint;
 import com.parse.ParseObject;
+import com.parse.ParsePush;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -26,38 +35,74 @@ import java.util.UUID;
 public class AccidentReport {
 
     private static final long TIME_PROCESS_SLEEP = 1000;
-    private static final long MAX_TIME_WAIT = 30;
+    private static final long MAX_TIME_WAIT = 20;  //ระยะเวลาที่รอการติดต่อจากเจ้าหน้าที่
+    private static final double MAX_NEAR_KILOMETER = 10;
+    private static final int LIMIT_RESCUER = 5;
+    private static final ParseGeoPoint currentUserLocation = new ParseGeoPoint(7.8481069, 98.329275);
+    private Context context;
+
     private Uri imagesUri;
     private String TAG = "theSos";
     private ParseObject currentUser;
     private TextView status;
-    private String objectId = "3r5fNg3CTs";
+    private String objectId = "3r5fNg3CTs"; //objectId ของ อุบัติเหตุที่เกิดตอนนี้
     private List<ParseObject> list;
-    private static final ParseGeoPoint currentUserLocation = new ParseGeoPoint(7.8481069, 98.329275);
-    private static final double MAX_NEAR_KILOMATE = 10;
-    private static final int LIMIT_RESCURER = 5;
-
-    public String currentStatus;
+    public Spanned currentStatus;
     private boolean running;
+    private ProgressBar loadingProgressBar;
+    private boolean progressRunning;
 
+    public AccidentReport(Context c) {
+        this.context = c;
+    }
 
     public void report() {
         try {
-            //sendAccidentToServer();
+            setErrorStatus("มีข้อผิดผลาด");
+            Thread.sleep(1000);
+            this.setLoadingProgressBar(true);
+            // ส่งข้อมูลการเกิดอุบัติเหตุขึ้นสู่ Server PARSE
+            // sendAccidentToServer();
+
+            // ค้นห้ากู้ภับที่ใกล้ที่สุด
             this.findNearRescuer();
+            // แสดงรายชื่อกู้ภัยที่พบ
             this.showAllLocation();
-            //this.generateTempData();
-            sendAccidentToRescuer();
+
+            // สร้าง Temporary Table เพื่อใช้ติดต่อระหว่าง ผู้ใช้และกู้ภัย
+             this.generateTempData();
+
+            // ส่งการแจ้งเตือนสู่กู้ภัย
+            this.sendAccidentToRescuer();
+
+            //สิ้นสุด
+            if (this.progressRunning) {
+                this.setLoadingProgressBar(false);
+            }
+
         } catch (Exception e) {
             e.printStackTrace();
-            // this.setCurrentStatus("Error !!!");
-            // this.updateStatus();
         }
 
     }
 
-    private void sendNotification() {
+    private void sendNotification(String tempId, String title, String description, ParseGeoPoint rescuerLocation) throws ParseException {
+        JSONObject data = new JSONObject();
+        try {
+            data.put("title", title);
+            data.put("text", description);
+            data.put("accident_id", getObjectId());
+            data.put("temp_id", tempId);
 
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+
+        ParsePush push = new ParsePush();
+        push.setChannel("");
+        push.setData(data);
+        push.send();
     }
 
     private String updateRescuerStatus(String objectId) {
@@ -67,15 +112,18 @@ public class AccidentReport {
         long currentTime;
 
         try {
-            //ดาวน์โหลด จาก Parse
+            //ดาวน์โหลดข้อมูล จาก Parse
             ParseQuery tempData = ParseQuery.getQuery("tempdata");
             tempData.whereEqualTo("objectId", objectId);
             ParseObject object = tempData.getFirst();
-            // ส่ง Notification
-            // this.sendNotification();
+            object.getRelation("d");
+
+            ParseUser rescuer = object.getParseUser("rescuer").fetchIfNeeded();
+            //ส่ง Notification ไปยังกู้ภัย
+            this.sendNotification(this.objectId,object.getObjectId(),"อุบัติเหตุทางเรือ",currentUserLocation);
+
 
             // Update สถานะเป็นกำลังส่ง
-
 
             // ตรวจสอบสถานะการติดต่อ
             do {
@@ -93,16 +141,15 @@ public class AccidentReport {
                 String rescuerStatus = tempObject.getString("status");
 
                 //อัพเดทสถานะ และเวลา 
-                this.setCurrentStatus("กำลังติดต่อกู้ภัย เหลือเวลาอีก  (" + (MAX_TIME_WAIT - diffSeconds) + ") วินาที");
+                this.setCurrentStatus(Html.fromHtml("กำลังติดต่อ <b>" + rescuer.getString("name") + "</b>  เหลือเวลาอีก " + (MAX_TIME_WAIT - diffSeconds) + " วินาที"));
+
                 Log.d(TAG, tempObject.getObjectId() + " ||  สถานะ -> " + rescuerStatus);
 
                 //เมื่อกู้ภัยตอบรับ
                 if (rescuerStatus.equals("accept")) {
-                    this.setCurrentStatus("กรุณารอสักครู่ เจ้าหน้ากำลังเดินไปที่เกิดเหตุ...");
                     return "found";
-
                 }
-                //เมื่อกู้ภัยประฏิเสธ
+                //เมื่อกู้ภัยปฏิเสธ
                 else if (rescuerStatus.equals("reject")) {
                     this.setCurrentStatus("เจ้าหน้าที่ปฏิเสธ! ระบบกำลังติดต่อเจ้าหน้าที่ท่านอื่น");
                     return "not_found";
@@ -120,6 +167,7 @@ public class AccidentReport {
             } while (running);
 
         } catch (ParseException | InterruptedException e) {
+            this.setCurrentStatus("เกิดข้อผิดผลาด !!! [0x100001]");
             e.printStackTrace();
         }
         return "not_found";
@@ -127,8 +175,16 @@ public class AccidentReport {
 
     }
 
-    private void setTempStatus(String objectId, String prepair) {
-
+    private void setTempStatus(String objectId, String status) {
+        ParseQuery<ParseObject> tempdata = ParseQuery.getQuery("tempdata");
+        tempdata.whereEqualTo("objectId", this.getObjectId());
+        try {
+            ParseObject temp = tempdata.getFirst();
+            temp.put("status", status);
+            temp.save();
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
     }
 
     public void sendAccidentToRescuer() {
@@ -156,9 +212,11 @@ public class AccidentReport {
                 //ส่งการแจ้งเตือนไปยังกู้ภัย
                 for (ParseObject temp : listTemp) {
                     Log.d(TAG, "ID = " + temp.getObjectId() + "  |  Status " + temp.getString("status"));
+
+                    //เตียมข้อมูลการส่ง
                     String currentReportStatus = this.updateRescuerStatus(temp.getObjectId());
                     if (currentReportStatus.equals("found")) {
-                        this.setCurrentStatus("พบกู้ภัย");
+                        this.setCurrentStatus("กรุณารอสักครู่ เจ้าหน้ากำลังเดินไปที่เกิดเหตุ...");
                         break;
                     }
                     this.setCurrentStatus("กำลังค้นหาคนต่อไป");
@@ -178,9 +236,13 @@ public class AccidentReport {
     public void findNearRescuer() throws Exception {
         try {
             ParseQuery<ParseObject> query = ParseQuery.getQuery("_User");
-            query.whereWithinKilometers("location", currentUserLocation, MAX_NEAR_KILOMATE);
+            query.whereWithinKilometers("location", currentUserLocation, MAX_NEAR_KILOMETER);
             query.whereNotEqualTo("objectId", currentUser.getObjectId());
-            query.setLimit(LIMIT_RESCURER);
+            // เฉพาะเจ้าหน้าที่
+            // query.whereEqualTo("type","Rescuer");
+
+            //จำกัดเจ้าหน้าที่ไว้กี่คน
+            query.setLimit(LIMIT_RESCUER);
             list = query.find();
             Log.d(TAG, "พบกู้ภัยทั้งสิ้น" + list.size() + " คน.");
 
@@ -195,7 +257,7 @@ public class AccidentReport {
 
     }
 
-    private void saveTempData(ParseObject rescuer, Integer round) {
+    private void saveTempData(ParseObject rescuer) {
 
         ParseObject object = new ParseObject("tempdata");
         object.put("status", "pending");
@@ -214,7 +276,7 @@ public class AccidentReport {
     private void generateTempData() {
         int index = 0;
         for (ParseObject object : list) {
-            this.saveTempData(object, index++);
+            this.saveTempData(object);
         }
 
     }
@@ -297,13 +359,28 @@ public class AccidentReport {
         this.currentUser = currentUser;
     }
 
-    public String getCurrentStatus() {
+    public Spanned getCurrentStatus() {
         return currentStatus;
     }
 
-    public void setCurrentStatus(String currentStatus) {
+    private void setCurrentStatus(String currentStatus) {
+        this.currentStatus = Html.fromHtml(currentStatus);
+        this.updateStatus();
+    }
+
+    private void setErrorStatus(String currentStatus) {
+        this.currentStatus = Html.fromHtml("<font color=\"red\"><b>" + currentStatus + "</b></font>");
+        this.updateStatus();
+    }
+
+    private void setCurrentStatus(Spanned currentStatus) {
         this.currentStatus = currentStatus;
         this.updateStatus();
+    }
+
+
+    private void setCurrentColor(int color) {
+        // status.setTextColor(color);
     }
 
     public String getObjectId() {
@@ -316,5 +393,28 @@ public class AccidentReport {
 
     public void setTextUI(TextView textUI) {
         this.status = textUI;
+    }
+
+    public void setLoadingHandle(ProgressBar loading) {
+        this.loadingProgressBar = loading;
+    }
+
+    public void setLoadingProgressBar(boolean running) {
+        this.progressRunning = running;
+        if (running) {
+            loadingProgressBar.post(new Runnable() {
+                @Override
+                public void run() {
+                    loadingProgressBar.setVisibility(View.VISIBLE);
+                }
+            });
+        } else {
+            loadingProgressBar.post(new Runnable() {
+                @Override
+                public void run() {
+                    loadingProgressBar.setVisibility(View.GONE);
+                }
+            });
+        }
     }
 }
