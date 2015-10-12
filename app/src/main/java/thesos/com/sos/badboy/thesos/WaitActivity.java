@@ -3,6 +3,7 @@ package thesos.com.sos.badboy.thesos;
 import android.net.Uri;
 import android.os.Handler;
 import android.os.Message;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -11,6 +12,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -55,6 +57,7 @@ public class WaitActivity extends AppCompatActivity {
     private AccidentReport acidentReport;
     private Button waitingBtn;
     private ProgressBar loading;
+    private ImageView statusIcon;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,15 +83,11 @@ public class WaitActivity extends AppCompatActivity {
     private void bindLayout() {
         status = (TextView) findViewById(R.id.loadingTxtTop);
 
-        waitingBtn = (Button) findViewById(R.id.startThread);
-        waitingBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                start();
-            }
-        });
+        statusIcon = (ImageView) findViewById(R.id.statusIcon);
+        statusIcon.setVisibility(View.GONE);
         loading = (ProgressBar) findViewById(R.id.waitingLoadingIcon);
         loading.setVisibility(View.GONE);
+
 
     }
 
@@ -107,7 +106,25 @@ public class WaitActivity extends AppCompatActivity {
                     acidentReport.setCurrentUser(currentUser);
                     acidentReport.setTextUI(status);
                     acidentReport.setLoadingHandle(loading);
-                    acidentReport.report();
+                    if(acidentReport.report()){
+                        statusIcon.post(new Runnable() {
+                            @Override
+                            public void run() {
+                                statusIcon.setImageResource(R.drawable.tick);
+                                statusIcon.setVisibility(View.VISIBLE);
+
+                            }
+                        });
+                    }else {
+                        statusIcon.post(new Runnable() {
+                            @Override
+                            public void run() {
+                                statusIcon.setImageResource(R.drawable.failsubmiticon);
+                                statusIcon.setVisibility(View.VISIBLE);
+
+                            }
+                        });
+                    }
 
 
 

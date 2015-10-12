@@ -1,18 +1,14 @@
 package thesos.com.sos.badboy.thesos;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.net.Uri;
 import android.text.Html;
-import android.text.Spannable;
 import android.text.Spanned;
 import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.parse.Parse;
 import com.parse.ParseException;
 import com.parse.ParseFile;
 import com.parse.ParseGeoPoint;
@@ -39,8 +35,8 @@ public class AccidentReport {
     private static final double MAX_NEAR_KILOMETER = 10;
     private static final int LIMIT_RESCUER = 5;
     private static final ParseGeoPoint currentUserLocation = new ParseGeoPoint(7.8481069, 98.329275);
-    private Context context;
 
+    private Context context;
     private Uri imagesUri;
     private String TAG = "theSos";
     private ParseObject currentUser;
@@ -56,10 +52,9 @@ public class AccidentReport {
         this.context = c;
     }
 
-    public void report() {
+    public boolean report() {
         try {
-            setErrorStatus("มีข้อผิดผลาด");
-            Thread.sleep(1000);
+            Thread.sleep(50);
             this.setLoadingProgressBar(true);
             // ส่งข้อมูลการเกิดอุบัติเหตุขึ้นสู่ Server PARSE
             // sendAccidentToServer();
@@ -70,21 +65,33 @@ public class AccidentReport {
             this.showAllLocation();
 
             // สร้าง Temporary Table เพื่อใช้ติดต่อระหว่าง ผู้ใช้และกู้ภัย
-             this.generateTempData();
+            this.generateTempData();
 
             // ส่งการแจ้งเตือนสู่กู้ภัย
-            this.sendAccidentToRescuer();
+            if (this.sendAccidentToRescuer()) {
+                setCurrentStatus("กรุณารอสักครู่ เจ้าหน้าที่กำลังเดินทาง....", "green");
+                stopProgress();
+                return true;
+            } else {
+                setCurrentStatus("ไม่พบกู้ภัย หรือ ไม่มีกู้ภัยที่ว่างในขณะนี้...", "red");
+                stopProgress();
+                return false;
 
-            //สิ้นสุด
-            if (this.progressRunning) {
-                this.setLoadingProgressBar(false);
             }
 
         } catch (Exception e) {
             e.printStackTrace();
+            setCurrentStatus("เกิดข้อผิดผลาดในการส่งการแจ้งเตือน", "red");
+            return false;
         }
-
     }
+
+    private void stopProgress() {
+        if (this.progressRunning) {
+            this.setLoadingProgressBar(false);
+        }
+    }
+
 
     private void sendNotification(String tempId, String title, String description, ParseGeoPoint rescuerLocation) throws ParseException {
         JSONObject data = new JSONObject();
@@ -120,7 +127,7 @@ public class AccidentReport {
 
             ParseUser rescuer = object.getParseUser("rescuer").fetchIfNeeded();
             //ส่ง Notification ไปยังกู้ภัย
-            this.sendNotification(this.objectId,object.getObjectId(),"อุบัติเหตุทางเรือ",currentUserLocation);
+            this.sendNotification(this.objectId, object.getObjectId(), "อุบัติเหตุทางเรือ", currentUserLocation);
 
 
             // Update สถานะเป็นกำลังส่ง
@@ -146,18 +153,21 @@ public class AccidentReport {
                 Log.d(TAG, tempObject.getObjectId() + " ||  สถานะ -> " + rescuerStatus);
 
                 //เมื่อกู้ภัยตอบรับ
-                if (rescuerStatus.equals("accept")) {
+                if (rescuerStatus.equals("ACCEPT")) {
+                    this.setAccidentStatus("ACCEPT");
                     return "found";
                 }
                 //เมื่อกู้ภัยปฏิเสธ
-                else if (rescuerStatus.equals("reject")) {
-                    this.setCurrentStatus("เจ้าหน้าที่ปฏิเสธ! ระบบกำลังติดต่อเจ้าหน้าที่ท่านอื่น");
+                else if (rescuerStatus.equals("REJECT")) {
+                    this.setCurrentStatus("เจ้าหน้าที่ปฏิเสธ! ระบบกำลังติดต่อเจ้าหน้าที่ท่านอื่น", "#f47835");
+                    Thread.sleep(2000);
                     return "not_found";
                 }
 
                 //เมื่อเวลาเกินจากที่ต้องใว้ให้ค้นหาคนถัดไป
                 if (diffSeconds > MAX_TIME_WAIT) {
                     this.setCurrentStatus("หมดเวลา");
+                    this.setTempStatus(tempObject.getObjectId(), "TIMEOUT");
                     return "not_found";
                 }
 
@@ -167,7 +177,7 @@ public class AccidentReport {
             } while (running);
 
         } catch (ParseException | InterruptedException e) {
-            this.setCurrentStatus("เกิดข้อผิดผลาด !!! [0x100001]");
+            this.setCurrentStatus("เกิดข้อผิดผลาด !!! [0x100001]", "RED");
             e.printStackTrace();
         }
         return "not_found";
@@ -177,7 +187,7 @@ public class AccidentReport {
 
     private void setTempStatus(String objectId, String status) {
         ParseQuery<ParseObject> tempdata = ParseQuery.getQuery("tempdata");
-        tempdata.whereEqualTo("objectId", this.getObjectId());
+        tempdata.whereEqualTo("objectId", objectId);
         try {
             ParseObject temp = tempdata.getFirst();
             temp.put("status", status);
@@ -187,16 +197,30 @@ public class AccidentReport {
         }
     }
 
-    public void sendAccidentToRescuer() {
+    private void setAccidentStatus(String status) {
+        ParseQuery<ParseObject> accident = ParseQuery.getQuery("accident");
+        accident.whereEqualTo("objectId", this.objectId);
+        try {
+            ParseObject temp = accident.getFirst();
+            temp.put("status", status);
+            temp.save();
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public boolean sendAccidentToRescuer() {
         synchronized (this) {
 
             try {
+                this.setAccidentStatus("CONTACTING");
+
                 ParseQuery<ParseObject> accident = ParseQuery.getQuery("accident");
                 accident.whereEqualTo("objectId", this.getObjectId());
                 ParseQuery<ParseObject> query = ParseQuery.getQuery("tempdata");
                 query.whereMatchesQuery("accident", accident);
                 //ค้นหาเฉพาะที่มีสถานะ pending
-                query.whereEqualTo("status", "pending");
+                query.whereEqualTo("status", "PENDING");
 
                 List<ParseObject> listTemp;
                 listTemp = query.find();
@@ -205,8 +229,8 @@ public class AccidentReport {
                 int count = query.count();
                 Log.d(TAG, "Count : " + count);
                 if (count == 0) {
-                    this.setCurrentStatus("ไม่พบกู้ภัย" + query.count());
-                    throw new Exception();
+                    this.setCurrentStatus("ไม่พบกู้ภัยที่อยุ่ในบริเวณใกล้เคียง", "red");
+                    return false;
                 }
 
                 //ส่งการแจ้งเตือนไปยังกู้ภัย
@@ -217,12 +241,14 @@ public class AccidentReport {
                     String currentReportStatus = this.updateRescuerStatus(temp.getObjectId());
                     if (currentReportStatus.equals("found")) {
                         this.setCurrentStatus("กรุณารอสักครู่ เจ้าหน้ากำลังเดินไปที่เกิดเหตุ...");
-                        break;
+                        return true;
                     }
                     this.setCurrentStatus("กำลังค้นหาคนต่อไป");
                     Thread.sleep(100);
-
                 }
+                this.setAccidentStatus("NOT_ACCEPT");
+
+                return false;
 
             } catch (Exception e) {
                 e.printStackTrace();
@@ -231,10 +257,12 @@ public class AccidentReport {
 
         }
 
+        return false;
     }
 
     public void findNearRescuer() throws Exception {
         try {
+            this.setAccidentStatus("FINDING");
             ParseQuery<ParseObject> query = ParseQuery.getQuery("_User");
             query.whereWithinKilometers("location", currentUserLocation, MAX_NEAR_KILOMETER);
             query.whereNotEqualTo("objectId", currentUser.getObjectId());
@@ -247,7 +275,8 @@ public class AccidentReport {
             Log.d(TAG, "พบกู้ภัยทั้งสิ้น" + list.size() + " คน.");
 
             if (list.size() == 0) {
-                this.setCurrentStatus("ไม่พบกู้ภัย");
+                this.setCurrentStatus("ไม่พบกู้ภัย", "red");
+                this.setAccidentStatus("NOT_FOUND");
                 throw new Exception();
             }
 
@@ -260,7 +289,7 @@ public class AccidentReport {
     private void saveTempData(ParseObject rescuer) {
 
         ParseObject object = new ParseObject("tempdata");
-        object.put("status", "pending");
+        object.put("status", "PENDING");
         ParseObject res = ParseObject.createWithoutData("_User", rescuer.getObjectId());
         object.put("rescuer", res);
         object.put("location", rescuer.getParseGeoPoint("location"));
@@ -310,10 +339,9 @@ public class AccidentReport {
 
             }
             pr.put("victimId", currentUser);
-            pr.put("status", "waiting");
-            pr.saveInBackground();
+            pr.put("status", "WAITING");
             pr.save();
-            objectId = pr.getObjectId();
+            this.objectId = pr.getObjectId();
             Log.d(TAG, "The object id is: " + pr.getObjectId());
             Log.d(TAG, "Send Object to Parse Server");
         } catch (IOException e) {
@@ -368,8 +396,8 @@ public class AccidentReport {
         this.updateStatus();
     }
 
-    private void setErrorStatus(String currentStatus) {
-        this.currentStatus = Html.fromHtml("<font color=\"red\"><b>" + currentStatus + "</b></font>");
+    private void setCurrentStatus(String currentStatus, String color) {
+        this.currentStatus = Html.fromHtml("<font color=\"" + color + "\"><b>" + currentStatus + "</b></font>");
         this.updateStatus();
     }
 
