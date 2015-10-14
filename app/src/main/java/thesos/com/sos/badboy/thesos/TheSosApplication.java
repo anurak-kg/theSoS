@@ -17,6 +17,7 @@ public class TheSosApplication extends Application{
     @Override
     public void onCreate() {
         super.onCreate();
+
         // Initialization code here
         // Set your Parse app id and client key in strings.xml
         Parse.initialize(this, getString(R.string.applicationId), getString(R.string.clientKey));

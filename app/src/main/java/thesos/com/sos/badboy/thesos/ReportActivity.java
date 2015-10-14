@@ -10,7 +10,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -24,8 +24,8 @@ import android.widget.Toast;
 
 import com.facebook.*;
 import com.facebook.login.widget.ProfilePictureView;
-import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.MapFragment;
+import com.google.android.gms.maps.*;
+import com.google.android.gms.maps.model.*;
 import com.parse.*;
 
 import org.json.JSONException;
@@ -36,7 +36,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 
-public class ReportActivity extends ActionBarActivity {
+public class ReportActivity extends AppCompatActivity implements OnMapReadyCallback {
 
     public Location locationGPS;
     String telephone;
@@ -65,15 +65,6 @@ public class ReportActivity extends ActionBarActivity {
 
         bindLayout();
 
-
-        Button testBtn = (Button) findViewById(R.id.testBtn);
-        testBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                goToTestActivity();
-            }
-        });
-        //Button logoutBtn = (Button) findViewById(R.id.logout);
         Bundle i = getIntent().getExtras();
         if (i != null) {
             telephone = i.getString("Phone");
@@ -92,7 +83,7 @@ public class ReportActivity extends ActionBarActivity {
             makeMeRequest();
         }
 
-        bindMapWidget();
+         bindMapWidget();
     }
 
     private void bindLayout() {
@@ -197,32 +188,14 @@ public class ReportActivity extends ActionBarActivity {
 
     }
 
-    private void sendAlert() {
-        final ParseGeoPoint userGeolocation = new ParseGeoPoint(locationGPS.getLatitude(), locationGPS.getLongitude());
-        ParseQuery query = new ParseQuery("_User");
-        query.whereNear("location", userGeolocation);
-        query.whereNotEqualTo("username", currentUser.getUsername());
-        /*query.getFirstInBackground(new GetCallback() {
-            @Override
-            public void done(ParseObject parseObject, ParseException e) {
-                if (e == null) {
-                    Toast.makeText(
-                            getApplicationContext(),
-                            parseObject.getString("username") + "  ห่างกัน: " + userGeolocation.distanceInKilometersTo(parseObject.getParseGeoPoint("location")) + "กม.",
-                            Toast.LENGTH_LONG).show();
-                    sendAlertInfo(parseObject.getObjectId());
-                } else {
-                    Log.d("Send", "Error Code 0x40003");
-                    e.printStackTrace();
-                }
-            }
-        });*/
-
-    }
 
     private void bindMapWidget() {
         try {
-            /*map = ((MapFragment) getFragmentManager().findFragmentById(R.id.map)).getMap();
+            MapFragment mapFragment = (MapFragment) getFragmentManager()
+                    .findFragmentById(R.id.map);
+            mapFragment.getMapAsync(this);
+
+            map = ((MapFragment) getFragmentManager().findFragmentById(R.id.map)).getMap();
             map.setMyLocationEnabled(true);
             LocationManager lm = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
             Location location = lm.getLastKnownLocation(LocationManager.GPS_PROVIDER);
@@ -230,7 +203,7 @@ public class ReportActivity extends ActionBarActivity {
             latitude = location.getLatitude();
             Log.d("mapWidget", "Long" + longitude + "  Lat :" + latitude);
             LatLng myLocation = new LatLng(latitude, longitude);
-            map.moveCamera(CameraUpdateFactory.newLatLngZoom(myLocation, 13));*/
+            map.moveCamera(CameraUpdateFactory.newLatLngZoom(myLocation, 13));
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -437,9 +410,8 @@ public class ReportActivity extends ActionBarActivity {
         mBestLocationProvider.startLocationUpdatesWithListener(mBestLocationListener);
     }
 
+    @Override
+    public void onMapReady(GoogleMap googleMap) {
 
-    public void makeText(String text) {
-        Toast toast = new Toast(getApplicationContext());
-        toast.makeText(getApplicationContext(), text, Toast.LENGTH_SHORT);
     }
 }
