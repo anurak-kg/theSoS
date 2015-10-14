@@ -20,9 +20,13 @@
   <component name="AndroidLogFilters">
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/app/src/main/java/thesos/com/sos/badboy/thesos/ReportActivity.java" line="126" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="52107420-a48c-4e48-ac67-5ff1456a9497" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build.gradle" afterPath="$PROJECT_DIR$/app/build.gradle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/thesos/com/sos/badboy/thesos/ReportActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/thesos/com/sos/badboy/thesos/ReportActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_report.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_report.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="theSOS.iws" />
@@ -63,38 +67,13 @@
             <state vertical-scroll-proportion="0.0">
               <caret line="398" column="71" selection-start-line="398" selection-start-column="71" selection-end-line="398" selection-end-column="71" />
               <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#1571#1572#0" expanded="false" />
-                <element signature="e#1603#1604#0" expanded="false" />
                 <element signature="e#4148#4175#0" expanded="false" />
                 <element signature="method#showAllLocation#0;class#AccidentReport#0" expanded="false" />
                 <element signature="method#convertImageToByte#0;class#AccidentReport#0" expanded="false" />
                 <element signature="method#updateStatus#0;class#AccidentReport#0" expanded="false" />
-                <element signature="e#12879#12880#0" expanded="false" />
-                <element signature="e#12940#12941#0" expanded="false" />
-                <element signature="e#13005#13006#0" expanded="false" />
-                <element signature="e#13047#13048#0" expanded="false" />
-                <element signature="e#13085#13086#0" expanded="false" />
-                <element signature="e#13119#13120#0" expanded="false" />
-                <element signature="e#13176#13177#0" expanded="false" />
-                <element signature="e#13222#13223#0" expanded="false" />
-                <element signature="e#13263#13264#0" expanded="false" />
-                <element signature="e#13299#13300#0" expanded="false" />
                 <element signature="method#setCurrentStatus#2;class#AccidentReport#0" expanded="false" />
                 <element signature="method#setCurrentColor#0;class#AccidentReport#0" expanded="false" />
-                <element signature="e#13940#13941#0" expanded="false" />
-                <element signature="e#13971#13972#0" expanded="false" />
-                <element signature="e#14019#14020#0" expanded="false" />
-                <element signature="e#14059#14060#0" expanded="false" />
-                <element signature="e#14105#14106#0" expanded="false" />
-                <element signature="e#14141#14142#0" expanded="false" />
-                <element signature="e#14198#14199#0" expanded="false" />
-                <element signature="e#14247#14248#0" expanded="false" />
                 <element signature="method#setLoadingProgressBar#0;class#AccidentReport#0" expanded="false" />
-                <element signature="e#14483#14484#0" expanded="false" />
-                <element signature="e#14569#14570#0" expanded="false" />
-                <element signature="e#14717#14718#0" expanded="false" />
-                <element signature="e#14800#14801#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -114,53 +93,27 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ReportActivity.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ReportActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/thesos/com/sos/badboy/thesos/ReportActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="412" column="0" selection-start-line="412" selection-start-column="0" selection-end-line="412" selection-end-column="0" />
+            <state vertical-scroll-proportion="-2.9803221">
+              <caret line="44" column="15" selection-start-line="44" selection-start-column="15" selection-end-line="44" selection-end-column="15" />
               <folding>
-                <element signature="e#2068#2129#0" expanded="false" />
-                <element signature="method#bindLayout#0;class#ReportActivity#0" expanded="false" />
-                <element signature="method#redirectToWaiting#0;class#ReportActivity#0" expanded="false" />
-                <element signature="method#getAccidentData#0;class#ReportActivity#0" expanded="false" />
-                <element signature="method#bindMapWidget#0;class#ReportActivity#0" expanded="false" />
-                <element signature="method#makeMeRequest#0;class#ReportActivity#0" expanded="false" />
+                <element signature="e#2178#2239#0" expanded="false" />
+                <element signature="e#4184#4572#0" expanded="true" />
+                <element signature="e#4571#4572#0" expanded="true" />
                 <element signature="method#updateViewsWithProfileInfo#0;class#ReportActivity#0" expanded="false" />
-                <element signature="e#12686#12733#0" expanded="false" />
+                <element signature="e#12928#12975#0" expanded="false" />
                 <element signature="method#logout#0;class#ReportActivity#0" expanded="false" />
                 <element signature="method#startLoginActivity#0;class#ReportActivity#0" expanded="false" />
                 <element signature="method#onCreateOptionsMenu#0;class#ReportActivity#0" expanded="false" />
-                <element signature="e#14279#14337#0" expanded="false" />
-                <element signature="method#onStatusChanged#0;class#14869:15493" expanded="false" />
-                <element signature="method#onProviderEnabled#0;class#14869:15493" expanded="false" />
-                <element signature="method#onProviderDisabled#0;class#14869:15493" expanded="false" />
-                <element signature="method#onLocationUpdateTimeoutExceeded#0;class#14869:15493" expanded="false" />
-                <element signature="method#onLocationUpdate#0;class#14869:15493" expanded="false" />
+                <element signature="e#14521#14579#0" expanded="false" />
+                <element signature="method#onStatusChanged#0;class#15111:15735" expanded="false" />
+                <element signature="method#onProviderEnabled#0;class#15111:15735" expanded="false" />
+                <element signature="method#onProviderDisabled#0;class#15111:15735" expanded="false" />
+                <element signature="method#onLocationUpdateTimeoutExceeded#0;class#15111:15735" expanded="false" />
+                <element signature="method#onLocationUpdate#0;class#15111:15735" expanded="false" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TheSosApplication.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/thesos/com/sos/badboy/thesos/TheSosApplication.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="25" column="29" selection-start-line="25" selection-start-column="29" selection-end-line="25" selection-end-column="29" />
-              <folding>
-                <element signature="e#898#1251#0" expanded="true" />
-                <element signature="e#1250#1251#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/thesos/com/sos/badboy/thesos/MainActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="52" selection-end-column="11" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -168,8 +121,8 @@
       <file leaf-file-name="activity_report.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_report.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0">
-              <caret line="88" column="67" selection-start-line="88" selection-start-column="67" selection-end-line="88" selection-end-column="67" />
+            <state vertical-scroll-proportion="10.448276">
+              <caret line="93" column="0" selection-start-line="93" selection-start-column="0" selection-end-line="93" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -178,10 +131,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="true">
+      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.58419245">
+            <state vertical-scroll-proportion="0.0">
               <caret line="10" column="25" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
               <folding />
             </state>
@@ -3472,10 +3425,10 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_wait.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/thesos/com/sos/badboy/thesos/AccidentReport.java" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_report.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/thesos/com/sos/badboy/thesos/TheSosApplication.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/thesos/com/sos/badboy/thesos/ReportActivity.java" />
         <option value="$PROJECT_DIR$/app/build.gradle" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_report.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/thesos/com/sos/badboy/thesos/ReportActivity.java" />
       </list>
     </option>
   </component>
@@ -3622,7 +3575,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="recentsLimit" value="5" />
-    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="emulator-5554" />
+    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="169.254.91.101:5555" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
     <property name="FullScreen" value="false" />
     <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager2.STATE" value="ToolWindow" />
@@ -3985,7 +3938,13 @@
       <option name="project" value="LOCAL" />
       <updated>1444840106030</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="update build tool versuin to 23.0.1">
+      <created>1444840176822</created>
+      <option name="number" value="00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1444840176822</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TodoView">
@@ -4006,7 +3965,7 @@
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32980332" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879046" sideWeight="0.49394855" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32980332" sideWeight="0.50596255" order="6" side_tool="true" content_ui="tabs" />
-      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.45655876" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" x="3" y="390" width="1197" height="307" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.45655876" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" x="3" y="390" width="1197" height="307" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32980332" sideWeight="0.49063033" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39863715" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33049405" sideWeight="0.5204236" order="7" side_tool="true" content_ui="tabs" x="1374" y="7" width="509" height="691" />
@@ -4054,7 +4013,8 @@
     <MESSAGE value="เพิ่มการส่งการแจ้งเตือน" />
     <MESSAGE value="หน้าแจ้งเตือนเสร็จสมบูณ" />
     <MESSAGE value="fix map error" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix map error" />
+    <MESSAGE value="update build tool versuin to 23.0.1" />
+    <option name="LAST_COMMIT_MESSAGE" value="update build tool versuin to 23.0.1" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -4077,13 +4037,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/menu_telephone.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/menu_report.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -4356,6 +4309,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="119" column="26" selection-start-line="119" selection-start-column="26" selection-end-line="119" selection-end-column="26" />
+          <folding>
+            <element signature="e#3515#3516#0" expanded="false" />
+            <element signature="e#3566#3567#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -4409,47 +4366,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.36742425">
           <caret line="33" column="13" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/thesos/com/sos/badboy/thesos/AccidentReport.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="398" column="71" selection-start-line="398" selection-start-column="71" selection-end-line="398" selection-end-column="71" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1571#1572#0" expanded="false" />
-            <element signature="e#1603#1604#0" expanded="false" />
-            <element signature="e#4148#4175#0" expanded="false" />
-            <element signature="method#showAllLocation#0;class#AccidentReport#0" expanded="false" />
-            <element signature="method#convertImageToByte#0;class#AccidentReport#0" expanded="false" />
-            <element signature="method#updateStatus#0;class#AccidentReport#0" expanded="false" />
-            <element signature="e#12879#12880#0" expanded="false" />
-            <element signature="e#12940#12941#0" expanded="false" />
-            <element signature="e#13005#13006#0" expanded="false" />
-            <element signature="e#13047#13048#0" expanded="false" />
-            <element signature="e#13085#13086#0" expanded="false" />
-            <element signature="e#13119#13120#0" expanded="false" />
-            <element signature="e#13176#13177#0" expanded="false" />
-            <element signature="e#13222#13223#0" expanded="false" />
-            <element signature="e#13263#13264#0" expanded="false" />
-            <element signature="e#13299#13300#0" expanded="false" />
-            <element signature="method#setCurrentStatus#2;class#AccidentReport#0" expanded="false" />
-            <element signature="method#setCurrentColor#0;class#AccidentReport#0" expanded="false" />
-            <element signature="e#13940#13941#0" expanded="false" />
-            <element signature="e#13971#13972#0" expanded="false" />
-            <element signature="e#14019#14020#0" expanded="false" />
-            <element signature="e#14059#14060#0" expanded="false" />
-            <element signature="e#14105#14106#0" expanded="false" />
-            <element signature="e#14141#14142#0" expanded="false" />
-            <element signature="e#14198#14199#0" expanded="false" />
-            <element signature="e#14247#14248#0" expanded="false" />
-            <element signature="method#setLoadingProgressBar#0;class#AccidentReport#0" expanded="false" />
-            <element signature="e#14483#14484#0" expanded="false" />
-            <element signature="e#14569#14570#0" expanded="false" />
-            <element signature="e#14717#14718#0" expanded="false" />
-            <element signature="e#14800#14801#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -4465,14 +4382,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/thesos/com/sos/badboy/thesos/TheSosApplication.java">
+    <entry file="file://$PROJECT_DIR$/app/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="25" column="29" selection-start-line="25" selection-start-column="29" selection-end-line="25" selection-end-column="29" />
-          <folding>
-            <element signature="e#898#1251#0" expanded="true" />
-            <element signature="e#1250#1251#0" expanded="true" />
-          </folding>
+          <caret line="10" column="25" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -4484,10 +4398,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_report.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/thesos/com/sos/badboy/thesos/TheSosApplication.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="88" column="67" selection-start-line="88" selection-start-column="67" selection-end-line="88" selection-end-column="67" />
+          <caret line="25" column="29" selection-start-line="25" selection-start-column="29" selection-end-line="25" selection-end-column="29" />
+          <folding>
+            <element signature="e#898#1251#0" expanded="false" />
+            <element signature="e#1250#1251#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/thesos/com/sos/badboy/thesos/AccidentReport.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="398" column="71" selection-start-line="398" selection-start-column="71" selection-end-line="398" selection-end-column="71" />
+          <folding>
+            <element signature="e#4148#4175#0" expanded="false" />
+            <element signature="method#showAllLocation#0;class#AccidentReport#0" expanded="false" />
+            <element signature="method#convertImageToByte#0;class#AccidentReport#0" expanded="false" />
+            <element signature="method#updateStatus#0;class#AccidentReport#0" expanded="false" />
+            <element signature="method#setCurrentStatus#2;class#AccidentReport#0" expanded="false" />
+            <element signature="method#setCurrentColor#0;class#AccidentReport#0" expanded="false" />
+            <element signature="method#setLoadingProgressBar#0;class#AccidentReport#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_report.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="10.448276">
+          <caret line="93" column="0" selection-start-line="93" selection-start-column="0" selection-end-line="93" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -4495,37 +4436,34 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/thesos/com/sos/badboy/thesos/ReportActivity.java">
+    <entry file="file://E:/AndroidSDK/sources/android-23/android/location/Location.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="412" column="0" selection-start-line="412" selection-start-column="0" selection-end-line="412" selection-end-column="0" />
-          <folding>
-            <element signature="e#2068#2129#0" expanded="false" />
-            <element signature="method#bindLayout#0;class#ReportActivity#0" expanded="false" />
-            <element signature="method#redirectToWaiting#0;class#ReportActivity#0" expanded="false" />
-            <element signature="method#getAccidentData#0;class#ReportActivity#0" expanded="false" />
-            <element signature="method#bindMapWidget#0;class#ReportActivity#0" expanded="false" />
-            <element signature="method#makeMeRequest#0;class#ReportActivity#0" expanded="false" />
-            <element signature="method#updateViewsWithProfileInfo#0;class#ReportActivity#0" expanded="false" />
-            <element signature="e#12686#12733#0" expanded="false" />
-            <element signature="method#logout#0;class#ReportActivity#0" expanded="false" />
-            <element signature="method#startLoginActivity#0;class#ReportActivity#0" expanded="false" />
-            <element signature="method#onCreateOptionsMenu#0;class#ReportActivity#0" expanded="false" />
-            <element signature="e#14279#14337#0" expanded="false" />
-            <element signature="method#onStatusChanged#0;class#14869:15493" expanded="false" />
-            <element signature="method#onProviderEnabled#0;class#14869:15493" expanded="false" />
-            <element signature="method#onProviderDisabled#0;class#14869:15493" expanded="false" />
-            <element signature="method#onLocationUpdateTimeoutExceeded#0;class#14869:15493" expanded="false" />
-            <element signature="method#onLocationUpdate#0;class#14869:15493" expanded="false" />
-          </folding>
+        <state vertical-scroll-proportion="-0.6708408">
+          <caret line="40" column="13" selection-start-line="40" selection-start-column="13" selection-end-line="40" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/build.gradle">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/thesos/com/sos/badboy/thesos/ReportActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.58419245">
-          <caret line="10" column="25" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
-          <folding />
+        <state vertical-scroll-proportion="-2.9803221">
+          <caret line="44" column="15" selection-start-line="44" selection-start-column="15" selection-end-line="44" selection-end-column="15" />
+          <folding>
+            <element signature="e#2178#2239#0" expanded="false" />
+            <element signature="e#4184#4572#0" expanded="true" />
+            <element signature="e#4571#4572#0" expanded="true" />
+            <element signature="method#updateViewsWithProfileInfo#0;class#ReportActivity#0" expanded="false" />
+            <element signature="e#12928#12975#0" expanded="false" />
+            <element signature="method#logout#0;class#ReportActivity#0" expanded="false" />
+            <element signature="method#startLoginActivity#0;class#ReportActivity#0" expanded="false" />
+            <element signature="method#onCreateOptionsMenu#0;class#ReportActivity#0" expanded="false" />
+            <element signature="e#14521#14579#0" expanded="false" />
+            <element signature="method#onStatusChanged#0;class#15111:15735" expanded="false" />
+            <element signature="method#onProviderEnabled#0;class#15111:15735" expanded="false" />
+            <element signature="method#onProviderDisabled#0;class#15111:15735" expanded="false" />
+            <element signature="method#onLocationUpdateTimeoutExceeded#0;class#15111:15735" expanded="false" />
+            <element signature="method#onLocationUpdate#0;class#15111:15735" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

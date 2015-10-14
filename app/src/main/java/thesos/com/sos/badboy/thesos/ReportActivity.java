@@ -1,12 +1,16 @@
 package thesos.com.sos.badboy.thesos;
 
+import android.*;
+import android.Manifest;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.location.Location;
 import android.location.LocationManager;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
@@ -83,7 +87,7 @@ public class ReportActivity extends AppCompatActivity implements OnMapReadyCallb
             makeMeRequest();
         }
 
-         bindMapWidget();
+        bindMapWidget();
     }
 
     private void bindLayout() {
@@ -116,9 +120,12 @@ public class ReportActivity extends AppCompatActivity implements OnMapReadyCallb
         alertBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // sendAlert();
-                redirectToWaiting();
-                Log.d("Alert", "Clikkkkkkkkkkk");
+                if(locationGPS != null){
+                    redirectToWaiting();
+                }
+                else{
+                    Toast.makeText(ReportActivity.this, "ไม่พบบตำแหน่งของผู้ใช้ โปรดเช็คการตั้งค่า GPS", Toast.LENGTH_LONG).show();
+                }
             }
         });
     }
@@ -163,29 +170,6 @@ public class ReportActivity extends AppCompatActivity implements OnMapReadyCallb
         accident.setAccidentDescription("Bla Bla Bla");
         //accident.setUri(uri.toString());
         return accident;
-
-        /*ParseObject pr = new ParseObject("accident");
-        pr.put("accidentType", "อุบัติเหตุทางรถยนต์");
-        pr.put("location", new ParseGeoPoint(locationGPS.getLatitude(), locationGPS.getLongitude()));
-        pr.put("accidentDescription", "Bla Bla Bla");
-        pr.put("rescuerId", ParseObject.createWithoutData("_User", rescuerId));
-        pr.put("victimId", currentUser);
-        pr.put("status", "waiting");
-        pr.saveInBackground(new SaveCallback() {
-            @Override
-            public void done(ParseException e) {
-                if (e == null) {
-                    Toast.makeText(getApplicationContext(), "Send Success", Toast.LENGTH_SHORT).show();
-                    Log.d("Alert", "Send Success" + latitude + " l :" + longitude);
-                } else {
-                    Log.d("Alert", "Send Error" + e.getLocalizedMessage());
-                    makeText("Error Code 0x40002");
-                }
-
-            }
-        });*/
-
-
     }
 
 
@@ -198,6 +182,18 @@ public class ReportActivity extends AppCompatActivity implements OnMapReadyCallb
             map = ((MapFragment) getFragmentManager().findFragmentById(R.id.map)).getMap();
             map.setMyLocationEnabled(true);
             LocationManager lm = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                if (checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && checkSelfPermission(Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                    // TODO: Consider calling
+                    //    public void requestPermissions(@NonNull String[] permissions, int requestCode)
+                    // here to request the missing permissions, and then overriding
+                    //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+                    //                                          int[] grantResults)
+                    // to handle the case where the user grants the permission. See the documentation
+                    // for Activity#requestPermissions for more details.
+                    return;
+                }
+            }
             Location location = lm.getLastKnownLocation(LocationManager.GPS_PROVIDER);
             longitude = location.getLongitude();
             latitude = location.getLatitude();
