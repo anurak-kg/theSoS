@@ -18,6 +18,19 @@ public class Accident implements Serializable {
     private String accidentDescription;
     private String accidentStatus;
     private String uri;
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    private String address;
+
+    private String victimName;
+
     private double latitude;
     private double longitude;
 
@@ -36,7 +49,8 @@ public class Accident implements Serializable {
     public void setAccidentType(String accidentType) {
         this.accidentType = accidentType;
     }
-    public void setLocation(double latitude,double longitude){
+
+    public void setLocation(double latitude, double longitude) {
         this.latitude = latitude;
         this.longitude = longitude;
 
@@ -74,6 +88,14 @@ public class Accident implements Serializable {
 
     public void setUri(String uri) {
         this.uri = uri;
+    }
+
+    public String getVictimName() {
+        return victimName;
+    }
+
+    public void setVictimName(String victimName) {
+        this.victimName = victimName;
     }
 
     public double getLatitude() {

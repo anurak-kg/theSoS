@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         bindWidget();
         ParseUser currentUser = ParseUser.getCurrentUser();
         if ((currentUser != null) && ParseFacebookUtils.isLinked(currentUser)) {
-            Intent i = new Intent(this, ReportActivity.class);
+            Intent i = new Intent(this, RouteActivity.class);
             startActivity(i);
         }
         loginBtn.setOnClickListener(new View.OnClickListener() {
@@ -51,22 +51,6 @@ public class MainActivity extends AppCompatActivity {
                 onLoginButtonClicked();
             }
         });
-    }
-
-    private void getHashKey() {
-        try {
-
-            PackageInfo info =     getPackageManager().getPackageInfo("thesos.com.sos.badboy.thesos",     PackageManager.GET_SIGNATURES);
-            for (Signature signature : info.signatures) {
-                MessageDigest md = MessageDigest.getInstance("SHA");
-                md.update(signature.toByteArray());
-                String sign= Base64.encodeToString(md.digest(), Base64.DEFAULT);
-                Log.e("MY KEY HASH:", sign);
-                Toast.makeText(getApplicationContext(), sign, Toast.LENGTH_LONG).show();
-            }
-        } catch (PackageManager.NameNotFoundException e) {
-        } catch (NoSuchAlgorithmException e) {
-        }
     }
 
 
@@ -89,6 +73,7 @@ public class MainActivity extends AppCompatActivity {
                 MainActivity.this.progressDialog.dismiss();
                 if (user == null) {
                     Log.d("TheSos", "Uh oh. The user cancelled the Facebook login.");
+
                 } else if (user.isNew()) {
                     Log.d("TheSos", "User signed up and logged in through Facebook!");
                     showUserDetailsActivity();

@@ -20,6 +20,7 @@
     <string name="title_activity_rescuer">สำหรับเจ้าหน้าที่</string>
     <string name="title_activity_accident">อุบัติเหตุตอนนี้ !!!</string>
     <string name="title_activity_accident_list">AccidentListActivity</string>
+    <string name="contenDesciption">Accident</string>
 
 
 </resources>

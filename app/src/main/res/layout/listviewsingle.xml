@@ -6,28 +6,60 @@
 
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:id="@+id/listAccidentImages"
         android:src="@drawable/common_signin_btn_icon_normal_dark"
         android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true" />
+        android:layout_alignParentLeft="true"
+        android:contentDescription="@string/contenDesciption" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="ประเภทอุบัติเหตุ"
-        android:id="@+id/listAccidentTypeTxt"
-        android:layout_alignParentTop="true"
-        android:layout_toRightOf="@+id/listAccidentImages" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="Small Text"
-        android:id="@+id/textView8"
-        android:layout_below="@+id/listAccidentTypeTxt"
-        android:layout_alignLeft="@+id/listAccidentTypeTxt" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_height="90dp"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/listAccidentImages"
+        android:layout_toEndOf="@+id/listAccidentImages">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="ประเภทอุบัติเหตุ"
+            android:id="@+id/listAccidentTypeTxt"
+            android:layout_alignParentTop="true"
+          />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="ตำแหน่ง"
+            android:id="@+id/listAccidentLocation"
+            android:layout_below="@+id/listAccidentTypeTxt"
+            android:layout_alignLeft="@+id/listAccidentTypeTxt" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="สถานะ"
+            android:id="@+id/listAccidentStatus"
+            android:layout_alignParentBottom="true"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="ชื่อผู้แจ้ง"
+            android:id="@+id/accidentListVictim"
+            android:layout_above="@+id/listAccidentStatus"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+    </RelativeLayout>
 </RelativeLayout>

@@ -1,19 +1,32 @@
 package thesos.com.sos.badboy.thesos;
 
 import android.app.ProgressDialog;
+import android.location.Address;
+import android.location.Geocoder;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.parse.ParseException;
 import com.parse.ParseFile;
+import com.parse.ParseGeoPoint;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
+import com.parse.ParseUser;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,18 +37,25 @@ public class AccidentListActivity extends AppCompatActivity {
     ProgressDialog mProgressDialog;
     private ArrayList<Accident> accidentlist;
     private AccidentList adapter;
+    public static final String TAG = "TheSos";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_accident_list);
-        setAdapter();
+        bindListView();
         new RemoteDataTask().execute();
 
     }
 
-    private void setAdapter() {
-        //AccidentList adapter = new AccidentList()
+    private void bindListView() {
+        listview = (ListView) findViewById(R.id.listView);
+        listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Toast.makeText(getApplicationContext(), accidentlist.get(position).getAccidentId(), Toast.LENGTH_LONG).show();
+            }
+        });
 
     }
 
@@ -86,18 +106,40 @@ public class AccidentListActivity extends AppCompatActivity {
                 ob = query.find();
                 for (ParseObject acc : ob) {
 
-                    //โหลดภาพ
+                    //ดาวน์โหลดข้อมูล
                     ParseFile image = (ParseFile) acc.get("photo");
+                    ParseUser victim = acc.getParseUser("victimId");
+
 
                     Accident accident = new Accident();
                     accident.setAccidentId(acc.getObjectId());
                     accident.setAccidentType(acc.getString("accidentType"));
-                    accident.setUri(image.getUrl());
+                    accident.setAccidentStatus(acc.getString("status"));
+
+                    // accident.setVictimName(victim.getString("name"));
+
+                    //ค้นหา Location name
+                    ParseGeoPoint geoPoint = acc.getParseGeoPoint("location");
+                    if (geoPoint != null) {
+                        GeocodeAddress geocodeAddress = new GeocodeAddress(geoPoint.getLatitude(), geoPoint.getLongitude());
+                        if (geocodeAddress.getFomatLineNumber() != null) {
+                            Log.d(TAG, "geoPoint  =   " + geocodeAddress.getFomatLineNumber());
+                            accident.setAddress(geocodeAddress.getFomatLineNumber());
+                        }
+                    }
+
+                    if (image != null) {
+                        accident.setUri(image.getUrl());
+                    }
+
+                    //โหลดข้อมูลผู้แจ้ง
 
                     accidentlist.add(accident);
                 }
             } catch (ParseException e) {
                 Log.e("Error", e.getMessage());
+                e.printStackTrace();
+            } catch (JSONException e) {
                 e.printStackTrace();
             }
             return null;
@@ -106,7 +148,6 @@ public class AccidentListActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(Void result) {
             // Locate the listview in listview_main.xml
-            listview = (ListView) findViewById(R.id.listView);
             // Pass the results into ListViewAdapter.java
             adapter = new AccidentList(AccidentListActivity.this, accidentlist);
             // Binds the Adapter to the ListView
