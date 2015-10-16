@@ -19,7 +19,7 @@
     <string name="title_activity_route">RouteActivity</string>
     <string name="title_activity_rescuer">สำหรับเจ้าหน้าที่</string>
     <string name="title_activity_accident">อุบัติเหตุตอนนี้ !!!</string>
-    <string name="title_activity_accident_list">AccidentListActivity</string>
+    <string name="title_activity_accident_list">รายการแจ้งอุบัติเหตุ</string>
     <string name="contenDesciption">Accident</string>
 
 
