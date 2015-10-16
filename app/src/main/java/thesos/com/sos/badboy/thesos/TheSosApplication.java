@@ -16,7 +16,8 @@ import com.parse.SaveCallback;
 /**
  * Created by Anurak on 19/09/58.
  */
-public class TheSosApplication extends  MultiDexApplication{
+public class TheSosApplication extends MultiDexApplication {
+    public static final String TAG = "TheSos";
 
     @Override
     protected void attachBaseContext(Context base) {
