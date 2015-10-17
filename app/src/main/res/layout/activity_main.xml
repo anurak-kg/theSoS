@@ -40,10 +40,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/mainLogo"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="58dp"
         android:paddingTop="20dp"
-        android:src="@drawable/applogo"
+        android:src="@drawable/common_ic_googleplayservices"
         android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true" />
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
