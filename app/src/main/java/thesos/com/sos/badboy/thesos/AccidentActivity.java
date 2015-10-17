@@ -139,18 +139,20 @@ public class AccidentActivity extends AppCompatActivity {
         Log.d(TheSosApplication.TAG, "Accident Location = Long : " + longitude + "  Lat : " + latitude);
         if (accidentLocation != null) {
             LatLng latLng = new LatLng(latitude, longitude);
-            // Mark ตำแหน่งบนแผนที่
+/*            // Mark ตำแหน่งบนแผนที่
             map.addMarker(new MarkerOptions()
                     .title("จุดเกิดเหตุอุบัติเหตุ !")
-                    .position(latLng));
+                    .position(latLng));*/
             //ปรับมุมกล้องของกูเกิ้ล Map ไปยังตำแหน่งที่เกิดอุบัติเหตุ
             map.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 16));
 
-
+            //เริ่มกระบวนการในการหาเส้นทาง
             MapRoute route = new MapRoute(AccidentActivity.this, map);
             route.setAccidentLatLng(latLng);
             route.setRescuerLatLng(new LatLng(7.848753, 98.329666));
             route.start();
+            route.setMarkMap();
+            route.setMapZoomFit();
 
         }
     }
