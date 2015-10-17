@@ -1,44 +1,55 @@
 package thesos.com.sos.badboy.thesos;
 
+import android.app.Fragment;
 import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.Switch;
 import android.widget.Toast;
-import android.widget.ToggleButton;
-
 import com.parse.FindCallback;
-import com.parse.Parse;
 import com.parse.ParseException;
 import com.parse.ParseGeoPoint;
 import com.parse.ParseInstallation;
 import com.parse.ParseObject;
 import com.parse.ParsePush;
 import com.parse.ParseQuery;
+import com.parse.ParseUser;
 import com.parse.SaveCallback;
-
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.List;
 
-public class RescuerActivity extends AppCompatActivity {
+public class RescuerActivity extends AppCompatActivity{
 
     private static final String TAG = "TheSos";
     private static final double MAX_NEAR_KILOMATE = 10;
     private static final int LIMIT_RESCURER = 5;
     private static ParseGeoPoint currentLocation;
+    private ParseUser currentUser;
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rescuer);
+        currentUser = ParseUser.getCurrentUser();
+        if ((currentUser != null) && currentUser.isAuthenticated()) {
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .add(R.id.fragment_container, UserView.newInstance(currentUser.getObjectId()))
+                    .commit();
+        }else{
+            Intent i = new Intent(this, MainActivity.class);
+            startActivity(i);
+            finish();
+        }
+
+
         Switch subscribeToggle = (Switch) findViewById(R.id.rescurer_sub);
         subscribeToggle.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -59,15 +70,11 @@ public class RescuerActivity extends AppCompatActivity {
         });
         currentLocation = new ParseGeoPoint(7.848657250419213, 98.32979081334793);
 
-        Button testPushBtn = (Button) findViewById(R.id.testPushBtn);
-        testPushBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //getNearRescuer();
-                goToAccidentListActivity();
 
-            }
-        });
+    }
+
+    private void bindFragment() {
+
     }
 
     private void getNearRescuer() {
@@ -86,6 +93,7 @@ public class RescuerActivity extends AppCompatActivity {
 
 
     }
+
     private void goToAccidentListActivity(){
         Intent i = new Intent(this, AccidentListActivity.class);
         startActivity(i);
@@ -164,4 +172,6 @@ public class RescuerActivity extends AppCompatActivity {
             return false;
         }
     }
+
+
 }

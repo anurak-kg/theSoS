@@ -193,6 +193,11 @@ public class ReportActivity extends AppCompatActivity implements OnMapReadyCallb
             Log.d("mapWidget", "Long" + longitude + "  Lat :" + latitude);
             LatLng myLocation = new LatLng(latitude, longitude);
             map.moveCamera(CameraUpdateFactory.newLatLngZoom(myLocation, 13));
+
+        } catch (NullPointerException e){
+            Toast.makeText(ReportActivity.this, "เกิดข้อผิดผลาดในการหาตำแหน่งปัจจุบัน", Toast.LENGTH_SHORT).show();
+            Log.d(TheSosApplication.TAG, "Null Error Poition");
+            e.printStackTrace();
         } catch (Exception e) {
             e.printStackTrace();
         }
