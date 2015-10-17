@@ -3,44 +3,76 @@ package thesos.com.sos.badboy.thesos;
 import android.app.ProgressDialog;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.net.Uri;
-import android.nfc.Tag;
-import android.os.Handler;
-import android.os.Message;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.CardView;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.MapFragment;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 import com.parse.GetCallback;
-import com.parse.GetDataCallback;
-import com.parse.Parse;
 import com.parse.ParseException;
 import com.parse.ParseFile;
+import com.parse.ParseGeoPoint;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
+import com.parse.ParseUser;
 
 public class AccidentActivity extends AppCompatActivity {
 
-    private String accidentId;
+    private String objectId;
     private static final String TAG = "TheSos";
     private ProgressDialog progressDialog;
     private TextView txtAccidentType;
     private ImageView accidentPhoto;
+    private String mode;
+    private android.support.v7.widget.CardView accidentlayouttop;
+    private TextView typeOfAccident;
+    private TextView typeOfAccidentTxt;
+    private android.support.v7.widget.CardView accidentlayoutmiddle;
+    private android.support.v7.widget.CardView accidentviewmap;
+    private android.support.v7.widget.CardView accidentviewphoto;
+    private android.widget.Button AccidentAcceptBtn;
+    private android.widget.Button AccidentCancelBtn;
+    private android.support.v7.widget.CardView accidentviewaccept;
+    private ParseUser victim;
+    private ParseGeoPoint accidentLocation;
+    private GoogleMap map;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_accident);
-        accidentId = getIntent().getExtras().getString("accident_id");
+        this.accidentviewaccept = (CardView) findViewById(R.id.accident_view_accept);
+        this.AccidentCancelBtn = (Button) findViewById(R.id.AccidentCancelBtn);
+        this.AccidentAcceptBtn = (Button) findViewById(R.id.AccidentAcceptBtn);
+        this.accidentviewphoto = (CardView) findViewById(R.id.accident_view_photo);
+        this.accidentPhoto = (ImageView) findViewById(R.id.accidentPhoto);
+        this.accidentviewmap = (CardView) findViewById(R.id.accident_view_map);
+        this.accidentlayoutmiddle = (CardView) findViewById(R.id.accident_layout_middle);
+        this.typeOfAccidentTxt = (TextView) findViewById(R.id.typeOfAccidentTxt);
+        this.typeOfAccident = (TextView) findViewById(R.id.typeOfAccident);
+        this.accidentlayouttop = (CardView) findViewById(R.id.accident_layout_top);
+
+
+        objectId = getIntent().getExtras().getString("objectId");
+        mode = getIntent().getExtras().getString("mode");
+
         bindLayout();
-        if (accidentId != null) {
+        if (objectId != null) {
             getAccidentData();
+        }
+        if (mode != null && mode.equals("ALERT")) {
+
         }
 
     }
@@ -51,6 +83,7 @@ public class AccidentActivity extends AppCompatActivity {
         // Uri uriLoadingPhoto = Uri.parse("android.resource://thesos.com.sos.badboy.thesos/" + R.raw.loadingtxt);
         Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.loading);
         accidentPhoto.setImageBitmap(bitmap);
+        map = ((MapFragment) getFragmentManager().findFragmentById(R.id.accident_view_map_fragment)).getMap();
 
 
     }
@@ -61,26 +94,24 @@ public class AccidentActivity extends AppCompatActivity {
             public void run() {
                 try {
                     ParseQuery<ParseObject> query = ParseQuery.getQuery("accident");
-                    query.whereNotEqualTo("objectId", accidentId);
+                    query.whereNotEqualTo("objectId", objectId);
                     // query.getFirst();
                     query.getFirstInBackground(new GetCallback<ParseObject>() {
                         @Override
                         public void done(final ParseObject parseObject, ParseException e) {
                             if (e == null) {
 
+                                victim = parseObject.getParseUser("victimId");
+                                setVictimFragments();
+                                accidentLocation = parseObject.getParseGeoPoint("location");
+                                moveAndMarkMapCamera();
                                 txtAccidentType.setText(parseObject.getString("accidentType"));
                                 //โหลดรูปภาพ
                                 ParseFile imageFile = parseObject.getParseFile("photo");
-                                imageFile.getDataInBackground(new GetDataCallback() {
-                                    public void done(byte[] data, ParseException e) {
-                                        if (e == null) {
-                                            Bitmap bitmap = BitmapFactory.decodeByteArray(data, 0, data.length);
-                                            accidentPhoto.setImageBitmap(bitmap);
-                                        } else {
-                                            Log.d(TAG, "Error: ไม่พบภาพถ่าย");
-                                        }
-                                    }
-                                });
+                                if (imageFile != null) {
+                                    Log.d(TAG, "PhotoUrl " + imageFile.getUrl());
+                                }
+
 
                             } else {
                                 Toast.makeText(getApplicationContext(), "เกิดข้อผิดผลาด : ไม่สามารถหาข้อมูลการเกิดอุบัติเหตุได้", Toast.LENGTH_LONG).show();
@@ -100,6 +131,38 @@ public class AccidentActivity extends AppCompatActivity {
         }.start();
 
 
+    }
+
+    private void moveAndMarkMapCamera() {
+        double longitude = accidentLocation.getLongitude();
+        double latitude = accidentLocation.getLatitude();
+        Log.d(TheSosApplication.TAG, "Accident Location = Long : " + longitude + "  Lat : " + latitude);
+        if (accidentLocation != null) {
+            LatLng latLng = new LatLng(latitude, longitude);
+            // Mark ตำแหน่งบนแผนที่
+            map.addMarker(new MarkerOptions()
+                    .title("จุดเกิดเหตุอุบัติเหตุ !")
+                    .position(latLng));
+            //ปรับมุมกล้องของกูเกิ้ล Map ไปยังตำแหน่งที่เกิดอุบัติเหตุ
+            map.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 16));
+
+
+            MapRoute route = new MapRoute(AccidentActivity.this, map);
+            route.setAccidentLatLng(latLng);
+            route.setRescuerLatLng(new LatLng(7.848753, 98.329666));
+            route.start();
+
+        }
+    }
+
+
+    private void setVictimFragments() {
+        if (victim != null) {
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .add(R.id.accident_user_fragment, UserView.newInstance(victim.getObjectId()))
+                    .commit();
+        }
     }
 
     @Override

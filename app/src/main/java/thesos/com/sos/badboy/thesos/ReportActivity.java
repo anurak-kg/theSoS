@@ -175,10 +175,10 @@ public class ReportActivity extends AppCompatActivity implements OnMapReadyCallb
 
     private void bindMapWidget() {
         try {
-            MapFragment mapFragment = (MapFragment) getFragmentManager()
+         /*   MapFragment mapFragment = (MapFragment) getFragmentManager()
                     .findFragmentById(R.id.map);
             mapFragment.getMapAsync(this);
-
+*/
             map = ((MapFragment) getFragmentManager().findFragmentById(R.id.map)).getMap();
             map.setMyLocationEnabled(true);
             LocationManager lm = (LocationManager) getSystemService(Context.LOCATION_SERVICE);

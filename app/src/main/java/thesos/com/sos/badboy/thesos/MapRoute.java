@@ -178,7 +178,6 @@ public class MapRoute {
             Log.d(TheSosApplication.TAG, "Start fetch route ");
             Log.d(TheSosApplication.TAG, "route google url is :  " + params[0]);
 
-
             try {
                 Request request = new Request.Builder()
                         .url(params[0])
@@ -190,8 +189,6 @@ public class MapRoute {
                 e.printStackTrace();
             }
             return null;
-           // JSONParser jParser = new JSONParser();
-            //String json = jParser.getJSONFromUrl(params[0]);              //Calling json parsing class(no 9) and passing url variable
         }
 
         @Override

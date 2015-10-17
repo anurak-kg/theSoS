@@ -39,7 +39,9 @@ public class AccidentPushBroadcastReceive extends ParsePushBroadcastReceiver {
             JSONObject data = getDataFromIntent(intent);
             Intent showFullQuoteIntent = new Intent(context, AccidentActivity.class);
 
-            showFullQuoteIntent.putExtra("accident_id", data.getString("accident_id"));
+            showFullQuoteIntent.putExtra("objectId", data.getString("accident_id"));
+            showFullQuoteIntent.putExtra("mode", "ALERT");
+
 
             int uniqueInt = (int) (System.currentTimeMillis() & 0xfffffff);
             PendingIntent pendingIntent = PendingIntent.getActivity(context, uniqueInt, showFullQuoteIntent, PendingIntent.FLAG_UPDATE_CURRENT);

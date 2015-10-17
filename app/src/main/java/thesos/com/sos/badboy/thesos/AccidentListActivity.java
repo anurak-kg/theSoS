@@ -1,6 +1,7 @@
 package thesos.com.sos.badboy.thesos;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.location.Address;
 import android.location.Geocoder;
 import android.os.AsyncTask;
@@ -54,6 +55,9 @@ public class AccidentListActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Toast.makeText(getApplicationContext(), accidentlist.get(position).getAccidentId(), Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(AccidentListActivity.this,AccidentActivity.class);
+                intent.putExtra("objectId",accidentlist.get(position).getAccidentId());
+                startActivity(intent);
             }
         });
 

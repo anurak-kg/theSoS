@@ -8,6 +8,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.Switch;
 import android.widget.Toast;
@@ -49,7 +51,14 @@ public class RescuerActivity extends AppCompatActivity{
             finish();
         }
 
-
+        Button actListViewBtn = (Button) findViewById(R.id.act_list_btn);
+        actListViewBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(RescuerActivity.this, AccidentListActivity.class);
+                startActivity(i);
+            }
+        });
         Switch subscribeToggle = (Switch) findViewById(R.id.rescurer_sub);
         subscribeToggle.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
