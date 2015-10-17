@@ -1,9 +1,7 @@
 package thesos.com.sos.badboy.thesos;
 
 import android.app.Application;
-import android.content.Context;
-import android.support.multidex.MultiDex;
-import android.support.multidex.MultiDexApplication;
+
 import android.util.Log;
 
 import com.parse.Parse;
@@ -16,14 +14,14 @@ import com.parse.SaveCallback;
 /**
  * Created by Anurak on 19/09/58.
  */
-public class TheSosApplication extends MultiDexApplication {
+public class TheSosApplication extends Application {
     public static final String TAG = "TheSos";
 
-    @Override
+   /* @Override
     protected void attachBaseContext(Context base) {
         super.attachBaseContext(base);
         MultiDex.install(this);
-    }
+    }*/
 
     @Override
     public void onCreate() {
