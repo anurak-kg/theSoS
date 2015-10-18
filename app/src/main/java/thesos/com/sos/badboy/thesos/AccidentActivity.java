@@ -11,6 +11,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,7 +19,6 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.MarkerOptions;
 import com.parse.GetCallback;
 import com.parse.ParseException;
 import com.parse.ParseFile;
@@ -47,11 +47,15 @@ public class AccidentActivity extends AppCompatActivity {
     private ParseUser victim;
     private ParseGeoPoint accidentLocation;
     private GoogleMap map;
+    private android.widget.RelativeLayout accidentuserfragment;
+    private android.widget.RelativeLayout accidentviewscrollview;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_accident);
+        this.accidentviewscrollview = (RelativeLayout) findViewById(R.id.accident_view_scrollview);
+        this.accidentuserfragment = (RelativeLayout) findViewById(R.id.accident_user_fragment);
         this.accidentviewaccept = (CardView) findViewById(R.id.accident_view_accept);
         this.AccidentCancelBtn = (Button) findViewById(R.id.AccidentCancelBtn);
         this.AccidentAcceptBtn = (Button) findViewById(R.id.AccidentAcceptBtn);
@@ -83,8 +87,17 @@ public class AccidentActivity extends AppCompatActivity {
         // Uri uriLoadingPhoto = Uri.parse("android.resource://thesos.com.sos.badboy.thesos/" + R.raw.loadingtxt);
         Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.loading);
         accidentPhoto.setImageBitmap(bitmap);
-        map = ((MapFragment) getFragmentManager().findFragmentById(R.id.accident_view_map_fragment)).getMap();
 
+        //Bind Map
+        map = ((WorkaroundMapFragment) getSupportFragmentManager().findFragmentById(R.id.accident_view_map_fragment)).getMap();
+
+        //ตั้งให้ Map Fragment ไม่สามารถ เลื่อนได้
+        ((WorkaroundMapFragment) getSupportFragmentManager().findFragmentById(R.id.accident_view_map_fragment)).setListener(new WorkaroundMapFragment.OnTouchListener() {
+            @Override
+            public void onTouch() {
+                accidentviewscrollview.requestDisallowInterceptTouchEvent(true);
+            }
+        });
 
     }
 
