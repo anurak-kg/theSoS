@@ -69,11 +69,6 @@ public class ReportActivity extends AppCompatActivity implements OnMapReadyCallb
 
         bindLayout();
 
-        Bundle i = getIntent().getExtras();
-        if (i != null) {
-            telephone = i.getString("Phone");
-        }
-
         //  logoutBtn.setOnClickListener(new View.OnClickListener() {
         //    @Override
         //    public void onClick(View v) {
@@ -85,6 +80,10 @@ public class ReportActivity extends AppCompatActivity implements OnMapReadyCallb
         ParseUser currentUser = ParseUser.getCurrentUser();
         if ((currentUser != null) && currentUser.isAuthenticated()) {
             makeMeRequest();
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .add(R.id.report_fragment_container, UserView.newInstance(currentUser.getObjectId()))
+                    .commit();
         }
 
         bindMapWidget();
@@ -113,17 +112,13 @@ public class ReportActivity extends AppCompatActivity implements OnMapReadyCallb
         accidentType.setAdapter(adapter);
 
 
-        usernameTxtView = (TextView) findViewById(R.id.username);
-        emailTxtView = (TextView) findViewById(R.id.email);
-        profilePicture = (ProfilePictureView) findViewById(R.id.profilePicture);
         alertBtn = (Button) findViewById(R.id.alertBtn);
         alertBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(locationGPS != null){
+                if (locationGPS != null) {
                     redirectToWaiting();
-                }
-                else{
+                } else {
                     Toast.makeText(ReportActivity.this, "ไม่พบบตำแหน่งของผู้ใช้ โปรดเช็คการตั้งค่า GPS", Toast.LENGTH_LONG).show();
                 }
             }
@@ -194,7 +189,7 @@ public class ReportActivity extends AppCompatActivity implements OnMapReadyCallb
             LatLng myLocation = new LatLng(latitude, longitude);
             map.moveCamera(CameraUpdateFactory.newLatLngZoom(myLocation, 13));
 
-        } catch (NullPointerException e){
+        } catch (NullPointerException e) {
             Toast.makeText(ReportActivity.this, "เกิดข้อผิดผลาดในการหาตำแหน่งปัจจุบัน", Toast.LENGTH_SHORT).show();
             Log.d(TheSosApplication.TAG, "Null Error Poition");
             e.printStackTrace();
@@ -214,7 +209,6 @@ public class ReportActivity extends AppCompatActivity implements OnMapReadyCallb
                             JSONObject userProfile = new JSONObject();
                             try {
 
-                                profilePicture.setProfileId(user.getString("id"));
 
                                 userProfile.put("facebookId", user.getLong("id"));
                                 userProfile.put("name", user.getString("name"));
@@ -223,10 +217,6 @@ public class ReportActivity extends AppCompatActivity implements OnMapReadyCallb
                                 }
                                 if (user.getString("email") != null) {
                                     userProfile.put("email", (String) user.getString("email"));
-                                }
-
-                                if (telephone != null) {
-                                    userProfile.put("telephone", telephone);
                                 }
 
 
@@ -264,8 +254,6 @@ public class ReportActivity extends AppCompatActivity implements OnMapReadyCallb
                                 }
                                 currentUser.saveInBackground();
 
-                                // Show the user info
-                                updateViewsWithProfileInfo();
                             } catch (JSONException e) {
                                 Log.d("My", "Error parsing returned user data. " + e);
                             }
@@ -294,42 +282,6 @@ public class ReportActivity extends AppCompatActivity implements OnMapReadyCallb
         request.executeAsync();
     }
 
-    private void updateViewsWithProfileInfo() {
-        currentUser = ParseUser.getCurrentUser();
-        if (currentUser.has("profile")) {
-            JSONObject userProfile = currentUser.getJSONObject("profile");
-            try {
-
-                if (userProfile.has("facebookId")) {
-                    setProfileId(userProfile.getString("facebookId"));
-                } else {
-                    // Show the default, blank user profile picture
-                    // userProfilePictureView.setProfileId(null);
-                }
-
-                if (userProfile.has("name")) {
-                    usernameTxtView.setText(userProfile.getString("name"));
-                } else {
-                    usernameTxtView.setText("");
-                }
-
-                if (userProfile.has("gender")) {
-                    // userGenderView.setText(userProfile.getString("gender"));
-                } else {
-                    // userGenderView.setText("");
-                }
-
-                if (userProfile.has("email")) {
-                    emailTxtView.setText(userProfile.getString("email"));
-                } else {
-                    emailTxtView.setText("");
-                }
-
-            } catch (JSONException e) {
-                Log.d("My", "Error parsing saved user data.");
-            }
-        }
-    }
 
     public void logout(MenuItem item) {
         ParseUser.logOut();

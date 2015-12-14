@@ -4,17 +4,22 @@ import android.app.ProgressDialog;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
+import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.target.BitmapImageViewTarget;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
@@ -26,6 +31,7 @@ import com.parse.ParseGeoPoint;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
+import com.parse.SaveCallback;
 
 public class AccidentActivity extends AppCompatActivity {
 
@@ -76,13 +82,54 @@ public class AccidentActivity extends AppCompatActivity {
             getAccidentData();
         }
         if (mode != null && mode.equals("ALERT")) {
+            setAlertVisible(View.VISIBLE);
+        } else {
+            setAlertVisible(View.GONE);
 
         }
 
     }
 
+    private void updateAccidentStatus(final String status) {
+        ParseQuery<ParseObject> parseQuery = new ParseQuery<ParseObject>("accident");
+        parseQuery.whereEqualTo("objectId", objectId);
+        parseQuery.getFirstInBackground(new GetCallback<ParseObject>() {
+            @Override
+            public void done(ParseObject parseObject, ParseException e) {
+                parseObject.put("status", status);
+                parseObject.saveInBackground(new SaveCallback() {
+                    @Override
+                    public void done(ParseException e) {
+                        Toast.makeText(AccidentActivity.this, "ส่งข้อมูลไปยังที่เกิดเหตุแล้ว", Toast.LENGTH_SHORT).show();
+                    }
+                });
+            }
+        });
+    }
+
+    private void setAlertVisible(int view) {
+        accidentviewaccept.setVisibility(view);
+
+    }
+
     private void bindLayout() {
         txtAccidentType = (TextView) findViewById(R.id.typeOfAccidentTxt);
+        AccidentAcceptBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                updateAccidentStatus("ACCEPT");
+                setAlertVisible(View.GONE);
+
+            }
+        });
+        AccidentCancelBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                updateAccidentStatus("REJECT");
+                setAlertVisible(View.GONE);
+
+            }
+        });
         accidentPhoto = (ImageView) findViewById(R.id.accidentPhoto);
         // Uri uriLoadingPhoto = Uri.parse("android.resource://thesos.com.sos.badboy.thesos/" + R.raw.loadingtxt);
         Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.loading);
@@ -113,6 +160,7 @@ public class AccidentActivity extends AppCompatActivity {
                         @Override
                         public void done(final ParseObject parseObject, ParseException e) {
                             if (e == null) {
+                                Log.d(TAG, "Download Accident Data!!");
 
                                 victim = parseObject.getParseUser("victimId");
                                 setVictimFragments();
@@ -123,6 +171,11 @@ public class AccidentActivity extends AppCompatActivity {
                                 ParseFile imageFile = parseObject.getParseFile("photo");
                                 if (imageFile != null) {
                                     Log.d(TAG, "PhotoUrl " + imageFile.getUrl());
+                                    Glide.with(AccidentActivity.this)
+                                            .load(imageFile.getUrl())
+                                            .centerCrop()
+                                            .error(R.drawable.no_photo_grey)
+                                            .into(accidentPhoto);
                                 }
 
 

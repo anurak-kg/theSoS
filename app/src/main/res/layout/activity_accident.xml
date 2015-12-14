@@ -1,9 +1,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/accident_view_scrollview"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_centerHorizontal="true"
-    android:id="@+id/accident_view_scrollview"
-    >
+    android:layout_centerHorizontal="true">
 
     <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="fill_parent"
@@ -47,7 +46,7 @@
                 android:padding="20dp"
                 card_view:cardCornerRadius="4dp">
 
-                <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
                     xmlns:tools="http://schemas.android.com/tools"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
@@ -69,10 +68,10 @@
                         android:layout_height="wrap_content"
                         android:layout_alignBottom="@+id/typeOfAccident"
                         android:layout_toRightOf="@+id/typeOfAccident"
-                        android:text=""                         />
+                        android:text="" />
 
 
-                </RelativeLayout>
+                </LinearLayout>
 
 
             </android.support.v7.widget.CardView>
@@ -94,9 +93,9 @@
                         xmlns:tools="http://schemas.android.com/tools"
                         android:id="@+id/accident_view_map_fragment"
                         android:name="thesos.com.sos.badboy.thesos.WorkaroundMapFragment"
-                        tools:context=".AccidentActivity"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent" />
+                        android:layout_height="match_parent"
+                        tools:context=".AccidentActivity" />
 
                 </RelativeLayout>
 
@@ -113,13 +112,12 @@
                 <RelativeLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="35dp">
+                    android:padding="2dp">
 
                     <ImageView
                         android:id="@+id/accidentPhoto"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_alignParentRight="true" />
+                        android:layout_width="300dp"
+                        android:layout_height="300dp" />
                 </RelativeLayout>
 
             </android.support.v7.widget.CardView>
@@ -133,6 +131,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_margin="10dp"
+        android:visibility="visible"
         card_view:cardCornerRadius="4dp">
 
         <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -143,8 +142,8 @@
 
             <Button
                 android:id="@+id/AccidentAcceptBtn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_alignParentLeft="true"
                 android:layout_centerVertical="true"
                 android:layout_weight="0.95"
@@ -159,7 +158,7 @@
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
                 android:layout_weight="0.05"
-                android:text="ยกเลิกคำขอ" />
+                android:text="ปฏิเสท" />
         </LinearLayout>
 
 

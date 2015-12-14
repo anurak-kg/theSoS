@@ -26,6 +26,10 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="tel_no">เบอร์โทรศัพท์</string>
     <string name="act_list_btn">รายการการแจ้งเหตุด่วน</string>
+    <string name="hint_card_id">เลขที่บัตรประชาชน</string>
+    <string name="hint_telephone">เบอร์โทรศัพท์</string>
+    <string name="hint_full_name">ชื่อ - นามสกุล</string>
+    <string name="saveAndNext">บันทึกและถัดไป</string>
 
 
 </resources>

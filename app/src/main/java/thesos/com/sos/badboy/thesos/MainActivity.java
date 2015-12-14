@@ -42,6 +42,8 @@ public class MainActivity extends AppCompatActivity {
         ParseUser currentUser = ParseUser.getCurrentUser();
         if ((currentUser != null) && ParseFacebookUtils.isLinked(currentUser)) {
             Intent i = new Intent(this, RouteActivity.class);
+/*            i.putExtra("mode","ALERT");
+            i.putExtra("objectId","3r5fNg3CTs");*/
             startActivity(i);
         }
         loginBtn.setOnClickListener(new View.OnClickListener() {
@@ -56,7 +58,6 @@ public class MainActivity extends AppCompatActivity {
 
     private void bindWidget() {
         loginBtn = (ImageButton) findViewById(R.id.loginBtn);
-
     }
 
     private void onLoginButtonClicked() {
