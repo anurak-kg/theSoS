@@ -45,7 +45,8 @@ public class TheSosApplication extends Application {
                     Log.e("TheSos", "failed to subscribe for push", e);
                 }
             }
-        });
+        });//Subscribe to notifications - default channel ""
+
 
     }
 }

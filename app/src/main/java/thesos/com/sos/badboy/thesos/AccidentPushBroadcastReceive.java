@@ -40,6 +40,7 @@ public class AccidentPushBroadcastReceive extends ParsePushBroadcastReceiver {
             Intent showFullQuoteIntent = new Intent(context, AccidentActivity.class);
 
             showFullQuoteIntent.putExtra("objectId", data.getString("accident_id"));
+            showFullQuoteIntent.putExtra("tempId", data.getString("temp_id"));
             showFullQuoteIntent.putExtra("mode", "ALERT");
 
 

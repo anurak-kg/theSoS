@@ -1,4 +1,5 @@
 package thesos.com.sos.badboy.thesos;
+
 import android.app.ActionBar;
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -41,10 +42,15 @@ public class MainActivity extends AppCompatActivity {
         bindWidget();
         ParseUser currentUser = ParseUser.getCurrentUser();
         if ((currentUser != null) && ParseFacebookUtils.isLinked(currentUser)) {
-            Intent i = new Intent(this, RouteActivity.class);
-/*            i.putExtra("mode","ALERT");
-            i.putExtra("objectId","3r5fNg3CTs");*/
-            startActivity(i);
+            if (currentUser.getString("type").equals("User")) {
+                Intent i = new Intent(this, ReportActivity.class);
+                startActivity(i);
+                finish();
+            } else if (currentUser.getString("type").equals("Rescuer")) {
+                Intent i = new Intent(this, RouteActivity.class);
+                startActivity(i);
+                finish();
+            }
         }
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -74,17 +80,15 @@ public class MainActivity extends AppCompatActivity {
                 MainActivity.this.progressDialog.dismiss();
                 if (user == null) {
                     Log.d("TheSos", "Uh oh. The user cancelled the Facebook login.");
-
+                    Toast.makeText(MainActivity.this, "เกิดข้อผิดผลาดในการขอสิทธิ Facebook", Toast.LENGTH_SHORT).show();
                 } else if (user.isNew()) {
                     Log.d("TheSos", "User signed up and logged in through Facebook!");
-                    showUserDetailsActivity();
+                    showExtraData();
 
                     //showRouteActivity();
-                   // showExtraData();
+                    // showExtraData();
                 } else {
-                    Log.d("TheSos", "User logged in through Faceb+ook!");
-                    //showRouteActivity();
-
+                    Log.d("TheSos", "User logged in through Facebook!");
                     showUserDetailsActivity();
                 }
             }
@@ -96,6 +100,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(i);
         finish();
     }
+
     private void showRouteActivity() {
         Intent i = new Intent(this, RouteActivity.class);
         startActivity(i);

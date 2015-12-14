@@ -138,7 +138,8 @@ public class RescuerActivity extends AppCompatActivity{
     }
 
     private String getChannel() {
-        return "Test";
+
+        return currentUser.getObjectId();
     }
 
     private void unSubscribed() {

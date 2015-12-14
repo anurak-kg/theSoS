@@ -57,7 +57,7 @@ public class AccidentList extends ArrayAdapter<Accident> {
         viewHolder.listAccidentTypeTxt.setText(accident.getAccidentType());
         viewHolder.accidentListVictim.setText(accident.getVictimName());
         viewHolder.listAccidentLocation.setText(accident.getAddress());
-        viewHolder.listAccidentStatus.setText(accident.getAccidentStatus());
+        //viewHolder.listAccidentStatus.setText(accident.getAccidentStatus());
         //โหลดรูปภาพ
         Glide.with(this.context)
                 .load(accident.getUri())

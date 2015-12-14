@@ -4,8 +4,6 @@ import android.app.ProgressDialog;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
-import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
-import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.util.Log;
@@ -19,10 +17,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.request.target.BitmapImageViewTarget;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.parse.GetCallback;
 import com.parse.ParseException;
@@ -32,6 +28,10 @@ import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
 import com.parse.SaveCallback;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
 
 public class AccidentActivity extends AppCompatActivity {
 
@@ -55,11 +55,16 @@ public class AccidentActivity extends AppCompatActivity {
     private GoogleMap map;
     private android.widget.RelativeLayout accidentuserfragment;
     private android.widget.RelativeLayout accidentviewscrollview;
+    private String tempId;
+    private TextView dateOfAccident;
+    private TextView dateAccidentTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_accident);
+        this.dateAccidentTextView = (TextView) findViewById(R.id.dateAccidentTextView);
+        this.dateOfAccident = (TextView) findViewById(R.id.dateOfAccident);
         this.accidentviewscrollview = (RelativeLayout) findViewById(R.id.accident_view_scrollview);
         this.accidentuserfragment = (RelativeLayout) findViewById(R.id.accident_user_fragment);
         this.accidentviewaccept = (CardView) findViewById(R.id.accident_view_accept);
@@ -76,9 +81,11 @@ public class AccidentActivity extends AppCompatActivity {
 
         objectId = getIntent().getExtras().getString("objectId");
         mode = getIntent().getExtras().getString("mode");
-
+        tempId = getIntent().getExtras().getString("tempId");
         bindLayout();
         if (objectId != null) {
+            Log.d(TheSosApplication.TAG, "Accident Id = " + objectId);
+            Log.d(TheSosApplication.TAG, "Temp Id = " + tempId);
             getAccidentData();
         }
         if (mode != null && mode.equals("ALERT")) {
@@ -91,8 +98,8 @@ public class AccidentActivity extends AppCompatActivity {
     }
 
     private void updateAccidentStatus(final String status) {
-        ParseQuery<ParseObject> parseQuery = new ParseQuery<ParseObject>("accident");
-        parseQuery.whereEqualTo("objectId", objectId);
+        ParseQuery<ParseObject> parseQuery = new ParseQuery<ParseObject>("tempdata");
+        parseQuery.whereEqualTo("objectId", tempId);
         parseQuery.getFirstInBackground(new GetCallback<ParseObject>() {
             @Override
             public void done(ParseObject parseObject, ParseException e) {
@@ -176,6 +183,13 @@ public class AccidentActivity extends AppCompatActivity {
                                             .centerCrop()
                                             .error(R.drawable.no_photo_grey)
                                             .into(accidentPhoto);
+                                }
+
+                                //ข้อมูลเวลา
+                                Date date = parseObject.getCreatedAt();
+                                if (date != null) {
+                                    String format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(date);
+                                    dateAccidentTextView.setText(format);
                                 }
 
 

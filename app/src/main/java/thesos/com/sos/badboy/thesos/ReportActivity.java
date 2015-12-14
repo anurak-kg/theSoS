@@ -7,18 +7,23 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.graphics.Point;
 import android.location.Location;
 import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.Handler;
+import android.os.SystemClock;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.Interpolator;
+import android.view.animation.LinearInterpolator;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -28,6 +33,11 @@ import android.widget.Toast;
 
 import com.facebook.*;
 import com.facebook.login.widget.ProfilePictureView;
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.location.LocationListener;
+import com.google.android.gms.location.LocationRequest;
+import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.*;
 import com.google.android.gms.maps.model.*;
 import com.parse.*;
@@ -40,7 +50,10 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 
-public class ReportActivity extends AppCompatActivity implements OnMapReadyCallback {
+public class ReportActivity extends AppCompatActivity implements
+        GoogleApiClient.ConnectionCallbacks,
+        GoogleApiClient.OnConnectionFailedListener,
+        LocationListener {
 
     public Location locationGPS;
     String telephone;
@@ -60,6 +73,11 @@ public class ReportActivity extends AppCompatActivity implements OnMapReadyCallb
 
     ImageView imageView;
     Uri uri;
+    private GoogleApiClient mGoogleApiClient;
+    private LocationRequest mLocationRequest;
+    private LatLng myLocation;
+    private Marker marker;
+    private MarkerOptions markerOptions;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -87,6 +105,17 @@ public class ReportActivity extends AppCompatActivity implements OnMapReadyCallb
         }
 
         bindMapWidget();
+        //init Provider
+        initialLocation();
+
+    }
+
+    private void initialLocation() {
+        mGoogleApiClient = new GoogleApiClient.Builder(this)
+                .addApi(LocationServices.API)
+                .addConnectionCallbacks(this)
+                .addOnConnectionFailedListener(this)
+                .build();
     }
 
     private void bindLayout() {
@@ -116,7 +145,8 @@ public class ReportActivity extends AppCompatActivity implements OnMapReadyCallb
         alertBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (locationGPS != null) {
+
+                if (myLocation.latitude != 10 && myLocation.longitude !=10) {
                     redirectToWaiting();
                 } else {
                     Toast.makeText(ReportActivity.this, "ไม่พบบตำแหน่งของผู้ใช้ โปรดเช็คการตั้งค่า GPS", Toast.LENGTH_LONG).show();
@@ -160,7 +190,7 @@ public class ReportActivity extends AppCompatActivity implements OnMapReadyCallb
 
         accident = new Accident();
         accident.setAccidentType("อุบัติเหตุทางรถ");
-        accident.setLocation(locationGPS.getLatitude(), locationGPS.getLongitude());
+        accident.setLocation(myLocation.latitude, myLocation.longitude);
         accident.setAccidentStatus("waiting");
         accident.setAccidentDescription("Bla Bla Bla");
         //accident.setUri(uri.toString());
@@ -174,6 +204,7 @@ public class ReportActivity extends AppCompatActivity implements OnMapReadyCallb
                     .findFragmentById(R.id.map);
             mapFragment.getMapAsync(this);
 */
+
             map = ((MapFragment) getFragmentManager().findFragmentById(R.id.map)).getMap();
             map.setMyLocationEnabled(true);
             LocationManager lm = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
@@ -182,16 +213,24 @@ public class ReportActivity extends AppCompatActivity implements OnMapReadyCallb
                     return;
                 }
             }
+
             Location location = lm.getLastKnownLocation(LocationManager.GPS_PROVIDER);
             longitude = location.getLongitude();
             latitude = location.getLatitude();
-            Log.d("mapWidget", "Long" + longitude + "  Lat :" + latitude);
-            LatLng myLocation = new LatLng(latitude, longitude);
+            Log.d(TheSosApplication.TAG, "Long" + longitude + "  Lat :" + latitude);
+            myLocation = new LatLng(latitude, longitude)    ;
+            markerOptions = new MarkerOptions().position(myLocation).title("My Location");
+            marker = map.addMarker(markerOptions);
+
             map.moveCamera(CameraUpdateFactory.newLatLngZoom(myLocation, 13));
 
         } catch (NullPointerException e) {
             Toast.makeText(ReportActivity.this, "เกิดข้อผิดผลาดในการหาตำแหน่งปัจจุบัน", Toast.LENGTH_SHORT).show();
             Log.d(TheSosApplication.TAG, "Null Error Poition");
+            myLocation = new LatLng(10, 10)    ;
+            markerOptions = new MarkerOptions().position(myLocation).title("My Location");
+            marker = map.addMarker(markerOptions);
+
             e.printStackTrace();
         } catch (Exception e) {
             e.printStackTrace();
@@ -321,43 +360,88 @@ public class ReportActivity extends AppCompatActivity implements OnMapReadyCallb
 
     }
 
-    public void initLocation() {
-        if (mBestLocationListener == null) {
-            mBestLocationListener = new BestLocationListener() {
-
-
-                public void onStatusChanged(String provider, int status, Bundle extras) {
-                }
-
-                public void onProviderEnabled(String provider) {
-                }
-
-                public void onProviderDisabled(String provider) {
-                }
-
-                public void onLocationUpdateTimeoutExceeded(BestLocationProvider.LocationType type) {
-                }
-
-                public void onLocationUpdate(Location location, BestLocationProvider.LocationType type, boolean isFresh) {
-                    locationGPS = location;
-                }
-            };
-
-            if (mBestLocationProvider == null) {
-                mBestLocationProvider = new BestLocationProvider(this, true, false, 10000, 1000, 2, 0);
-            }
-        }
-    }
 
     @Override
     public void onResume() {
         super.onResume();
-        initLocation();
-        mBestLocationProvider.startLocationUpdatesWithListener(mBestLocationListener);
     }
 
     @Override
-    public void onMapReady(GoogleMap googleMap) {
+    protected void onStart() {
+        super.onStart();
+        // Connect the client.
+        mGoogleApiClient.connect();
+    }
+    @Override
+    protected void onStop() {
+        // Disconnecting the client invalidates it.
+        mGoogleApiClient.disconnect();
+        super.onStop();
+    }
 
+
+    @Override
+    public void onConnected(Bundle bundle) {
+
+        mLocationRequest = LocationRequest.create();
+        mLocationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
+        mLocationRequest.setInterval(1000); // Update location every second
+
+        LocationServices.FusedLocationApi.requestLocationUpdates(
+                mGoogleApiClient, mLocationRequest, this);
+    }
+    @Override
+    public void onConnectionSuspended(int i) {
+        Log.i(TheSosApplication.TAG, "GoogleApiClient connection has been suspend");
+    }
+
+    @Override
+    public void onConnectionFailed(ConnectionResult connectionResult) {
+        Log.i(TheSosApplication.TAG, "GoogleApiClient connection has failed");
+    }
+
+    @Override
+    public void onLocationChanged(Location location) {
+        Log.d(TheSosApplication.TAG,"Location received: " + location.toString());
+        myLocation  = new LatLng(location.getLatitude(),location.getLongitude());
+        animateMarker(marker,myLocation,false);
+        map.moveCamera(CameraUpdateFactory.newLatLngZoom(myLocation, 13));
+
+    }
+    public void animateMarker(final Marker marker, final LatLng toPosition,
+                              final boolean hideMarker) {
+        final Handler handler = new Handler();
+        final long start = SystemClock.uptimeMillis();
+        Projection proj = map.getProjection();
+        Point startPoint = proj.toScreenLocation(marker.getPosition());
+        final LatLng startLatLng = proj.fromScreenLocation(startPoint);
+        final long duration = 500;
+
+        final Interpolator interpolator = new LinearInterpolator();
+
+        handler.post(new Runnable() {
+            @Override
+            public void run() {
+                long elapsed = SystemClock.uptimeMillis() - start;
+                float t = interpolator.getInterpolation((float) elapsed
+                        / duration);
+                double lng = t * toPosition.longitude + (1 - t)
+                        * startLatLng.longitude;
+                double lat = t * toPosition.latitude + (1 - t)
+                        * startLatLng.latitude;
+                marker.setPosition(new LatLng(lat, lng));
+
+                if (t < 1.0) {
+                    // Post again 16ms later.
+                    handler.postDelayed(this, 16);
+                } else {
+                    if (hideMarker) {
+                        marker.setVisible(false);
+                    } else {
+                        marker.setVisible(true);
+                    }
+                }
+            }
+        });
     }
 }

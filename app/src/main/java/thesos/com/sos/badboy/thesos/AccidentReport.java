@@ -31,7 +31,7 @@ import java.util.UUID;
 public class AccidentReport {
 
     private static final long TIME_PROCESS_SLEEP = 1000;
-    private static final long MAX_TIME_WAIT = 20;  //ระยะเวลาที่รอการติดต่อจากเจ้าหน้าที่
+    private static final long MAX_TIME_WAIT = 30;  //ระยะเวลาที่รอการติดต่อจากเจ้าหน้าที่
     private static final double MAX_NEAR_KILOMETER = 10;
     private static final int LIMIT_RESCUER = 5;
     private static final ParseGeoPoint currentUserLocation = new ParseGeoPoint(7.8481069, 98.329275);
@@ -47,9 +47,11 @@ public class AccidentReport {
     private boolean running;
     private ProgressBar loadingProgressBar;
     private boolean progressRunning;
+    private Accident accident;
 
-    public AccidentReport(Context c) {
+    public AccidentReport(Context c, Accident accident) {
         this.context = c;
+        this.accident = accident;
     }
 
     public boolean report() {
@@ -57,7 +59,7 @@ public class AccidentReport {
             Thread.sleep(50);
             this.setLoadingProgressBar(true);
             // ส่งข้อมูลการเกิดอุบัติเหตุขึ้นสู่ Server PARSE
-            // sendAccidentToServer();
+             sendAccidentToServer();
 
             // ค้นห้ากู้ภับที่ใกล้ที่สุด
             this.findNearRescuer();
@@ -93,12 +95,12 @@ public class AccidentReport {
     }
 
 
-    private void sendNotification(String tempId, String title, String description, ParseGeoPoint rescuerLocation) throws ParseException {
+    private void sendNotification(String objectId, String tempId, String description, ParseGeoPoint rescuerLocation, String rescueId) throws ParseException {
         JSONObject data = new JSONObject();
         try {
-            data.put("title", title);
+            data.put("title", "test");
             data.put("text", description);
-            data.put("accident_id", getObjectId());
+            data.put("accident_id", objectId);
             data.put("temp_id", tempId);
 
         } catch (JSONException e) {
@@ -107,7 +109,8 @@ public class AccidentReport {
 
 
         ParsePush push = new ParsePush();
-        push.setChannel("");
+        push.setChannel(rescueId);
+        //push.setChannel("");
         push.setData(data);
         push.send();
     }
@@ -127,7 +130,7 @@ public class AccidentReport {
 
             ParseUser rescuer = object.getParseUser("rescuer").fetchIfNeeded();
             //ส่ง Notification ไปยังกู้ภัย
-            this.sendNotification(this.objectId, object.getObjectId(), "อุบัติเหตุทางเรือ", currentUserLocation);
+            this.sendNotification(this.objectId, object.getObjectId(), "อุบัติเหตุทางเรือ", currentUserLocation, rescuer.getObjectId());
 
 
             // Update สถานะเป็นกำลังส่ง
@@ -227,7 +230,7 @@ public class AccidentReport {
 
                 //ถ้าไม่พบกู้ภัยที่มีสถานะ waiting
                 int count = query.count();
-                Log.d(TAG, "Count : " + count);
+                Log.d(TheSosApplication.TAG, "Count : " + count);
                 if (count == 0) {
                     this.setCurrentStatus("ไม่พบกู้ภัยที่อยุ่ในบริเวณใกล้เคียง", "red");
                     return false;
@@ -235,7 +238,7 @@ public class AccidentReport {
 
                 //ส่งการแจ้งเตือนไปยังกู้ภัย
                 for (ParseObject temp : listTemp) {
-                    Log.d(TAG, "ID = " + temp.getObjectId() + "  |  Status " + temp.getString("status"));
+                    Log.d(TheSosApplication.TAG, "ID = " + temp.getObjectId() + "  |  Status " + temp.getString("status"));
 
                     //เตียมข้อมูลการส่ง
                     String currentReportStatus = this.updateRescuerStatus(temp.getObjectId());
@@ -267,12 +270,12 @@ public class AccidentReport {
             query.whereWithinKilometers("location", currentUserLocation, MAX_NEAR_KILOMETER);
             query.whereNotEqualTo("objectId", currentUser.getObjectId());
             // เฉพาะเจ้าหน้าที่
-            // query.whereEqualTo("type","Rescuer");
+            query.whereEqualTo("type", "Rescuer");
 
             //จำกัดเจ้าหน้าที่ไว้กี่คน
             query.setLimit(LIMIT_RESCUER);
             list = query.find();
-            Log.d(TAG, "พบกู้ภัยทั้งสิ้น" + list.size() + " คน.");
+            Log.d(TheSosApplication.TAG, "พบกู้ภัยทั้งสิ้น" + list.size() + " คน.");
 
             if (list.size() == 0) {
                 this.setCurrentStatus("ไม่พบกู้ภัย", "red");
@@ -324,7 +327,7 @@ public class AccidentReport {
 
             ParseObject pr = new ParseObject("accident");
             pr.put("accidentType", "อุบัติเหตุทางรถยนต์");
-            //pr.put("location", new ParseGeoPoint(accident.getLatitude(), accident.getLongitude()));
+            pr.put("location", new ParseGeoPoint(accident.getLatitude(), accident.getLongitude()));
             pr.put("accidentDescription", "Bla Bla Bla");
             if (imagesUri != null) {
                 File file = new File(imagesUri.getPath());
@@ -342,8 +345,8 @@ public class AccidentReport {
             pr.put("status", "WAITING");
             pr.save();
             this.objectId = pr.getObjectId();
-            Log.d(TAG, "The object id is: " + pr.getObjectId());
-            Log.d(TAG, "Send Object to Parse Server");
+            Log.d(TheSosApplication.TAG, "The object id is: " + pr.getObjectId());
+            Log.d(TheSosApplication.TAG, "Send Object to Parse Server");
         } catch (IOException e) {
             Log.d("theSos", "Error Save (0x00102)");
             e.printStackTrace();
