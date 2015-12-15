@@ -42,6 +42,9 @@ public class MainActivity extends AppCompatActivity {
         bindWidget();
         ParseUser currentUser = ParseUser.getCurrentUser();
         if ((currentUser != null) && ParseFacebookUtils.isLinked(currentUser)) {
+            if(currentUser.getString("type") == null){
+                showExtraData();
+            }
             if (currentUser.getString("type").equals("User")) {
                 Intent i = new Intent(this, ReportActivity.class);
                 startActivity(i);
@@ -91,6 +94,9 @@ public class MainActivity extends AppCompatActivity {
                     if (user.getString("type").equals("User")) {
                         Intent i = new Intent(MainActivity.this, ReportActivity.class);
                         startActivity(i);
+                        if (user.getString("telephone") == null) {
+                            showExtraData();
+                        }
                         finish();
                     } else if (user.getString("type").equals("Rescuer")) {
                         Intent i = new Intent(MainActivity.this, RouteActivity.class);

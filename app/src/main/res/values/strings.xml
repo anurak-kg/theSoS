@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">แอปพริเคชั้นแจ้งเหตูฉุกเฉิน</string>
+    <string name="app_name">แจ้งเหตูฉุกเฉิน กุศลธรรมภูเก็ต</string>
     <string name="applicationId">zPrOlIvdOFRYgrzqRrPvketZjpGvwIIWyT4tAXEF</string>
     <string name="clientKey">39u6qq3HqKfFZMqI5tM2pGGPj3z1y9GNGfBeuNPj</string>
     <string name="hello_world">Hello world!</string>
