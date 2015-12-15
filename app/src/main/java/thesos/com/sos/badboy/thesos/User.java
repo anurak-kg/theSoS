@@ -13,7 +13,7 @@ import com.parse.SaveCallback;
  */
 public class User {
     ParseUser currentUser;
-
+    String type;
     public void User() {
         currentUser = ParseUser.getCurrentUser();
     }
