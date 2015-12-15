@@ -33,6 +33,8 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
+import uk.co.senab.photoview.PhotoViewAttacher;
+
 public class AccidentActivity extends AppCompatActivity {
 
     private String objectId;
@@ -58,6 +60,7 @@ public class AccidentActivity extends AppCompatActivity {
     private String tempId;
     private TextView dateOfAccident;
     private TextView dateAccidentTextView;
+    private PhotoViewAttacher mAttacher;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -183,6 +186,8 @@ public class AccidentActivity extends AppCompatActivity {
                                             .centerCrop()
                                             .error(R.drawable.no_photo_grey)
                                             .into(accidentPhoto);
+                                    mAttacher = new PhotoViewAttacher(accidentPhoto);
+
                                 }
 
                                 //ข้อมูลเวลา

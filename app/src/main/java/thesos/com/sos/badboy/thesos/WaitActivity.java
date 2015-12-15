@@ -62,18 +62,20 @@ public class WaitActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_wait);
+
         //Fetch Facebook user info if it is logged
         currentUser = ParseUser.getCurrentUser();
         if ((currentUser != null) && currentUser.isAuthenticated()) {
             makeMeRequest();
         }
         accident = (Accident) getIntent().getSerializableExtra("accident");
+
         if (getIntent().getExtras().getString("uri") != null) {
             imagesUri = Uri.parse(getIntent().getExtras().getString("uri"));
             Log.d("theSos", imagesUri.getPath());
         }
         Log.d("theSos", accident.getAccidentType());
-        setContentView(R.layout.activity_wait);
         bindLayout();
 
         //เริ่มกระบวนการติดต่อเจ้าหน้าที่
@@ -100,7 +102,9 @@ public class WaitActivity extends AppCompatActivity {
                     Log.d(TheSosApplication.TAG, "Prepare Send Accident to Parse");
 
                     acidentReport = new AccidentReport(getApplicationContext(),accident);
-                    //acidentReport.setImagesUri(imagesUri);
+                    if (imagesUri != null) {
+                        acidentReport.setImagesUri(imagesUri);
+                    }
                     acidentReport.setCurrentUser(currentUser);
                     acidentReport.setTextUI(status);
                     acidentReport.setLoadingHandle(loading);

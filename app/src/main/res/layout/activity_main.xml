@@ -33,17 +33,16 @@
         android:background="@null"
         android:contentDescription="Facebook Login"
         android:src="@drawable/facebooklogin"
-        android:layout_below="@+id/mainLogo"
-        android:layout_alignLeft="@+id/mainLogo"
-        android:layout_alignStart="@+id/mainLogo" />
+        android:layout_alignBottom="@+id/mainLogo"
+        android:layout_centerHorizontal="true" />
 
     <ImageView
-        android:layout_width="300dp"
-        android:layout_height="300dp"
+        android:layout_width="400dp"
+        android:layout_height="400dp"
         android:id="@+id/mainLogo"
         android:paddingTop="20dp"
         android:src="@drawable/logo_app"
-        android:layout_alignParentTop="true"
+        android:layout_alignBottom="@+id/email"
         android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

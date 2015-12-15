@@ -135,9 +135,9 @@
                     android:layout_height="wrap_content"
                     android:padding="2dp">
 
-                    <ImageView
+                    <uk.co.senab.photoview.PhotoView
                         android:id="@+id/accidentPhoto"
-                        android:layout_width="300dp"
+                        android:layout_width="match_parent"
                         android:layout_height="300dp" />
                 </RelativeLayout>
 

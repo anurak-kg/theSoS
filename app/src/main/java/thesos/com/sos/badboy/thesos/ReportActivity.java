@@ -1,6 +1,5 @@
 package thesos.com.sos.badboy.thesos;
 
-import android.*;
 import android.Manifest;
 import android.content.ContentResolver;
 import android.content.Context;
@@ -24,6 +23,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.Interpolator;
 import android.view.animation.LinearInterpolator;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -47,6 +47,8 @@ import org.json.JSONObject;
 
 import java.io.File;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 
 
@@ -78,6 +80,12 @@ public class ReportActivity extends AppCompatActivity implements
     private LatLng myLocation;
     private Marker marker;
     private MarkerOptions markerOptions;
+    private String[] accidentTypeArray = {"รถชน", "คนจมน้ำ", "สัตว์เข้าบ้าน", "ทำคลอด", "ช่วยคนฆ่าคนตาย", "ไฟไหม้", "น้ำท่วม", "อื่นๆ"};
+    private String type;
+    private ArrayList<String> arrayAccidnet;
+    private Button buttonIntent;
+    private int CAMERA_PHOTO_WIDTH = 600;
+    private int CAMERA_PHOTO_HEIGHT = 400;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -86,6 +94,7 @@ public class ReportActivity extends AppCompatActivity implements
         setTitle("แจ้งเหตุร้ายเหตุด่วน ");
 
         bindLayout();
+        arrayAccidnet = new ArrayList<String>(Arrays.asList(accidentTypeArray));
 
         //  logoutBtn.setOnClickListener(new View.OnClickListener() {
         //    @Override
@@ -119,7 +128,7 @@ public class ReportActivity extends AppCompatActivity implements
     }
 
     private void bindLayout() {
-        Button buttonIntent = (Button) findViewById(R.id.takePictureBtn);
+        buttonIntent = (Button) findViewById(R.id.takePictureBtn);
         buttonIntent.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
@@ -129,16 +138,37 @@ public class ReportActivity extends AppCompatActivity implements
                 File f = new File(Environment.getExternalStorageDirectory()
                         , "DCIM/Camera/" + imageFileName);
                 uri = Uri.fromFile(f);
+
+                intent.putExtra("crop", "true");
+                intent.putExtra("outputX", CAMERA_PHOTO_WIDTH);
+                intent.putExtra("outputY", CAMERA_PHOTO_HEIGHT);
+                intent.putExtra("aspectX", 1);
+                intent.putExtra("aspectY", 1);
+                intent.putExtra("scale", true);
                 intent.putExtra(MediaStore.EXTRA_OUTPUT, uri);
+
+
                 startActivityForResult(Intent.createChooser(intent
                         , "Take a picture with"), REQUEST_CAMERA);
             }
         });
 
-        Spinner accidentType = (Spinner) findViewById(R.id.AccidentDropDown);
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.accident_type, android.R.layout.simple_spinner_dropdown_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        final Spinner accidentType = (Spinner) findViewById(R.id.AccidentDropDown);
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, accidentTypeArray);
         accidentType.setAdapter(adapter);
+        accidentType.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                type = accidentTypeArray[position];
+                Log.d(TheSosApplication.TAG, "Type = " + type);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
 
 
         alertBtn = (Button) findViewById(R.id.alertBtn);
@@ -146,10 +176,10 @@ public class ReportActivity extends AppCompatActivity implements
             @Override
             public void onClick(View v) {
 
-                if (myLocation.latitude != 10 && myLocation.longitude !=10) {
+                if (myLocation.latitude != 10 && myLocation.longitude != 10) {
                     redirectToWaiting();
                 } else {
-                    Toast.makeText(ReportActivity.this, "ไม่พบบตำแหน่งของผู้ใช้ โปรดเช็คการตั้งค่า GPS", Toast.LENGTH_LONG).show();
+                    Toast.makeText(ReportActivity.this, "ไม่พบตำแหน่งของผู้ใช้ โปรดเช็คการตั้งค่า GPS", Toast.LENGTH_LONG).show();
                 }
             }
         });
@@ -178,8 +208,10 @@ public class ReportActivity extends AppCompatActivity implements
             try {
                 Bitmap bitmap = MediaStore.Images.Media.getBitmap(cr, uri);
                 // imageView.setImageBitmap(bitmap);
+                buttonIntent.setText("ถ่ายภาพใหม่");
                 Toast.makeText(getApplicationContext()
                         , uri.getPath(), Toast.LENGTH_SHORT).show();
+
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -189,11 +221,13 @@ public class ReportActivity extends AppCompatActivity implements
     private Accident getAccidentData() {
 
         accident = new Accident();
-        accident.setAccidentType("อุบัติเหตุทางรถ");
+        accident.setAccidentType(type);
         accident.setLocation(myLocation.latitude, myLocation.longitude);
         accident.setAccidentStatus("waiting");
-        accident.setAccidentDescription("Bla Bla Bla");
-        //accident.setUri(uri.toString());
+        accident.setAccidentDescription(type);
+        if (uri != null) {
+            accident.setUri(uri.getPath());
+        }
         return accident;
     }
 
@@ -218,7 +252,7 @@ public class ReportActivity extends AppCompatActivity implements
             longitude = location.getLongitude();
             latitude = location.getLatitude();
             Log.d(TheSosApplication.TAG, "Long" + longitude + "  Lat :" + latitude);
-            myLocation = new LatLng(latitude, longitude)    ;
+            myLocation = new LatLng(latitude, longitude);
             markerOptions = new MarkerOptions().position(myLocation).title("My Location");
             marker = map.addMarker(markerOptions);
 
@@ -226,8 +260,8 @@ public class ReportActivity extends AppCompatActivity implements
 
         } catch (NullPointerException e) {
             Toast.makeText(ReportActivity.this, "เกิดข้อผิดผลาดในการหาตำแหน่งปัจจุบัน", Toast.LENGTH_SHORT).show();
-            Log.d(TheSosApplication.TAG, "Null Error Poition");
-            myLocation = new LatLng(10, 10)    ;
+            Log.d(TheSosApplication.TAG, "Null Error Location");
+            myLocation = new LatLng(10, 10);
             markerOptions = new MarkerOptions().position(myLocation).title("My Location");
             marker = map.addMarker(markerOptions);
 
@@ -258,31 +292,6 @@ public class ReportActivity extends AppCompatActivity implements
                                     userProfile.put("email", (String) user.getString("email"));
                                 }
 
-
-                           /*     Criteria criteria = new Criteria();
-                                LocationManager locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
-                                String provider = locationManager.getBestProvider(criteria, true);
-                                Location location = locationManager.getLastKnownLocation(provider);
-                                double latitude = location.getLatitude();
-                                double longitude = location.getLongitude();
-
-
-                                Geocoder gcd = new Geocoder(ReportActivity.this, Locale.getDefault());
-
-                                List<Address> addresses = null;
-                                try {
-                                    addresses = gcd.getFromLocation(latitude, longitude, 1);
-                                } catch (IOException e) {
-                                    e.printStackTrace();
-                                }
-                                if (addresses.size() > 0) {
-                                    System.out.println(addresses.get(0).getLocality());
-                                    if (addresses.get(0).getLocality() != null) {
-                                        userProfile.put("city", addresses.get(0).getLocality());
-                                    }
-
-                                }
-*/
                                 ParseUser currentUser = ParseUser.getCurrentUser();
                                 currentUser.put("name", user.getString("name"));
                                 currentUser.put("type", "User");
@@ -372,6 +381,7 @@ public class ReportActivity extends AppCompatActivity implements
         // Connect the client.
         mGoogleApiClient.connect();
     }
+
     @Override
     protected void onStop() {
         // Disconnecting the client invalidates it.
@@ -390,6 +400,7 @@ public class ReportActivity extends AppCompatActivity implements
         LocationServices.FusedLocationApi.requestLocationUpdates(
                 mGoogleApiClient, mLocationRequest, this);
     }
+
     @Override
     public void onConnectionSuspended(int i) {
         Log.i(TheSosApplication.TAG, "GoogleApiClient connection has been suspend");
@@ -402,12 +413,13 @@ public class ReportActivity extends AppCompatActivity implements
 
     @Override
     public void onLocationChanged(Location location) {
-        Log.d(TheSosApplication.TAG,"Location received: " + location.toString());
-        myLocation  = new LatLng(location.getLatitude(),location.getLongitude());
-        animateMarker(marker,myLocation,false);
+        Log.d(TheSosApplication.TAG, "Location received: " + location.toString());
+        myLocation = new LatLng(location.getLatitude(), location.getLongitude());
+        animateMarker(marker, myLocation, false);
         map.moveCamera(CameraUpdateFactory.newLatLngZoom(myLocation, 13));
 
     }
+
     public void animateMarker(final Marker marker, final LatLng toPosition,
                               final boolean hideMarker) {
         final Handler handler = new Handler();

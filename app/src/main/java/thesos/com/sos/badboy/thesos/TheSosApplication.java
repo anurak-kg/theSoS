@@ -29,6 +29,7 @@ public class TheSosApplication extends Application {
 
         // Initialization code here
         // Set your Parse app id and client key in strings.xml
+        Parse.enableLocalDatastore(this);
         Parse.initialize(this, getString(R.string.applicationId), getString(R.string.clientKey));
         ParseInstallation.getCurrentInstallation().saveInBackground();
 

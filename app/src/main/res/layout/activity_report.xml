@@ -72,9 +72,8 @@
                     android:id="@+id/alertBtn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-
                     android:layout_below="@+id/takePictureBtn"
-                    android:text="แจ้งเหตุด่วนนะ !!" />
+                    android:text="แจ้งเหตุ !!" />
 
                 <Button
                     android:id="@+id/takePictureBtn"
