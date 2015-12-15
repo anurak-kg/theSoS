@@ -45,22 +45,8 @@ public class MainActivity extends AppCompatActivity {
         bindWidget();
         ParseUser currentUser = ParseUser.getCurrentUser();
         if ((currentUser != null) && ParseFacebookUtils.isLinked(currentUser)) {
+            checkUserType(currentUser.getString("type"));
 
-            if(currentUser.getString("type") == null){
-                showExtraData();
-            }
-
-            Log.d(TheSosApplication.TAG,"User Type = " +currentUser.getString("type"));
-            if (currentUser.getString("type").equals("User")) {
-                Intent i = new Intent(this, ReportActivity.class);
-                startActivity(i);
-                finish();
-
-            } else if (currentUser.getString("type").equals("Rescuer")) {
-                Intent i = new Intent(this, RouteActivity.class);
-                startActivity(i);
-                finish();
-            }
         }
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,6 +57,26 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    private void checkUserType(String type) {
+        Log.d(TheSosApplication.TAG,"User Type = " +type);
+
+
+        if (type == null) {
+            showExtraData();
+        } else if (type.equals("User")) {
+            Log.d(TheSosApplication.TAG,"User Type = " +type);
+
+            Intent i = new Intent(this, ReportActivity.class);
+            startActivity(i);
+            finish();
+        } else if (type.equals("Rescuer")) {
+            Log.d(TheSosApplication.TAG,"User Type = " +type);
+
+            Intent i = new Intent(this, RouteActivity.class);
+            startActivity(i);
+            finish();
+        }
+    }
 
     private void bindWidget() {
         loginBtn = (ImageButton) findViewById(R.id.loginBtn);
@@ -98,22 +104,9 @@ public class MainActivity extends AppCompatActivity {
                     //showRouteActivity();
                     // showExtraData();
                 } else {
-                    if (user.getString("type").equals("User")) {
+                        Log.d("TheSos", "User logged in through Facebook!");
+                    checkUserType(user.getString("type"));
 
-                        if (user.getString("telephone") == null) {
-                            showExtraData();
-                        } else{
-                            Intent i = new Intent(MainActivity.this, ReportActivity.class);
-                            startActivity(i);
-                            finish();
-                        }
-
-                    } else if (user.getString("type").equals("Rescuer")) {
-                        Intent i = new Intent(MainActivity.this, RouteActivity.class);
-                        startActivity(i);
-                        finish();
-                    }
-                    Log.d("TheSos", "User logged in through Facebook!");
                 }
             }
         });

@@ -94,7 +94,7 @@ public class AccidentListActivity extends AppCompatActivity {
 
             //สร้าง Dialog การโหลดข้อมูล
             mProgressDialog = new ProgressDialog(AccidentListActivity.this);
-            mProgressDialog.setTitle("กำลังโหลดข้อมูลอุบบัติเหตุ");
+            mProgressDialog.setTitle("กำลังโหลดข้อมูลอุบัติเหตุุ");
             mProgressDialog.setMessage("Loading...");
             mProgressDialog.setIndeterminate(false);
             mProgressDialog.show();

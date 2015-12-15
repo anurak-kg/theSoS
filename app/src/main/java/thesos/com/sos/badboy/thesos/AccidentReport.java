@@ -32,7 +32,7 @@ public class AccidentReport {
 
     private static final long TIME_PROCESS_SLEEP = 1000;
     private static final long MAX_TIME_WAIT = 30;  //ระยะเวลาที่รอการติดต่อจากเจ้าหน้าที่
-    private static final double MAX_NEAR_KILOMETER = 10;
+    private static final double MAX_NEAR_KILOMETER = 20;
     private static final int LIMIT_RESCUER = 5;
     private static final ParseGeoPoint currentUserLocation = new ParseGeoPoint(7.8481069, 98.329275);
 
@@ -59,7 +59,7 @@ public class AccidentReport {
             Thread.sleep(50);
             this.setLoadingProgressBar(true);
             // ส่งข้อมูลการเกิดอุบัติเหตุขึ้นสู่ Server PARSE
-             sendAccidentToServer();
+            sendAccidentToServer();
 
             // ค้นห้ากู้ภับที่ใกล้ที่สุด
             this.findNearRescuer();
@@ -99,7 +99,7 @@ public class AccidentReport {
         JSONObject data = new JSONObject();
         try {
             data.put("title", "มูลนิธิกุศลธรรมภูเก็ต");
-            data.put("text", "เกิดอุบัติเหตุ "+description+"ใกล้พื้นที่ของคุณ");
+            data.put("text", "เกิดอุบัติเหตุ " + description + " ใกล้พื้นที่ของคุณ");
             data.put("accident_id", objectId);
             data.put("temp_id", tempId);
 
@@ -109,7 +109,7 @@ public class AccidentReport {
 
 
         ParsePush push = new ParsePush();
-        push.setChannel(rescueId);
+        push.setChannel("A"+rescueId);
         //push.setChannel("");
         push.setData(data);
         push.send();
@@ -326,9 +326,11 @@ public class AccidentReport {
             Log.d("theSos", "Start Send Accident to Parse");
 
             ParseObject pr = new ParseObject("accident");
-            pr.put("accidentType", "อุบัติเหตุทางรถยนต์");
+            pr.put("accidentType", accident.getAccidentType());
             pr.put("location", new ParseGeoPoint(accident.getLatitude(), accident.getLongitude()));
-            pr.put("accidentDescription", "Bla Bla Bla");
+            pr.put("accidentDescription", accident.getAccidentType());
+
+            //เช็ครูปว่า
             if (imagesUri != null) {
                 File file = new File(imagesUri.getPath());
                 if (file.exists()) {

@@ -294,7 +294,6 @@ public class ReportActivity extends AppCompatActivity implements
 
                                 ParseUser currentUser = ParseUser.getCurrentUser();
                                 currentUser.put("name", user.getString("name"));
-                                currentUser.put("type", "User");
                                 currentUser.put("profile", userProfile);
 
                                 if (locationGPS != null) {
