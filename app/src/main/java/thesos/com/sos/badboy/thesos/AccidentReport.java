@@ -98,8 +98,8 @@ public class AccidentReport {
     private void sendNotification(String objectId, String tempId, String description, ParseGeoPoint rescuerLocation, String rescueId) throws ParseException {
         JSONObject data = new JSONObject();
         try {
-            data.put("title", "test");
-            data.put("text", description);
+            data.put("title", "มูลนิธิกุศลธรรมภูเก็ต");
+            data.put("text", "เกิดอุบัติเหตุ "+description+"ใกล้พื้นที่ของคุณ");
             data.put("accident_id", objectId);
             data.put("temp_id", tempId);
 
@@ -130,7 +130,7 @@ public class AccidentReport {
 
             ParseUser rescuer = object.getParseUser("rescuer").fetchIfNeeded();
             //ส่ง Notification ไปยังกู้ภัย
-            this.sendNotification(this.objectId, object.getObjectId(), "อุบัติเหตุทางเรือ", currentUserLocation, rescuer.getObjectId());
+            this.sendNotification(this.objectId, object.getObjectId(), accident.getAccidentType(), currentUserLocation, rescuer.getObjectId());
 
 
             // Update สถานะเป็นกำลังส่ง

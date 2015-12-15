@@ -35,7 +35,7 @@ public class AccidentPushBroadcastReceive extends ParsePushBroadcastReceiver {
     @Override
     protected void onPushReceive(Context context, Intent intent) {
         try {
-            Log.d(TAG, "Push Receive");
+            Log.d(TheSosApplication.TAG, "Push Receive");
             JSONObject data = getDataFromIntent(intent);
             Intent showFullQuoteIntent = new Intent(context, AccidentActivity.class);
 
