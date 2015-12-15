@@ -82,50 +82,12 @@ public class RescuerActivity extends AppCompatActivity{
 
     }
 
-    private void bindFragment() {
-
-    }
-
-    private void getNearRescuer() {
-        ParseQuery<ParseObject> query = ParseQuery.getQuery("_User");
-        query.whereWithinKilometers("location", currentLocation, MAX_NEAR_KILOMATE);
-        query.setLimit(LIMIT_RESCURER);
-        query.findInBackground(new FindCallback<ParseObject>() {
-            @Override
-            public void done(List<ParseObject> list, ParseException e) {
-                for (ParseObject object : list) {
-                    ParseGeoPoint location = object.getParseGeoPoint("location");
-                    Log.d(TAG, object.getString("name") + "อยู่ห่างจากผู้ใช้ " + location.distanceInKilometersTo(currentLocation) + " กม.");
-                }
-            }
-        });
-
-
-    }
-
     private void goToAccidentListActivity(){
         Intent i = new Intent(this, AccidentListActivity.class);
         startActivity(i);
         finish();
     }
 
-    private void pushAccidentNotic() {
-        JSONObject data = new JSONObject();
-        try {
-            data.put("title", "ทดสอบหน่อยไอสาด");
-            data.put("text", "อุบัติเหตุทางเรือ @Chalong ระยะห่าง 1.2 กม.");
-            data.put("accident_id", "gXMeLvFipa");
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-
-
-        ParsePush push = new ParsePush();
-        push.setChannel("");
-        push.setData(data);
-        push.sendInBackground();
-        Toast.makeText(getApplicationContext(), "Send", Toast.LENGTH_LONG).show();
-    }
 
     private void subscribed() {
         String channel = getChannel();

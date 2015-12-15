@@ -88,8 +88,16 @@ public class MainActivity extends AppCompatActivity {
                     //showRouteActivity();
                     // showExtraData();
                 } else {
+                    if (user.getString("type").equals("User")) {
+                        Intent i = new Intent(MainActivity.this, ReportActivity.class);
+                        startActivity(i);
+                        finish();
+                    } else if (user.getString("type").equals("Rescuer")) {
+                        Intent i = new Intent(MainActivity.this, RouteActivity.class);
+                        startActivity(i);
+                        finish();
+                    }
                     Log.d("TheSos", "User logged in through Facebook!");
-                    showUserDetailsActivity();
                 }
             }
         });
