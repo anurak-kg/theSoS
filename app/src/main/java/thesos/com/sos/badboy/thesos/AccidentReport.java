@@ -32,7 +32,7 @@ public class AccidentReport {
 
     private static final long TIME_PROCESS_SLEEP = 1000;
     private static final long MAX_TIME_WAIT = 30;  //ระยะเวลาที่รอการติดต่อจากเจ้าหน้าที่
-    private static final double MAX_NEAR_KILOMETER = 20;
+    private static final double MAX_NEAR_KILOMETER = 20; //ขอบเขตการค้นหา  กม.
     private static final int LIMIT_RESCUER = 5;
     private static final ParseGeoPoint currentUserLocation = new ParseGeoPoint(7.8481069, 98.329275);
 
@@ -271,6 +271,7 @@ public class AccidentReport {
             query.whereNotEqualTo("objectId", currentUser.getObjectId());
             // เฉพาะเจ้าหน้าที่
             query.whereEqualTo("type", "Rescuer");
+            query.whereEqualTo("rescueListen", true);
 
             //จำกัดเจ้าหน้าที่ไว้กี่คน
             query.setLimit(LIMIT_RESCUER);

@@ -1,9 +1,14 @@
 package thesos.com.sos.badboy.thesos;
 
+import android.*;
 import android.app.Fragment;
+import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.location.Location;
+import android.location.LocationManager;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -21,6 +26,8 @@ import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.parse.FindCallback;
 import com.parse.ParseException;
@@ -50,6 +57,10 @@ public class RescuerActivity extends AppCompatActivity implements
     private ParseUser currentUser;
     private GoogleApiClient mGoogleApiClient;
     private LocationRequest mLocationRequest;
+    private LatLng myLocation;
+    private boolean rescueListen;
+    private Switch subscribeToggle;
+    private GoogleMap map;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,7 +88,7 @@ public class RescuerActivity extends AppCompatActivity implements
                 startActivity(i);
             }
         });
-        Switch subscribeToggle = (Switch) findViewById(R.id.rescurer_sub);
+        subscribeToggle = (Switch) findViewById(R.id.rescurer_sub);
         subscribeToggle.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
@@ -87,7 +98,7 @@ public class RescuerActivity extends AppCompatActivity implements
                         subscribed();
                     }
                 } else {
-                    if (!ifSubscribed()) {
+                    if (ifSubscribed()) {
                         //ยกเลิกการรับข้อมูล
                         unSubscribed();
                     }
@@ -96,7 +107,53 @@ public class RescuerActivity extends AppCompatActivity implements
             }
         });
         currentLocation = new ParseGeoPoint(7.848657250419213, 98.32979081334793);
+        bindMap();
+        listenStatus();
 
+    }
+
+    private void bindMap() {
+        map = ((MapFragment) getFragmentManager().findFragmentById(R.id.rescueMap)).getMap();
+        map.setMyLocationEnabled(true);
+        LocationManager lm = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            if (checkSelfPermission(android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && checkSelfPermission(android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                return;
+            }
+        }
+
+    }
+
+    private void listenStatus() {
+        if (!currentUser.containsKey("rescueListen")) {
+            rescueListen = false;
+            currentUser.put("rescueListen", false);
+            currentUser.saveInBackground();
+        } else {
+            rescueListen = currentUser.getBoolean("rescueListen");
+        }
+        updateSwitchStatus();
+
+    }
+
+    private void updateSwitchStatus() {
+        if (rescueListen) {
+            subscribeToggle.setChecked(true);
+        } else {
+            subscribeToggle.setChecked(false);
+        }
+    }
+
+    private void updateListenData() {
+        currentUser.put("rescueListen", rescueListen);
+        currentUser.saveInBackground(new SaveCallback() {
+            @Override
+            public void done(ParseException e) {
+                Log.d(TheSosApplication.TAG, "Listen = " + rescueListen);
+                Log.d(TheSosApplication.TAG, "Listen form data = " + currentUser.getBoolean("rescueListen"));
+
+            }
+        });
 
     }
 
@@ -115,6 +172,9 @@ public class RescuerActivity extends AppCompatActivity implements
                 Toast.makeText(getApplicationContext(), "Subscribed ", Toast.LENGTH_LONG).show();
             }
         });
+        rescueListen = true;
+        updateListenData();
+
     }
 
     private String getChannel() {
@@ -130,6 +190,8 @@ public class RescuerActivity extends AppCompatActivity implements
                 Toast.makeText(getApplicationContext(), "unSubscribe", Toast.LENGTH_LONG).show();
             }
         });
+        rescueListen = false;
+        updateListenData();
     }
 
     private void initialLocation() {
@@ -138,6 +200,8 @@ public class RescuerActivity extends AppCompatActivity implements
                 .addConnectionCallbacks(this)
                 .addOnConnectionFailedListener(this)
                 .build();
+        myLocation = new LatLng(0, 0);
+
     }
 
     @Override
@@ -192,6 +256,9 @@ public class RescuerActivity extends AppCompatActivity implements
 
             }
         });
+
+        map.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(location.getLatitude(), location.getLongitude()), 13));
+
     }
 
     @Override
@@ -215,10 +282,23 @@ public class RescuerActivity extends AppCompatActivity implements
 
         return super.onOptionsItemSelected(item);
     }
+    public void logout(MenuItem item) {
+        ParseUser.logOut();
+        startLoginActivity();
+    }
+
+    private void startLoginActivity() {
+        Intent intent = new Intent(this, MainActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
+    }
 
     public boolean ifSubscribed() {
         //check if device is already subscribed to Giants channel
-        if (ParseInstallation.getCurrentInstallation().getList("channels").contains(getChannel())) {
+        boolean status = ParseInstallation.getCurrentInstallation().getList("channels").contains(getChannel());
+        Log.d(TheSosApplication.TAG, "Subscribed status = " + status);
+        if (status) {
             return true;
         } else {
             return false;

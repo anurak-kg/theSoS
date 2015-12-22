@@ -58,7 +58,7 @@ public class UserView extends Fragment {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
             userId = getArguments().getString(USER_ID);
-            Log.d(TheSosApplication.TAG, "onCreate() returned: " + userId);
+            Log.d(TheSosApplication.TAG, "UserView Create UserId: " + userId);
         }
         loadUserData();
     }
@@ -104,6 +104,8 @@ public class UserView extends Fragment {
                             userprogressbar.setVisibility(View.GONE);
 
                         } catch (Exception e1) {
+                            Log.d(TheSosApplication.TAG, "Error to get UserView 0x111111");
+
                             e1.printStackTrace();
                         }
                     } else {
