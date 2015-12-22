@@ -18,6 +18,11 @@ public class Accident implements Serializable {
     private String accidentDescription;
     private String accidentStatus;
     private String uri;
+    private double latitude;
+    private double longitude;
+    private String address;
+    private String victimName;
+
 
     public String getAddress() {
         return address;
@@ -26,13 +31,6 @@ public class Accident implements Serializable {
     public void setAddress(String address) {
         this.address = address;
     }
-
-    private String address;
-
-    private String victimName;
-
-    private double latitude;
-    private double longitude;
 
     public String getAccidentId() {
         return accidentId;

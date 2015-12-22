@@ -57,7 +57,7 @@ public class AccidentList extends ArrayAdapter<Accident> {
         viewHolder.listAccidentTypeTxt.setText(accident.getAccidentType());
         viewHolder.accidentListVictim.setText(accident.getVictimName());
         viewHolder.listAccidentLocation.setText(accident.getAddress());
-        //viewHolder.listAccidentStatus.setText(accident.getAccidentStatus());
+        viewHolder.victimTextView.setText(accident.getVictimName());
         //โหลดรูปภาพ
         Glide.with(this.context)
                 .load(accident.getUri())
@@ -81,15 +81,15 @@ public class AccidentList extends ArrayAdapter<Accident> {
         public TextView listAccidentTypeTxt;
         public TextView accidentListVictim;
         public TextView listAccidentLocation;
-        public TextView listAccidentStatus;
+        public TextView victimTextView;
         public ImageView imageView;
 
         public ViewHolder(View convertView) {
             listAccidentTypeTxt = (TextView) convertView.findViewById(R.id.listAccidentTypeTxt);
             accidentListVictim = (TextView) convertView.findViewById(R.id.accidentListVictim);
-            listAccidentStatus = (TextView) convertView.findViewById(R.id.listAccidentStatus);
             listAccidentLocation = (TextView) convertView.findViewById(R.id.listAccidentLocation);
             imageView = (ImageView) convertView.findViewById(R.id.listAccidentImages);
+            victimTextView = (TextView) convertView.findViewById(R.id.victimeNameTextView);
         }
     }
 }

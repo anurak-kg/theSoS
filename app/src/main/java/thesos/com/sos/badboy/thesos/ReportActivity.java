@@ -68,8 +68,6 @@ public class ReportActivity extends AppCompatActivity implements
     private double latitude;
     private Button alertBtn;
     private Accident accident;
-    private BestLocationListener mBestLocationListener;
-    private BestLocationProvider mBestLocationProvider;
     private ProfilePictureView profilePicture;
     public static final int REQUEST_CAMERA = 2;
 
@@ -139,7 +137,6 @@ public class ReportActivity extends AppCompatActivity implements
                         , "DCIM/Camera/" + imageFileName);
                 uri = Uri.fromFile(f);
 
-                intent.putExtra("crop", "true");
                 intent.putExtra("outputX", CAMERA_PHOTO_WIDTH);
                 intent.putExtra("outputY", CAMERA_PHOTO_HEIGHT);
                 intent.putExtra("aspectX", 1);
@@ -185,10 +182,6 @@ public class ReportActivity extends AppCompatActivity implements
         });
     }
 
-    private void goToTestActivity() {
-        Intent i = new Intent(this, TestActivity.class);
-        startActivity(i);
-    }
 
     private void redirectToWaiting() {
         Intent i = new Intent(this, WaitActivity.class);

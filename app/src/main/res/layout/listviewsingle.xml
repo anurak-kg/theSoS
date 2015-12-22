@@ -45,21 +45,24 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:text="สถานะ"
-            android:id="@+id/listAccidentStatus"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="ชื่อผู้แจ้ง"
+            android:id="@+id/accidentListVictim"
+            android:layout_below="@id/listAccidentLocation"
             android:layout_alignParentBottom="true"
-            />
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="ชื่อผู้แจ้ง"
-            android:id="@+id/accidentListVictim"
-            android:layout_above="@+id/listAccidentStatus"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
+            android:text="Anurak Kingkaew"
+            android:id="@+id/victimeNameTextView"
+            android:layout_alignBaseline="@+id/listAccidentLocation"
+            android:layout_alignBottom="@+id/listAccidentLocation"
+            android:layout_toRightOf="@+id/listAccidentTypeTxt"
+            android:layout_toEndOf="@+id/listAccidentTypeTxt" />
 
     </RelativeLayout>
 </RelativeLayout>

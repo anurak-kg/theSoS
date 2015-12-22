@@ -43,9 +43,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         //getHashKey();
         bindWidget();
+
         ParseUser currentUser = ParseUser.getCurrentUser();
         if ((currentUser != null) && ParseFacebookUtils.isLinked(currentUser)) {
             checkUserType(currentUser.getString("type"));
+            Log.d(TheSosApplication.TAG,"User Type =" + currentUser.getString("type"));
+           // showExtraData();
 
         }
         loginBtn.setOnClickListener(new View.OnClickListener() {
@@ -55,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
                 onLoginButtonClicked();
             }
         });
+
     }
 
     private void checkUserType(String type) {

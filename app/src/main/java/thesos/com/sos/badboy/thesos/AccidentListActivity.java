@@ -107,6 +107,7 @@ public class AccidentListActivity extends AppCompatActivity {
             try {
 
                 ParseQuery<ParseObject> query = new ParseQuery<ParseObject>("accident");
+                query.include("victimId");
                 ob = query.find();
                 for (ParseObject acc : ob) {
 
@@ -119,8 +120,8 @@ public class AccidentListActivity extends AppCompatActivity {
                     accident.setAccidentId(acc.getObjectId());
                     accident.setAccidentType(acc.getString("accidentType"));
                     accident.setAccidentStatus(acc.getString("status"));
-
-                    // accident.setVictimName(victim.getString("name"));
+                    Log.d(TheSosApplication.TAG,victim.toString());
+                    Log.d(TheSosApplication.TAG,victim.getString("name"));
 
                     //ค้นหา Location name
                     ParseGeoPoint geoPoint = acc.getParseGeoPoint("location");

@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.andreabaccega.widget.FormEditText;
 import com.parse.ParseException;
@@ -82,7 +83,14 @@ public class TelephoneActivity extends AppCompatActivity {
         for (FormEditText field : allFields) {
             allValid = field.testValidity() && allValid;
         }
+        if(addcardidtextedit.getText().length() != 13){
+            allValid = false;
+            Toast.makeText(TelephoneActivity.this, "รูปแบบรหัสประชาชนไม่ถุกต้อง", Toast.LENGTH_SHORT).show();
+        }if (addnametextedit.getText().length() == 0){
+            allValid = false;
+            Toast.makeText(TelephoneActivity.this, "กรุณาใส่ชื่อครับ", Toast.LENGTH_SHORT).show();
 
+        }
         if (allValid) {
             Log.d(TheSosApplication.TAG, "pass");
             updateProfile();

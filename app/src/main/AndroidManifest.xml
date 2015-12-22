@@ -61,9 +61,6 @@
             android:name=".TelephoneActivity"
             android:label="@string/title_activity_telephone" />
         <activity
-            android:name=".TestActivity"
-            android:label="@string/title_activity_test" />
-        <activity
             android:name="com.facebook.FacebookActivity"
             android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
             android:label="@string/app_name"

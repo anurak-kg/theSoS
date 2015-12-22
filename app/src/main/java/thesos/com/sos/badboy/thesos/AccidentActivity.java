@@ -1,6 +1,7 @@
 package thesos.com.sos.badboy.thesos;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
@@ -20,6 +21,7 @@ import com.bumptech.glide.Glide;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 import com.parse.GetCallback;
 import com.parse.ParseException;
 import com.parse.ParseFile;
@@ -42,9 +44,10 @@ public class AccidentActivity extends AppCompatActivity {
     private ProgressDialog progressDialog;
     private TextView txtAccidentType;
     private ImageView accidentPhoto;
-    private String mode;
+    private String mode = "normal";
     private android.support.v7.widget.CardView accidentlayouttop;
     private TextView typeOfAccident;
+    private boolean alert = false;
     private TextView typeOfAccidentTxt;
     private android.support.v7.widget.CardView accidentlayoutmiddle;
     private android.support.v7.widget.CardView accidentviewmap;
@@ -61,6 +64,7 @@ public class AccidentActivity extends AppCompatActivity {
     private TextView dateOfAccident;
     private TextView dateAccidentTextView;
     private PhotoViewAttacher mAttacher;
+    private ParseUser currentUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,10 +85,16 @@ public class AccidentActivity extends AppCompatActivity {
         this.typeOfAccident = (TextView) findViewById(R.id.typeOfAccident);
         this.accidentlayouttop = (CardView) findViewById(R.id.accident_layout_top);
 
+        currentUser = ParseUser.getCurrentUser();
+        if (currentUser == null) {
+            startActivity(new Intent(this, MainActivity.class));
+        }
 
         objectId = getIntent().getExtras().getString("objectId");
         mode = getIntent().getExtras().getString("mode");
         tempId = getIntent().getExtras().getString("tempId");
+
+
         bindLayout();
         if (objectId != null) {
             Log.d(TheSosApplication.TAG, "Accident Id = " + objectId);
@@ -92,6 +102,7 @@ public class AccidentActivity extends AppCompatActivity {
             getAccidentData();
         }
         if (mode != null && mode.equals("ALERT")) {
+            alert = true;
             setAlertVisible(View.VISIBLE);
         } else {
             setAlertVisible(View.GONE);
@@ -105,9 +116,9 @@ public class AccidentActivity extends AppCompatActivity {
         parseQuery.whereEqualTo("objectId", tempId);
         parseQuery.getFirstInBackground(new GetCallback<ParseObject>() {
             @Override
-            public void done(ParseObject parseObject, ParseException e) {
-                parseObject.put("status", status);
-                parseObject.saveInBackground(new SaveCallback() {
+            public void done(ParseObject object, ParseException e) {
+                object.put("status", status);
+                object.saveInBackground(new SaveCallback() {
                     @Override
                     public void done(ParseException e) {
                         Toast.makeText(AccidentActivity.this, "ส่งข้อมูลไปยังที่เกิดเหตุแล้ว", Toast.LENGTH_SHORT).show();
@@ -141,9 +152,7 @@ public class AccidentActivity extends AppCompatActivity {
             }
         });
         accidentPhoto = (ImageView) findViewById(R.id.accidentPhoto);
-        // Uri uriLoadingPhoto = Uri.parse("android.resource://thesos.com.sos.badboy.thesos/" + R.raw.loadingtxt);
-        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.loading);
-        accidentPhoto.setImageBitmap(bitmap);
+        accidentPhoto.setImageBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.loading));
 
         //Bind Map
         map = ((WorkaroundMapFragment) getSupportFragmentManager().findFragmentById(R.id.accident_view_map_fragment)).getMap();
@@ -164,19 +173,20 @@ public class AccidentActivity extends AppCompatActivity {
             public void run() {
                 try {
                     ParseQuery<ParseObject> query = ParseQuery.getQuery("accident");
-                    query.whereNotEqualTo("objectId", objectId);
-                    // query.getFirst();
+                    query.whereEqualTo("objectId", objectId);
                     query.getFirstInBackground(new GetCallback<ParseObject>() {
                         @Override
-                        public void done(final ParseObject parseObject, ParseException e) {
+                        public void done(ParseObject parseObject, ParseException e) {
                             if (e == null) {
-                                Log.d(TAG, "Download Accident Data!!");
 
+
+                                Log.d(TheSosApplication.TAG, "Download Accident Data!!");
+                                Log.d(TheSosApplication.TAG, "|| Accident ID = " +parseObject.getObjectId());
                                 victim = parseObject.getParseUser("victimId");
-                                setVictimFragments();
                                 accidentLocation = parseObject.getParseGeoPoint("location");
-                                moveAndMarkMapCamera();
                                 txtAccidentType.setText(parseObject.getString("accidentType"));
+                                String type = parseObject.getString("accidentType");
+
                                 //โหลดรูปภาพ
                                 ParseFile imageFile = parseObject.getParseFile("photo");
                                 if (imageFile != null) {
@@ -187,7 +197,8 @@ public class AccidentActivity extends AppCompatActivity {
                                             .error(R.drawable.no_photo_grey)
                                             .into(accidentPhoto);
                                     mAttacher = new PhotoViewAttacher(accidentPhoto);
-
+                                }else{
+                                    accidentPhoto.setImageResource(R.drawable.no_photo_grey);
                                 }
 
                                 //ข้อมูลเวลา
@@ -196,6 +207,17 @@ public class AccidentActivity extends AppCompatActivity {
                                     String format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(date);
                                     dateAccidentTextView.setText(format);
                                 }
+                                //ข้อมูลประเภท
+                                Log.d(TheSosApplication.TAG, "|| Type = "+ type);
+
+                                if (type != null) {
+                                    typeOfAccidentTxt.setText(parseObject.getString("accidentType"));
+                                }
+
+
+                                setVictimFragments();
+                                moveAndMarkMapCamera();
+
 
 
                             } else {
@@ -224,20 +246,29 @@ public class AccidentActivity extends AppCompatActivity {
         Log.d(TheSosApplication.TAG, "Accident Location = Long : " + longitude + "  Lat : " + latitude);
         if (accidentLocation != null) {
             LatLng latLng = new LatLng(latitude, longitude);
-/*            // Mark ตำแหน่งบนแผนที่
-            map.addMarker(new MarkerOptions()
-                    .title("จุดเกิดเหตุอุบัติเหตุ !")
-                    .position(latLng));*/
-            //ปรับมุมกล้องของกูเกิ้ล Map ไปยังตำแหน่งที่เกิดอุบัติเหตุ
+            if (alert) {
+                //เริ่มกระบวนการในการหาเส้นทาง
+                ParseGeoPoint parseGeoPoint = currentUser.getParseGeoPoint("location");
+                if (parseGeoPoint != null) {
+                    MapRoute route = new MapRoute(AccidentActivity.this, map);
+                    route.setAccidentLatLng(latLng);
+                    route.setRescuerLatLng(new LatLng(parseGeoPoint.getLatitude(), parseGeoPoint.getLongitude()));
+                    route.start();
+                    route.setMarkMap();
+                    route.setMapZoomFit();
+                } else {
+                    Toast.makeText(AccidentActivity.this, "ไม่สามารถนำทางได้เนื่องจากไม่พบตำแหน่งกู้ภัย", Toast.LENGTH_LONG).show();
+                }
+
+            } else {
+                //Mark ตำแหน่งบนแผนที่
+                map.addMarker(new MarkerOptions()
+                        .title("จุดเกิดเหตุอุบัติเหตุ !")
+                        .position(latLng));
+            }
+
             map.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 16));
 
-            //เริ่มกระบวนการในการหาเส้นทาง
-            MapRoute route = new MapRoute(AccidentActivity.this, map);
-            route.setAccidentLatLng(latLng);
-            route.setRescuerLatLng(new LatLng(7.848753, 98.329666));
-            route.start();
-            route.setMarkMap();
-            route.setMapZoomFit();
 
         }
     }
