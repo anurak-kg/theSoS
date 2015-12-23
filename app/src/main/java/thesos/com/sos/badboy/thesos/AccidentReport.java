@@ -62,7 +62,11 @@ public class AccidentReport {
             sendAccidentToServer();
 
             // ค้นห้ากู้ภับที่ใกล้ที่สุด
-            this.findNearRescuer();
+            if (!findNearRescuer()){
+                setCurrentStatus("ไม่พบกู้ภัย หรือ ไม่มีกู้ภัยที่ว่างในขณะนี้...", "red");
+                stopProgress();
+                return false;
+            }
             // แสดงรายชื่อกู้ภัยที่พบ
             this.showAllLocation();
 
@@ -263,7 +267,7 @@ public class AccidentReport {
         return false;
     }
 
-    public void findNearRescuer() throws Exception {
+    public boolean findNearRescuer() throws Exception {
         try {
             this.setAccidentStatus("FINDING");
             ParseQuery<ParseObject> query = ParseQuery.getQuery("_User");
@@ -281,12 +285,13 @@ public class AccidentReport {
             if (list.size() == 0) {
                 this.setCurrentStatus("ไม่พบกู้ภัย", "red");
                 this.setAccidentStatus("NOT_FOUND");
-                throw new Exception();
+                return false;
             }
 
         } catch (ParseException e) {
             e.printStackTrace();
         }
+        return  true;
 
     }
 
