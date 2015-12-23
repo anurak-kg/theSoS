@@ -86,11 +86,17 @@ public class TelephoneActivity extends AppCompatActivity {
         if(addcardidtextedit.getText().length() != 13){
             allValid = false;
             Toast.makeText(TelephoneActivity.this, "รูปแบบรหัสประชาชนไม่ถุกต้อง", Toast.LENGTH_SHORT).show();
-        }if (addnametextedit.getText().length() == 0){
+        }
+        if (addnametextedit.getText().length() == 0){
             allValid = false;
             Toast.makeText(TelephoneActivity.this, "กรุณาใส่ชื่อครับ", Toast.LENGTH_SHORT).show();
 
         }
+        if (addtelephonetextedit.getText().length() != 10){
+            allValid = false;
+            Toast.makeText(TelephoneActivity.this, "เบอร์โทรไม่ถูกต้อง", Toast.LENGTH_SHORT).show();
+        }
+
         if (allValid) {
             Log.d(TheSosApplication.TAG, "pass");
             updateProfile();

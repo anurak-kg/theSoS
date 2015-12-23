@@ -107,6 +107,7 @@ public class AccidentListActivity extends AppCompatActivity {
             try {
 
                 ParseQuery<ParseObject> query = new ParseQuery<ParseObject>("accident");
+                query.setLimit(20);
                 query.include("victimId");
                 ob = query.find();
                 for (ParseObject acc : ob) {
@@ -124,14 +125,23 @@ public class AccidentListActivity extends AppCompatActivity {
                     Log.d(TheSosApplication.TAG,victim.getString("name"));
 
                     //ค้นหา Location name
-                    ParseGeoPoint geoPoint = acc.getParseGeoPoint("location");
-                    if (geoPoint != null) {
-                        GeocodeAddress geocodeAddress = new GeocodeAddress(geoPoint.getLatitude(), geoPoint.getLongitude());
-                        if (geocodeAddress.getFomatLineNumber() != null) {
-                            Log.d(TAG, "geoPoint  =   " + geocodeAddress.getFomatLineNumber());
-                            accident.setAddress(geocodeAddress.getFomatLineNumber());
+                    try {
+                        ParseGeoPoint geoPoint = acc.getParseGeoPoint("location");
+                        if (geoPoint != null) {
+                            GeocodeAddress geocodeAddress = new GeocodeAddress(geoPoint.getLatitude(), geoPoint.getLongitude());
+                            if (geocodeAddress.getFomatLineNumber() != null) {
+                                Log.d(TAG, "geoPoint  =   " + geocodeAddress.getFomatLineNumber());
+                                accident.setAddress(geocodeAddress.getFomatLineNumber());
+                            }
                         }
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                        accident.setAddress("เกิดปัญหาในการดึงชื่อ");
+
+                    } catch (Exception e){
+                        accident.setAddress("เกิดปัญหาในการดึงชื่อ");
                     }
+
 
                     if (image != null) {
                         accident.setUri(image.getUrl());
@@ -143,8 +153,6 @@ public class AccidentListActivity extends AppCompatActivity {
                 }
             } catch (ParseException e) {
                 Log.e("Error", e.getMessage());
-                e.printStackTrace();
-            } catch (JSONException e) {
                 e.printStackTrace();
             }
             return null;
