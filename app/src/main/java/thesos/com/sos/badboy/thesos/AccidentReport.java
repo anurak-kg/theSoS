@@ -32,16 +32,16 @@ public class AccidentReport {
 
     private static final long TIME_PROCESS_SLEEP = 1000;
     private static final long MAX_TIME_WAIT = 30;  //ระยะเวลาที่รอการติดต่อจากเจ้าหน้าที่
-    private static final double MAX_NEAR_KILOMETER = 20; //ขอบเขตการค้นหา  กม.
+    private static final double MAX_NEAR_KILOMETER = 15.0; //ขอบเขตการค้นหา  กม.
     private static final int LIMIT_RESCUER = 5;
-    private static final ParseGeoPoint currentUserLocation = new ParseGeoPoint(7.8481069, 98.329275);
+    private ParseGeoPoint currentUserLocation = new ParseGeoPoint(7.8481069, 98.329275);
 
     private Context context;
     private Uri imagesUri;
     private String TAG = "theSos";
     private ParseObject currentUser;
     private TextView status;
-    private String objectId = "3r5fNg3CTs"; //objectId ของ อุบัติเหตุที่เกิดตอนนี้
+    private String objectId; //objectId ของ อุบัติเหตุที่เกิดตอนนี้
     private List<ParseObject> list;
     public Spanned currentStatus;
     private boolean running;
@@ -325,10 +325,10 @@ public class AccidentReport {
     private void sendAccidentToServer() {
         try {
             Log.d("theSos", "Start Send Accident to Parse");
-
+            currentUserLocation = new ParseGeoPoint(accident.getLatitude(),accident.getLongitude());
             ParseObject pr = new ParseObject("accident");
             pr.put("accidentType", accident.getAccidentType());
-            pr.put("location", new ParseGeoPoint(accident.getLatitude(), accident.getLongitude()));
+            pr.put("location", currentUserLocation);
             pr.put("accidentDescription", accident.getAccidentType());
 
             //เช็ครูปว่า

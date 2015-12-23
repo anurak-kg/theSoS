@@ -105,10 +105,7 @@ public class ReportActivity extends AppCompatActivity implements
         ParseUser currentUser = ParseUser.getCurrentUser();
         if ((currentUser != null) && currentUser.isAuthenticated()) {
             makeMeRequest();
-            getSupportFragmentManager()
-                    .beginTransaction()
-                    .add(R.id.report_fragment_container, UserView.newInstance(currentUser.getObjectId()))
-                    .commit();
+
         }
 
         bindMapWidget();
@@ -292,7 +289,16 @@ public class ReportActivity extends AppCompatActivity implements
                                 if (locationGPS != null) {
                                     currentUser.put("location", new ParseGeoPoint(locationGPS.getLatitude(), locationGPS.getLongitude()));
                                 }
-                                currentUser.saveInBackground();
+                                final String s = currentUser.getObjectId();
+                                currentUser.saveInBackground(new SaveCallback() {
+                                    @Override
+                                    public void done(ParseException e) {
+                                        getSupportFragmentManager()
+                                                .beginTransaction()
+                                                .add(R.id.report_fragment_container, UserView.newInstance(s))
+                                                .commit();
+                                    }
+                                });
 
                             } catch (JSONException e) {
                                 Log.d("My", "Error parsing returned user data. " + e);
