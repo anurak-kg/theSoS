@@ -141,6 +141,14 @@ public class AccidentReport {
 
             // ตรวจสอบสถานะการติดต่อ
             do {
+
+
+
+
+
+
+
+
                 // คำนวญเวลา เพื่อกำหนดเวลาในการติดต่อ
                 currentTime = new Date().getTime();
                 long diff = currentTime - start;

@@ -29,6 +29,8 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 public class AccidentListActivity extends AppCompatActivity {
@@ -105,11 +107,18 @@ public class AccidentListActivity extends AppCompatActivity {
 
             accidentlist = new ArrayList<Accident>();
             try {
+                Calendar calendar = Calendar.getInstance();
+                calendar.set(Calendar.DAY_OF_MONTH,Calendar.getInstance().get(Calendar.MONTH));
+                Date date = calendar.getTime();
+
 
                 ParseQuery<ParseObject> query = new ParseQuery<ParseObject>("accident");
-                query.setLimit(20);
+                query.whereGreaterThanOrEqualTo("createdAt", date);
+                query.setLimit(100);
+                query.orderByDescending("createdAt");
                 query.include("victimId");
                 ob = query.find();
+                Log.d(TheSosApplication.TAG,"Accident summary = " +ob.size());
                 for (ParseObject acc : ob) {
 
                     //ดาวน์โหลดข้อมูล
